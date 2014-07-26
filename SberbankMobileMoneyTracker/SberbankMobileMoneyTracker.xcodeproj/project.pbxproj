@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */; };
 		928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671ED1983EC5600974D6B /* UIView+Tag.m */; };
+		928671F21984014200974D6B /* UIImage+ImageFromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671F11984014200974D6B /* UIImage+ImageFromColor.m */; };
 		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
 		92877F561983B743007FB3F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F551983B743007FB3F7 /* AppDelegate.m */; };
 		92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */; };
@@ -30,6 +31,8 @@
 		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		928671EC1983EC5600974D6B /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Tag.h"; path = "Helpers/UIView+Tag/UIView+Tag.h"; sourceTree = "<group>"; };
 		928671ED1983EC5600974D6B /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Tag.m"; path = "Helpers/UIView+Tag/UIView+Tag.m"; sourceTree = "<group>"; };
+		928671F01984014200974D6B /* UIImage+ImageFromColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFromColor.h"; sourceTree = "<group>"; };
+		928671F11984014200974D6B /* UIImage+ImageFromColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageFromColor.m"; sourceTree = "<group>"; };
 		92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberbankMobileMoneyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92877F511983B743007FB3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92877F521983B743007FB3F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,6 +93,22 @@
 			name = "UIView+Tag";
 			sourceTree = "<group>";
 		};
+		928671EF1984011A00974D6B /* UIImage+Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				928671F01984014200974D6B /* UIImage+ImageFromColor.h */,
+				928671F11984014200974D6B /* UIImage+ImageFromColor.m */,
+			);
+			name = "UIImage+Overlay";
+			sourceTree = "<group>";
+		};
+		928671F3198401FF00974D6B /* StartViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = StartViewController;
+			sourceTree = "<group>";
+		};
 		92877F441983B743007FB3F7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +154,7 @@
 		92877F7A1983BB1A007FB3F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				928671F3198401FF00974D6B /* StartViewController */,
 				92877F7E1983BB45007FB3F7 /* StatisticViewController */,
 			);
 			name = ViewControllers;
@@ -210,6 +230,7 @@
 		92877F911983D09C007FB3F7 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				928671EF1984011A00974D6B /* UIImage+Overlay */,
 				928671EB1983EC3100974D6B /* UIView+Tag */,
 				92877FA21983E102007FB3F7 /* UIColors + App */,
 				92877F9E1983DB87007FB3F7 /* Additional Helpers */,
@@ -395,6 +416,7 @@
 				92877FA91983E5BD007FB3F7 /* Constants.m in Sources */,
 				92877F561983B743007FB3F7 /* AppDelegate.m in Sources */,
 				92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */,
+				928671F21984014200974D6B /* UIImage+ImageFromColor.m in Sources */,
 				92877F531983B743007FB3F7 /* main.m in Sources */,
 				92877F9A1983D2F8007FB3F7 /* CalendarCell.m in Sources */,
 				92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */,

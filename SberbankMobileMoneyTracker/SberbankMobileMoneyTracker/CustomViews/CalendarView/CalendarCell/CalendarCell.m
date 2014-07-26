@@ -13,6 +13,7 @@
 
 @property (nonatomic) UILabel *dayLabel;
 @property (nonatomic) NSArray *arrayOfCircles;
+@property (nonatomic) UIImageView *selectedBubble;
 
 @end
 
@@ -105,7 +106,7 @@
 
 + (CGRect)calendarCellFrame
 {
-    return CGRectMake(0, 0, 45, 175);
+    return CGRectMake(0, 0, 45, 190);
 }
 
 - (NSArray*)circleSizes
@@ -124,6 +125,10 @@
     
     if ( !selected )
     {
+        self.dayLabel.textColor = [UIColor darkGrayColor];
+        [self.selectedBubble removeFromSuperview];
+        self.selectedBubble = nil;
+        
         [[NSNotificationCenter defaultCenter] removeObserver:self];
         return;
     }
@@ -135,6 +140,12 @@
                                              selector: @selector(deselectCell:)
                                                  name: kNotificationCalendarCellDidSelect
                                                object: nil];
+    
+    self.selectedBubble = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_bubble_calendar"]];
+    self.selectedBubble.frame = CGRectMake(0, 0, 34, 34);
+    self.selectedBubble.center = CGPointMake(self.dayLabel.center.x + 0.5, self.dayLabel.center.y + 2.5);
+    [self insertSubview:self.selectedBubble belowSubview:self.dayLabel];
+    self.dayLabel.textColor = [UIColor whiteColor];
     
     for (Circle *circle in self.arrayOfCircles) {
         [circle bounceAppearWithDuration:0.6];
@@ -152,9 +163,12 @@
 {
     if ( !self.selected ) {
         self.selected = TRUE;
+        
+        if ( [self.delegate respondsToSelector:@selector(calendarCellDidSelect:)] ) {
+            [self.delegate calendarCellDidSelect:self];
+        }
     }
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

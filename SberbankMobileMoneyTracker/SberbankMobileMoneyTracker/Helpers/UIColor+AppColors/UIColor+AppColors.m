@@ -18,4 +18,9 @@
              [UIColor colorWithHexString:@"9bc663"]];
 }
 
++ (UIColor*)mainGreyColor
+{
+    return [UIColor colorWithHexString:@"d8d9d9"];
+}
+
 @end

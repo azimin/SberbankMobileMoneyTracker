@@ -10,6 +10,11 @@
 
 @interface CalendarView : UIView
 
+@property (nonatomic) NSInteger selectedIndex;
+@property (nonatomic) NSArray *numbers;
+@property (nonatomic) NSArray *arrayOfValues;
 
+- (instancetype)initWithDays: (NSArray*)numbers
+            andArrayOfValues: (NSArray*)arrayOfValues;
 
 @end

@@ -19,4 +19,5 @@
     #import "UIColor+AppColors.h"
     #import "NSArray+Functional.h"
     #import "UIView+Tag.h"
+    #import "UIImage+ImageFromColor.h"
 #endif

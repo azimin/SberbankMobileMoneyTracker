@@ -8,15 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CalendarCellDelegat;
+
 @interface CalendarCell : UIView
 
 @property (nonatomic) NSString *dayString;
 @property (nonatomic) NSArray *values;
 @property (nonatomic, getter = isSelected) BOOL selected;
 
+@property (nonatomic, assign) id <CalendarCellDelegat> delegate;
+
 - (instancetype)initWithDayString: (NSString*)dayString
                         andValues: (NSArray*)valus;
 
 + (CGRect)calendarCellFrame;
+
+@end
+
+@protocol CalendarCellDelegat <NSObject>
+
+- (void)calendarCellDidSelect:(CalendarCell *)calendarCell;
 
 @end

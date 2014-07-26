@@ -8,7 +8,7 @@
 
 #import "StatisticViewController.h"
 #import "Circle.h"
-#import "CalendarCell.h"
+#import "CalendarView.h"
 
 @interface StatisticViewController ()
 
@@ -20,19 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   // self.circle = [[Circle alloc] initWithRadius: 40
-                                         // andCenter: CGPointMake(100, 100)];
+
     self.circle  = [[Circle alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     self.circle.backgroundColor = [UIColor colorWithHexString:@"ca4e4e"];
     
-    CalendarCell *cell = [[CalendarCell alloc] initWithDayString:@"12" andValues:@[@(10), @(20), @(12), @(5)]];
-    cell.center = CGPointMake(100, 100);
+    /*CalendarCell *cell = [[CalendarCell alloc] initWithDayString:@"12" andValues:@[@(10), @(20), @(12), @(5)]];
+    cell.center = CGPointMake(100, 150);
     [self.view addSubview:cell];
     
     cell = [[CalendarCell alloc] initWithDayString:@"13" andValues:@[@(40), @(20), @(12), @(15)]];
-    cell.center = CGPointMake(140, 100);
-    [self.view addSubview:cell];
+    cell.center = CGPointMake(140, 150);
+    [self.view addSubview:cell];*/
+    NSMutableArray *valuesArray = [NSMutableArray array];
+    for (NSInteger index = 0; index < 7; index ++)
+    {
+        NSMutableArray *values = [NSMutableArray array];
+        for (NSInteger index = 0; index < 4; index ++) {
+            [values addObject:@(arc4random() % 100)];
+        }
+        
+        [valuesArray addObject:values];
+    }
+    
+    CalendarView *calendar = [[CalendarView alloc] initWithDays:@[@(10), @(11), @(12), @(13), @(14), @(15), @(16)] andArrayOfValues:valuesArray];
+    calendar.center = CGPointMake(calendar.center.x, calendar.center.y + 100);
+    [self.view addSubview:calendar];
     
     //[self.view addSubview:self.circle];
     

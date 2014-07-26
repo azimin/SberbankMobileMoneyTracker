@@ -118,7 +118,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     if ( isBounce ) {
         
         CGFloat scaleDifferent = (scale - 1.0) / 10;
-        [self runBounceAnimationWithScalePoints:ScalePointMale(1.0, scale + scaleDifferent, scale - scaleDifferent, scale) withDuration:duration];
+        [self runBounceAnimationWithScalePoints:ScalePointMale(1.0, scale + scaleDifferent * 2, scale - scaleDifferent, scale) withDuration:duration];
         
     } else {
         

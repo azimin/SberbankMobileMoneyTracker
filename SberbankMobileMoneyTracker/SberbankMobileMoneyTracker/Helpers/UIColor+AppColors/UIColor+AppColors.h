@@ -11,5 +11,6 @@
 @interface UIColor (AppColors)
 
 + (NSArray*)circleColors;
++ (UIColor*)mainGreyColor;
 
 @end
