@@ -29,6 +29,7 @@
 - (instancetype)init
 {
     if (self == [super init])
+        
     {
         [MagicalRecord setupCoreDataStackWithStoreNamed:@"SberbankMobileMoneyTrackerModel"];
     }
