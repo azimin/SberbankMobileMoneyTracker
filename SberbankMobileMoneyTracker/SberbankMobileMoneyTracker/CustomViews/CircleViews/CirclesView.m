@@ -44,6 +44,8 @@
 
 - (void)commonInit
 {
+    self.userInteractionEnabled = FALSE;
+    
     NSArray *sortedValues = [self.values sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         CGFloat firstValue = [obj1 floatValue];
         CGFloat secondValuer = [obj2 floatValue];

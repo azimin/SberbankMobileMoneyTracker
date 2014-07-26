@@ -27,13 +27,22 @@
     self.itemsView = [[NSMutableArray alloc] init];
     [self.itemsView addObject:view];
     if (self.infiniteDataSource) {
-        [self.itemsView insertObject:[self.infiniteDataSource infiniteScrollView:self loadPreviousViewAfterView:view] atIndex:0];
-        [self.itemsView addObject:[self.infiniteDataSource infiniteScrollView:self loadNextViewAfterView:view]];
+        UIView *vi = [self.infiniteDataSource infiniteScrollView:self loadPreviousViewAfterView:view];
+        
+        if (vi) {
+            [self.itemsView insertObject:vi atIndex:0];
+        }
+        
+        vi = [self.infiniteDataSource infiniteScrollView:self loadNextViewAfterView:view];
+        
+        if (vi) {
+            [self.itemsView addObject:vi];
+        }
     }
     
-    [self addSubview:self.itemsView[0]];
-    [self addSubview:self.itemsView[1]];
-    [self addSubview:self.itemsView[2]];
+    for (UIView *vi in self.itemsView) {
+        [self addSubview:vi];
+    }
     
     return self;
 }
@@ -48,45 +57,71 @@
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    BOOL isEnd = FALSE;
+    
     //right
     if ( scrollView.contentOffset.x > scrollView.frame.size.width ) {
-        int lastIndex = (int)[self.itemsView count] - 1;
-        [self.itemsView[0] removeFromSuperview];
-        for(int i = 0; i < lastIndex; i++)
-            self.itemsView[i] = self.itemsView[i + 1];
-        
         UIView *newView = [self.infiniteDataSource infiniteScrollView:self loadNextViewAfterView:self.itemsView[1]];
-        self.itemsView[lastIndex] = newView;
-        [self addSubview:newView];
+        if ( !newView ) {
+            isEnd = TRUE;
+        } else {
+            int lastIndex = (int)[self.itemsView count] - 1;
+            
+            [self.itemsView[0] removeFromSuperview];
+            for(int i = 0; i < lastIndex; i++)
+                self.itemsView[i] = self.itemsView[i + 1];
+            
+            self.itemsView[lastIndex] = newView;
+            [self addSubview:newView];
+        }
     }
     
     //left
     if ( scrollView.contentOffset.x < scrollView.frame.size.width ) {
-        int lastIndex = (int)[self.itemsView count] - 1;
-        [self.itemsView[lastIndex] removeFromSuperview];
-        for(int i = lastIndex; i > 0; i--)
-            self.itemsView[i] = self.itemsView[i - 1];
-        
         UIView *newView = [self.infiniteDataSource infiniteScrollView:self loadPreviousViewAfterView:self.itemsView[1]];
-        self.itemsView[0] = newView;
-        [self addSubview:newView];
+        if ( !newView ) {
+            isEnd = TRUE;
+        } else {
+            int lastIndex = (int)[self.itemsView count] - 1;
+            [self.itemsView[lastIndex] removeFromSuperview];
+            for(int i = lastIndex; i > 0; i--)
+                self.itemsView[i] = self.itemsView[i - 1];
+            
+            self.itemsView[0] = newView;
+            [self addSubview:newView];
+        }
     }
-    [self changeContentFrames];
-    [self scrollRectToVisible:CGRectMake(320, 0, 320, 568) animated:NO];
+    
+    if ( !isEnd ) {
+        [self changeContentFrames];
+        [self scrollRectToVisible:CGRectMake(320, 0, 320, 568) animated:NO];
+    }
+    
 }
 
 - (void)changeContentFrames{
-    CGRect rect = ((UIView *)self.itemsView[0]).frame;
-    rect.origin.x = 0;
-    ((UIView *)self.itemsView[0]).frame = rect;
+    CGRect rect;
     
-    rect = ((UIView *)self.itemsView[1]).frame;
-    rect.origin.x = 320;
-    ((UIView *)self.itemsView[1]).frame = rect;
+    if (self.itemsView.count > 0) {
+        CGRect rect = ((UIView *)self.itemsView[0]).frame;
+        rect.origin.x = 0;
+        ((UIView *)self.itemsView[0]).frame = rect;
+    }
     
-    rect = ((UIView *)self.itemsView[2]).frame;
-    rect.origin.x = 640;
-    ((UIView *)self.itemsView[2]).frame = rect;
+    if (self.itemsView.count > 1) {
+        rect = ((UIView *)self.itemsView[1]).frame;
+        rect.origin.x = 320;
+        ((UIView *)self.itemsView[1]).frame = rect;
+    }
+    
+    if (self.itemsView.count > 2) {
+        rect = ((UIView *)self.itemsView[2]).frame;
+        rect.origin.x = 640;
+        ((UIView *)self.itemsView[2]).frame = rect;
+    }
+    
+    
 }
 
 @end

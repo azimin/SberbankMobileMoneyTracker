@@ -211,7 +211,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     
     CGFloat scale = (isBegin) ? 0.9 : 1.0 / 0.9;
     
-    [UIView animateWithDuration:0.1 animations:^{
+    [UIView animateWithDuration:0.15 animations:^{
         self.transform = CGAffineTransformMakeScale(scale, scale);
     }];
 }
@@ -265,11 +265,12 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     if ( recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateChanged ) {
         [self touchAnimationBegin:[self isPointInViewOrAround:point]];
     } else if ( recognizer.state == UIGestureRecognizerStateEnded ) {
-        [self touchAnimationBegin:FALSE];
         
         if ( [self isPointInViewOrAround:point] ) {
             [self.target performSelector:self.selector withObject:nil];
         }
+        
+        [self touchAnimationBegin:FALSE];
         
     } else {
         [self touchAnimationBegin:FALSE];

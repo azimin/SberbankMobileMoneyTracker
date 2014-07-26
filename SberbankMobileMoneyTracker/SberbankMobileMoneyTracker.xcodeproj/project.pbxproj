@@ -29,6 +29,7 @@
 		92B83D191984032700AD72BC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B83D181984032700AD72BC /* StartViewController.xib */; };
 		92B83D1D1984039200AD72BC /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D1C1984039200AD72BC /* CirclesView.m */; };
 		92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D2119840AFF00AD72BC /* LabelOnCircle.m */; };
+		92F18CC31984214500ACEA70 /* MainViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F18CC21984214500ACEA70 /* MainViewNavigation.m */; };
 		CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB181984038B009D9E8A /* CoreDataManager.m */; };
 		CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1C19840411009D9E8A /* CategoryType.m */; };
 		CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1F19840412009D9E8A /* DayInfo.m */; };
@@ -75,6 +76,8 @@
 		92B83D1C1984039200AD72BC /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CirclesView.m; path = CustomViews/CircleViews/CirclesView.m; sourceTree = "<group>"; };
 		92B83D2019840AFF00AD72BC /* LabelOnCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelOnCircle.h; path = CustomViews/UILabelWithText/LabelOnCircle.h; sourceTree = "<group>"; };
 		92B83D2119840AFF00AD72BC /* LabelOnCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelOnCircle.m; path = CustomViews/UILabelWithText/LabelOnCircle.m; sourceTree = "<group>"; };
+		92F18CC11984214500ACEA70 /* MainViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewNavigation.h; path = CustomViews/MainViewNavigation/MainViewNavigation.h; sourceTree = "<group>"; };
+		92F18CC21984214500ACEA70 /* MainViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewNavigation.m; path = CustomViews/MainViewNavigation/MainViewNavigation.m; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9CAB171984038B009D9E8A /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		CB9CAB181984038B009D9E8A /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
@@ -227,6 +230,7 @@
 		92877F841983BD3D007FB3F7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				92F18CC01984211900ACEA70 /* MainViewNavigation */,
 				92B83D1F19840AE200AD72BC /* UILabelWithText */,
 				92B83D1A1984037900AD72BC /* CirclesView */,
 				92877FAB1983EB03007FB3F7 /* InfiniteScrollView */,
@@ -359,6 +363,15 @@
 			name = UILabelWithText;
 			sourceTree = "<group>";
 		};
+		92F18CC01984211900ACEA70 /* MainViewNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				92F18CC11984214500ACEA70 /* MainViewNavigation.h */,
+				92F18CC21984214500ACEA70 /* MainViewNavigation.m */,
+			);
+			name = MainViewNavigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -473,6 +486,7 @@
 				92877F9A1983D2F8007FB3F7 /* CalendarCell.m in Sources */,
 				92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */,
 				92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */,
+				92F18CC31984214500ACEA70 /* MainViewNavigation.m in Sources */,
 				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
 				CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */,
