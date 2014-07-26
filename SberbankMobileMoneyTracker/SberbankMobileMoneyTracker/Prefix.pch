@@ -18,4 +18,5 @@
     #import "UIColor+Expanded.h"
     #import "UIColor+AppColors.h"
     #import "NSArray+Functional.h"
+    #import "UIView+Tag.h"
 #endif

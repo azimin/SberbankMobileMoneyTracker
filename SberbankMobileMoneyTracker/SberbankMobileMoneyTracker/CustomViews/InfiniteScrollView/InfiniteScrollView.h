@@ -9,16 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @class InfiniteScrollView;
+
 @protocol InfiniteScrollViewDataSource <NSObject>
 
 @required
--(UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadNextViewAfterView:(UIView *)currentView;
--(UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadPreviousViewAfterView:(UIView *)currentView;
+- (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadNextViewAfterView:(UIView *)currentView;
+- (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadPreviousViewAfterView:(UIView *)currentView;
 
 @end
 
+
 @interface InfiniteScrollView : UIScrollView
 
--(instancetype)initWithVisibleView:(UIView *)view dataSource:(id<InfiniteScrollViewDataSource>)source;
+- (instancetype)initWithVisibleView:(UIView *)view dataSource:(id<InfiniteScrollViewDataSource>)source;
 
 @end

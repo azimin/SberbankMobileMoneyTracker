@@ -15,7 +15,7 @@
 
 @implementation InfiniteScrollView
 
--(instancetype)initWithVisibleView:(UIView *)view dataSource:(id<InfiniteScrollViewDataSource>)source;{
+- (instancetype)initWithVisibleView:(UIView *)view dataSource:(id<InfiniteScrollViewDataSource>)source;{
     self.delegate = self;
     self.pagingEnabled = YES;
     self = [super initWithFrame:CGRectMake(0, 0, 320, 568)];
@@ -26,7 +26,7 @@
     
     self.itemsView = [[NSMutableArray alloc] init];
     [self.itemsView addObject:view];
-    if(self.infiniteDataSource){
+    if (self.infiniteDataSource) {
         [self.itemsView insertObject:[self.infiniteDataSource infiniteScrollView:self loadPreviousViewAfterView:view] atIndex:0];
         [self.itemsView addObject:[self.infiniteDataSource infiniteScrollView:self loadNextViewAfterView:view]];
     }
@@ -47,9 +47,9 @@
 }
 
 
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     //right
-    if(scrollView.contentOffset.x > scrollView.frame.size.width){
+    if ( scrollView.contentOffset.x > scrollView.frame.size.width ) {
         int lastIndex = (int)[self.itemsView count] - 1;
         [self.itemsView[0] removeFromSuperview];
         for(int i = 0; i < lastIndex; i++)
@@ -61,7 +61,7 @@
     }
     
     //left
-    if(scrollView.contentOffset.x < scrollView.frame.size.width){
+    if ( scrollView.contentOffset.x < scrollView.frame.size.width ) {
         int lastIndex = (int)[self.itemsView count] - 1;
         [self.itemsView[lastIndex] removeFromSuperview];
         for(int i = lastIndex; i > 0; i--)
@@ -75,7 +75,7 @@
     [self scrollRectToVisible:CGRectMake(320, 0, 320, 568) animated:NO];
 }
 
--(void)changeContentFrames{
+- (void)changeContentFrames{
     CGRect rect = ((UIView *)self.itemsView[0]).frame;
     rect.origin.x = 0;
     ((UIView *)self.itemsView[0]).frame = rect;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */; };
+		928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671ED1983EC5600974D6B /* UIView+Tag.m */; };
 		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
 		92877F561983B743007FB3F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F551983B743007FB3F7 /* AppDelegate.m */; };
 		92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */; };
@@ -27,6 +28,8 @@
 
 /* Begin PBXFileReference section */
 		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		928671EC1983EC5600974D6B /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Tag.h"; path = "Helpers/UIView+Tag/UIView+Tag.h"; sourceTree = "<group>"; };
+		928671ED1983EC5600974D6B /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Tag.m"; path = "Helpers/UIView+Tag/UIView+Tag.m"; sourceTree = "<group>"; };
 		92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberbankMobileMoneyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92877F511983B743007FB3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92877F521983B743007FB3F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +79,15 @@
 				BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		928671EB1983EC3100974D6B /* UIView+Tag */ = {
+			isa = PBXGroup;
+			children = (
+				928671EC1983EC5600974D6B /* UIView+Tag.h */,
+				928671ED1983EC5600974D6B /* UIView+Tag.m */,
+			);
+			name = "UIView+Tag";
 			sourceTree = "<group>";
 		};
 		92877F441983B743007FB3F7 = {
@@ -198,6 +210,7 @@
 		92877F911983D09C007FB3F7 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				928671EB1983EC3100974D6B /* UIView+Tag */,
 				92877FA21983E102007FB3F7 /* UIColors + App */,
 				92877F9E1983DB87007FB3F7 /* Additional Helpers */,
 				92877F921983D0C2007FB3F7 /* Color+Extend */,
@@ -388,6 +401,7 @@
 				92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
+				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
