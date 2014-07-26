@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "StatisticViewController.h"
+#import "StartViewController.h"
 
 @interface AppDelegate ()
 
@@ -54,7 +54,7 @@
 
 - (void) openMainView
 {
-    StatisticViewController *statisticViewController = [[StatisticViewController alloc] initWithNibName:@"StatisticViewController" bundle:nil];
+    StartViewController *statisticViewController = [[StartViewController alloc] initWithNibName:@"StartViewController" bundle:nil];
     self.window.rootViewController = statisticViewController;
     [self.window makeKeyAndVisible];
 }

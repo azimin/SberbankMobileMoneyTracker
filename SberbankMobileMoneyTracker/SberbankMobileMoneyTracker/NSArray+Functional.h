@@ -17,4 +17,6 @@
 
 - (void)run: (void (^)(id obj))block;
 
++ (NSArray*)categoriesArray;
+
 @end

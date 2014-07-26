@@ -59,4 +59,9 @@
         block(obj);
 }
 
++ (NSArray*)categoriesArray
+{
+    return @[@"Home", @"Health", @"Food", @"Fun"];
+}
+
 @end

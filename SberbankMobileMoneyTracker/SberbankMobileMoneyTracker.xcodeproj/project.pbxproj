@@ -25,6 +25,10 @@
 		92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877FA41983E147007FB3F7 /* UIColor+AppColors.m */; };
 		92877FA91983E5BD007FB3F7 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877FA81983E5BD007FB3F7 /* Constants.m */; };
 		92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877FAD1983EB13007FB3F7 /* InfiniteScrollView.m */; };
+		92B83D15198402EE00AD72BC /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D14198402EE00AD72BC /* StartViewController.m */; };
+		92B83D191984032700AD72BC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B83D181984032700AD72BC /* StartViewController.xib */; };
+		92B83D1D1984039200AD72BC /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D1C1984039200AD72BC /* CirclesView.m */; };
+		92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D2119840AFF00AD72BC /* LabelOnCircle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,13 @@
 		92877FA81983E5BD007FB3F7 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Configuration/Constants/Constants.m; sourceTree = "<group>"; };
 		92877FAC1983EB13007FB3F7 /* InfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfiniteScrollView.h; path = CustomViews/InfiniteScrollView/InfiniteScrollView.h; sourceTree = "<group>"; };
 		92877FAD1983EB13007FB3F7 /* InfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfiniteScrollView.m; path = CustomViews/InfiniteScrollView/InfiniteScrollView.m; sourceTree = "<group>"; };
+		92B83D13198402EE00AD72BC /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartViewController.h; path = ViewControllers/StartViewControllers/StartViewController.h; sourceTree = "<group>"; };
+		92B83D14198402EE00AD72BC /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartViewController.m; path = ViewControllers/StartViewControllers/StartViewController.m; sourceTree = "<group>"; };
+		92B83D181984032700AD72BC /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartViewController.xib; path = ViewControllers/StartViewControllers/StartViewController.xib; sourceTree = "<group>"; };
+		92B83D1B1984039200AD72BC /* CirclesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CirclesView.h; path = CustomViews/CircleViews/CirclesView.h; sourceTree = "<group>"; };
+		92B83D1C1984039200AD72BC /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CirclesView.m; path = CustomViews/CircleViews/CirclesView.m; sourceTree = "<group>"; };
+		92B83D2019840AFF00AD72BC /* LabelOnCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelOnCircle.h; path = CustomViews/UILabelWithText/LabelOnCircle.h; sourceTree = "<group>"; };
+		92B83D2119840AFF00AD72BC /* LabelOnCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelOnCircle.m; path = CustomViews/UILabelWithText/LabelOnCircle.m; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +116,9 @@
 		928671F3198401FF00974D6B /* StartViewController */ = {
 			isa = PBXGroup;
 			children = (
+				92B83D13198402EE00AD72BC /* StartViewController.h */,
+				92B83D14198402EE00AD72BC /* StartViewController.m */,
+				92B83D181984032700AD72BC /* StartViewController.xib */,
 			);
 			name = StartViewController;
 			sourceTree = "<group>";
@@ -200,6 +214,8 @@
 		92877F841983BD3D007FB3F7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				92B83D1F19840AE200AD72BC /* UILabelWithText */,
+				92B83D1A1984037900AD72BC /* CirclesView */,
 				92877FAB1983EB03007FB3F7 /* InfiniteScrollView */,
 				92877F8B1983BEAA007FB3F7 /* Circle */,
 				92877F851983BD5C007FB3F7 /* CalendarView */,
@@ -308,6 +324,24 @@
 			name = InfiniteScrollView;
 			sourceTree = "<group>";
 		};
+		92B83D1A1984037900AD72BC /* CirclesView */ = {
+			isa = PBXGroup;
+			children = (
+				92B83D1B1984039200AD72BC /* CirclesView.h */,
+				92B83D1C1984039200AD72BC /* CirclesView.m */,
+			);
+			name = CirclesView;
+			sourceTree = "<group>";
+		};
+		92B83D1F19840AE200AD72BC /* UILabelWithText */ = {
+			isa = PBXGroup;
+			children = (
+				92B83D2019840AFF00AD72BC /* LabelOnCircle.h */,
+				92B83D2119840AFF00AD72BC /* LabelOnCircle.m */,
+			);
+			name = UILabelWithText;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -368,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */,
+				92B83D191984032700AD72BC /* StartViewController.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
 				92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */,
 			);
@@ -421,12 +456,15 @@
 				92877F9A1983D2F8007FB3F7 /* CalendarCell.m in Sources */,
 				92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */,
 				92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */,
+				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
 				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
+				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,
 				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
+				92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
