@@ -33,6 +33,10 @@
 		CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB181984038B009D9E8A /* CoreDataManager.m */; };
 		CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1C19840411009D9E8A /* CategoryType.m */; };
 		CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1F19840412009D9E8A /* DayInfo.m */; };
+		CB9FD03919841CA300FF6ED0 /* CategoryTypesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9FD03719841CA300FF6ED0 /* CategoryTypesTableViewCell.m */; };
+		CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9FD03819841CA300FF6ED0 /* CategoryTypesTableViewCell.xib */; };
+		CB9FD03E1984273800FF6ED0 /* CategoryTypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */; };
+		CB9FD03F1984273800FF6ED0 /* CategoryTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,9 @@
 		92F18CC11984214500ACEA70 /* MainViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewNavigation.h; path = CustomViews/MainViewNavigation/MainViewNavigation.h; sourceTree = "<group>"; };
 		92F18CC21984214500ACEA70 /* MainViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewNavigation.m; path = CustomViews/MainViewNavigation/MainViewNavigation.m; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB15E42A1984141300157FA4 /* NewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewExpenseViewController.h; path = ViewControllers/NewExpenseViewController/NewExpenseViewController.h; sourceTree = "<group>"; };
+		CB15E42B1984141300157FA4 /* NewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewExpenseViewController.m; path = ViewControllers/NewExpenseViewController/NewExpenseViewController.m; sourceTree = "<group>"; };
+		CB15E42C1984141300157FA4 /* NewExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewExpenseViewController.xib; path = ViewControllers/NewExpenseViewController/NewExpenseViewController.xib; sourceTree = "<group>"; };
 		CB9CAB171984038B009D9E8A /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		CB9CAB181984038B009D9E8A /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		CB9CAB1A19840411009D9E8A /* SberbankMobileMoneyTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SberbankMobileMoneyTracker-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -86,6 +93,12 @@
 		CB9CAB1C19840411009D9E8A /* CategoryType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryType.m; sourceTree = "<group>"; };
 		CB9CAB1E19840412009D9E8A /* DayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayInfo.h; sourceTree = "<group>"; };
 		CB9CAB1F19840412009D9E8A /* DayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayInfo.m; sourceTree = "<group>"; };
+		CB9FD03619841CA300FF6ED0 /* CategoryTypesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTypesTableViewCell.h; sourceTree = "<group>"; };
+		CB9FD03719841CA300FF6ED0 /* CategoryTypesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTypesTableViewCell.m; sourceTree = "<group>"; };
+		CB9FD03819841CA300FF6ED0 /* CategoryTypesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTypesTableViewCell.xib; sourceTree = "<group>"; };
+		CB9FD03B1984273800FF6ED0 /* CategoryTypesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTypesViewController.h; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.h; sourceTree = "<group>"; };
+		CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTypesViewController.m; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.m; sourceTree = "<group>"; };
+		CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTypesViewController.xib; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +194,8 @@
 		92877F7A1983BB1A007FB3F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CB9FD02F19841C1800FF6ED0 /* CategoryTypesViewController */,
+				CB15E4291984139900157FA4 /* NewExpenseViewController */,
 				928671F3198401FF00974D6B /* StartViewController */,
 				92877F7E1983BB45007FB3F7 /* StatisticViewController */,
 			);
@@ -431,9 +446,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB15E42E1984141300157FA4 /* NewExpenseViewController.xib in Resources */,
+				CB9FD03F1984273800FF6ED0 /* CategoryTypesViewController.xib in Resources */,
 				92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */,
 				92B83D191984032700AD72BC /* StartViewController.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
+				CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */,
 				92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,8 +508,10 @@
 				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
 				CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */,
+				CB15E42D1984141300157FA4 /* NewExpenseViewController.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
 				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
+				CB9FD03E1984273800FF6ED0 /* CategoryTypesViewController.m in Sources */,
 				CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,

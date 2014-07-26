@@ -46,11 +46,7 @@
         }
     } else {
         dayInfo = [DayInfo createEntity];
-        
-        int timestamp = [[NSDate date] timeIntervalSince1970];
-        timestamp = timestamp - timestamp % 86400;
-        NSDate *date1970 = [NSDate dateWithTimeIntervalSince1970:0];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+        dayInfo = date;
         
         
         NSMutableSet *dayInfoCategories = [[NSMutableSet alloc] init];
