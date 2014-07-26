@@ -8,6 +8,7 @@
 
 #import "StartViewController.h"
 #import "CirclesView.h"
+#import "Circle.h"
 
 @interface StartViewController ()
 
@@ -20,15 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
     [self.circlesView removeFromSuperview];
     
     self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(0, 122, 320, 285)];
     [self.view addSubview:self.circlesView];
+    
+    Circle *circle = [[Circle alloc] initWithRadius:40 andCenter:CGPointMake(self.view.frame.size.width / 2, 482)];
+    circle.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:circle];
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"btn_add_new_transaction"]];
+    imgView.frame = circle.bounds;
+    [circle addSubview:imgView];
+    circle.color = [UIColor colorWithHexString:@"555555"];
+    [circle addTarget:self action:@selector(buttonClicked)];
+}
+
+- (void)buttonClicked
+{
+    NSLog(@"Swag");
 }
 
 @end
