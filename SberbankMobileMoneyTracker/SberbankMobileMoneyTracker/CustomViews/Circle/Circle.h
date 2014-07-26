@@ -1,5 +1,5 @@
 //
-//  CalendarView.h
+//  Circle.h
 //  SberbankMobileMoneyTracker
 //
 //  Created by Alex Zimin on 26/07/14.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalendarView : UIView
+@interface Circle : UIView
 
+- (id)initWithRadius: (CGFloat)radius
+           andCenter: (CGPoint)center;
 
+@property (nonatomic) CGFloat *radius;
 
 @end
