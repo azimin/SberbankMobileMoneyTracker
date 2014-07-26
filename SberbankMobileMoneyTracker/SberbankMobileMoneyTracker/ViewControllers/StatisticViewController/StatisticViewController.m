@@ -8,6 +8,7 @@
 
 #import "StatisticViewController.h"
 #import "Circle.h"
+#import "CalendarCell.h"
 
 @interface StatisticViewController ()
 
@@ -20,11 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.circle = [[Circle alloc] initWithRadius: 40
-                                          andCenter: CGPointMake(100, 100)];
+   // self.circle = [[Circle alloc] initWithRadius: 40
+                                         // andCenter: CGPointMake(100, 100)];
+    self.circle  = [[Circle alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
     self.circle.backgroundColor = [UIColor colorWithHexString:@"ca4e4e"];
     
-    [self.view addSubview:self.circle];
+    CalendarCell *cell = [[CalendarCell alloc] initWithDayString:@"12" andValues:@[@(10), @(20), @(12), @(5)]];
+    cell.center = CGPointMake(100, 100);
+    [self.view addSubview:cell];
+    
+    cell = [[CalendarCell alloc] initWithDayString:@"13" andValues:@[@(40), @(20), @(12), @(15)]];
+    cell.center = CGPointMake(140, 100);
+    [self.view addSubview:cell];
+    
+    //[self.view addSubview:self.circle];
     
     [self performSelector:@selector(animationGo) withObject:nil afterDelay:1.0];
 }
@@ -37,6 +47,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
 }
 
 /*
