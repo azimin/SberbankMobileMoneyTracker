@@ -11,7 +11,7 @@
 #import "CategoryType.h"
 
 @interface CoreDataManager ()
-
+@property (strong, nonatomic) NSManagedObjectContext *context;
 @end
 
 @implementation CoreDataManager
@@ -32,25 +32,26 @@
         
     {
         [MagicalRecord setupCoreDataStackWithStoreNamed:@"SberbankMobileMoneyTrackerModel"];
+        self.context = [NSManagedObjectContext defaultContext];
     }
     return self;
 }
 
-- (void)addExpenses:(double)sum toCategory:(NSString *)categoryName atDate:(NSDate *)date{
+- (void)addExpense:(double)sum toCategory:(NSString *)categoryName atDate:(NSDate *)date{
     DayInfo *dayInfo = [DayInfo findFirstByAttribute:@"date" withValue:date];
     
     if(dayInfo){
         for(CategoryType *type in dayInfo.categoryTypes){
-            if([type.name isEqualToString:categoryName])
+            if([type.name isEqualToString:categoryName]){
                 type.value = @([type.value doubleValue] + sum);
+            }
         }
     } else {
         dayInfo = [DayInfo createEntity];
-        dayInfo = date;
-        
+        dayInfo.date = date;
         
         NSMutableSet *dayInfoCategories = [[NSMutableSet alloc] init];
-        NSArray *categoryNames = @[@"Home", @"Health", @"Food", @"Fun"];
+        NSArray *categoryNames = [NSArray categoriesArray];
         for(NSString *cName in categoryNames){
             CategoryType *concreteType = [CategoryType createEntity];
             concreteType.name = cName;
@@ -62,6 +63,8 @@
         
         dayInfo.categoryTypes = dayInfoCategories;
     }
+    
+    [self.context saveToPersistentStoreAndWait];
 }
 
 -(NSArray *)fetchExpensesStatistic{

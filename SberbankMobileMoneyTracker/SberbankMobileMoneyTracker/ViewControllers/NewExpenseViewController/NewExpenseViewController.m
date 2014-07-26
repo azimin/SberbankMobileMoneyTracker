@@ -43,7 +43,6 @@
 }
 
 - (void)confirmButtonTouchUpInside{
-    
     //code for processing new expense
     
     [self dismissViewControllerAnimated:YES completion:nil];

@@ -38,6 +38,8 @@
 		CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9FD03819841CA300FF6ED0 /* CategoryTypesTableViewCell.xib */; };
 		CB9FD03E1984273800FF6ED0 /* CategoryTypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */; };
 		CB9FD03F1984273800FF6ED0 /* CategoryTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */; };
+		CBEFCC28198458320089D145 /* MoneyTrackerServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCC27198458320089D145 /* MoneyTrackerServerManager.m */; };
+		CBEFCC2B198459B00089D145 /* MoneyTrackerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCC2A198459B00089D145 /* MoneyTrackerClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,10 @@
 		CB9FD03B1984273800FF6ED0 /* CategoryTypesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTypesViewController.h; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.h; sourceTree = "<group>"; };
 		CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTypesViewController.m; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.m; sourceTree = "<group>"; };
 		CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTypesViewController.xib; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.xib; sourceTree = "<group>"; };
+		CBEFCC26198458320089D145 /* MoneyTrackerServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTrackerServerManager.h; sourceTree = "<group>"; };
+		CBEFCC27198458320089D145 /* MoneyTrackerServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTrackerServerManager.m; sourceTree = "<group>"; };
+		CBEFCC29198459B00089D145 /* MoneyTrackerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTrackerClient.h; sourceTree = "<group>"; };
+		CBEFCC2A198459B00089D145 /* MoneyTrackerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTrackerClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				CBEFCC25198451180089D145 /* ServerInteraction */,
 				92877F911983D09C007FB3F7 /* Third Party */,
 				92877F7D1983BB36007FB3F7 /* AppDelegate */,
 				92877F7B1983BB29007FB3F7 /* Core */,
@@ -407,6 +414,17 @@
 			name = CategoryTypesTableViewCell;
 			sourceTree = "<group>";
 		};
+		CBEFCC25198451180089D145 /* ServerInteraction */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFCC26198458320089D145 /* MoneyTrackerServerManager.h */,
+				CBEFCC27198458320089D145 /* MoneyTrackerServerManager.m */,
+				CBEFCC29198459B00089D145 /* MoneyTrackerClient.h */,
+				CBEFCC2A198459B00089D145 /* MoneyTrackerClient.m */,
+			);
+			name = ServerInteraction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -528,6 +546,7 @@
 				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
 				CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */,
+				CBEFCC2B198459B00089D145 /* MoneyTrackerClient.m in Sources */,
 				CB15E42D1984141300157FA4 /* NewExpenseViewController.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
 				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
@@ -535,6 +554,7 @@
 				CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,
+				CBEFCC28198458320089D145 /* MoneyTrackerServerManager.m in Sources */,
 				CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */,
 				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
