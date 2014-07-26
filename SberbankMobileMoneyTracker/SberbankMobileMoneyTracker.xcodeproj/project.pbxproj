@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */; };
+		92801811198463B7002901F3 /* ExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9280180F198463B7002901F3 /* ExpenseViewController.m */; };
+		92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92801810198463B7002901F3 /* ExpenseViewController.xib */; };
 		928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671ED1983EC5600974D6B /* UIView+Tag.m */; };
 		928671F21984014200974D6B /* UIImage+ImageFromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671F11984014200974D6B /* UIImage+ImageFromColor.m */; };
 		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
 		92877F561983B743007FB3F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F551983B743007FB3F7 /* AppDelegate.m */; };
 		92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */; };
 		92877F611983B743007FB3F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92877F601983B743007FB3F7 /* Images.xcassets */; };
-		92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F801983BB97007FB3F7 /* StatisticViewController.m */; };
-		92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F811983BB97007FB3F7 /* StatisticViewController.xib */; };
 		92877F881983BD86007FB3F7 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F871983BD86007FB3F7 /* CalendarView.m */; };
 		92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F891983BE08007FB3F7 /* CalendarView.xib */; };
 		92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F8D1983BEC9007FB3F7 /* Circle.m */; };
@@ -29,6 +29,7 @@
 		92B83D191984032700AD72BC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B83D181984032700AD72BC /* StartViewController.xib */; };
 		92B83D1D1984039200AD72BC /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D1C1984039200AD72BC /* CirclesView.m */; };
 		92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D2119840AFF00AD72BC /* LabelOnCircle.m */; };
+		92F18CC31984214500ACEA70 /* MainViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F18CC21984214500ACEA70 /* MainViewNavigation.m */; };
 		CB15E42D1984141300157FA4 /* NewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB15E42B1984141300157FA4 /* NewExpenseViewController.m */; };
 		CB15E42E1984141300157FA4 /* NewExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB15E42C1984141300157FA4 /* NewExpenseViewController.xib */; };
 		CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB181984038B009D9E8A /* CoreDataManager.m */; };
@@ -44,6 +45,9 @@
 
 /* Begin PBXFileReference section */
 		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9280180E198463B7002901F3 /* ExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpenseViewController.h; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.h; sourceTree = "<group>"; };
+		9280180F198463B7002901F3 /* ExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpenseViewController.m; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.m; sourceTree = "<group>"; };
+		92801810198463B7002901F3 /* ExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpenseViewController.xib; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.xib; sourceTree = "<group>"; };
 		928671EC1983EC5600974D6B /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Tag.h"; path = "Helpers/UIView+Tag/UIView+Tag.h"; sourceTree = "<group>"; };
 		928671ED1983EC5600974D6B /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Tag.m"; path = "Helpers/UIView+Tag/UIView+Tag.m"; sourceTree = "<group>"; };
 		928671F01984014200974D6B /* UIImage+ImageFromColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFromColor.h"; sourceTree = "<group>"; };
@@ -55,9 +59,6 @@
 		92877F551983B743007FB3F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		92877F581983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SberbankMobileMoneyTracker.xcdatamodel; sourceTree = "<group>"; };
 		92877F601983B743007FB3F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92877F7F1983BB97007FB3F7 /* StatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticViewController.h; path = ViewControllers/StatisticViewController/StatisticViewController.h; sourceTree = "<group>"; };
-		92877F801983BB97007FB3F7 /* StatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticViewController.m; path = ViewControllers/StatisticViewController/StatisticViewController.m; sourceTree = "<group>"; };
-		92877F811983BB97007FB3F7 /* StatisticViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StatisticViewController.xib; path = ViewControllers/StatisticViewController/StatisticViewController.xib; sourceTree = "<group>"; };
 		92877F861983BD86007FB3F7 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarView.h; path = CustomViews/CalendarView/CalendarView.h; sourceTree = "<group>"; };
 		92877F871983BD86007FB3F7 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarView.m; path = CustomViews/CalendarView/CalendarView.m; sourceTree = "<group>"; };
 		92877F891983BE08007FB3F7 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarView.xib; path = CustomViews/CalendarView/CalendarView.xib; sourceTree = "<group>"; };
@@ -83,6 +84,8 @@
 		92B83D1C1984039200AD72BC /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CirclesView.m; path = CustomViews/CircleViews/CirclesView.m; sourceTree = "<group>"; };
 		92B83D2019840AFF00AD72BC /* LabelOnCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelOnCircle.h; path = CustomViews/UILabelWithText/LabelOnCircle.h; sourceTree = "<group>"; };
 		92B83D2119840AFF00AD72BC /* LabelOnCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelOnCircle.m; path = CustomViews/UILabelWithText/LabelOnCircle.m; sourceTree = "<group>"; };
+		92F18CC11984214500ACEA70 /* MainViewNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewNavigation.h; path = CustomViews/MainViewNavigation/MainViewNavigation.h; sourceTree = "<group>"; };
+		92F18CC21984214500ACEA70 /* MainViewNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewNavigation.m; path = CustomViews/MainViewNavigation/MainViewNavigation.m; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB15E42A1984141300157FA4 /* NewExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewExpenseViewController.h; path = ViewControllers/NewExpenseViewController/NewExpenseViewController.h; sourceTree = "<group>"; };
 		CB15E42B1984141300157FA4 /* NewExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewExpenseViewController.m; path = ViewControllers/NewExpenseViewController/NewExpenseViewController.m; sourceTree = "<group>"; };
@@ -124,6 +127,16 @@
 				BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9280180D19846395002901F3 /* ExpenseTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9280180E198463B7002901F3 /* ExpenseViewController.h */,
+				9280180F198463B7002901F3 /* ExpenseViewController.m */,
+				92801810198463B7002901F3 /* ExpenseViewController.xib */,
+			);
+			name = ExpenseTableViewController;
 			sourceTree = "<group>";
 		};
 		928671EB1983EC3100974D6B /* UIView+Tag */ = {
@@ -200,10 +213,9 @@
 		92877F7A1983BB1A007FB3F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CB9FD02F19841C1800FF6ED0 /* CategoryTypesViewController */,
+				9280180D19846395002901F3 /* ExpenseTableViewController */,
 				CB15E4291984139900157FA4 /* NewExpenseViewController */,
 				928671F3198401FF00974D6B /* StartViewController */,
-				92877F7E1983BB45007FB3F7 /* StatisticViewController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -238,20 +250,10 @@
 			name = AppDelegate;
 			sourceTree = "<group>";
 		};
-		92877F7E1983BB45007FB3F7 /* StatisticViewController */ = {
-			isa = PBXGroup;
-			children = (
-				92877F7F1983BB97007FB3F7 /* StatisticViewController.h */,
-				92877F801983BB97007FB3F7 /* StatisticViewController.m */,
-				92877F811983BB97007FB3F7 /* StatisticViewController.xib */,
-			);
-			name = StatisticViewController;
-			sourceTree = "<group>";
-		};
 		92877F841983BD3D007FB3F7 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				CB9FD03519841C7D00FF6ED0 /* CategoryTypesTableViewCell */,
+				92F18CC01984211900ACEA70 /* MainViewNavigation */,
 				92B83D1F19840AE200AD72BC /* UILabelWithText */,
 				92B83D1A1984037900AD72BC /* CirclesView */,
 				92877FAB1983EB03007FB3F7 /* InfiniteScrollView */,
@@ -384,24 +386,24 @@
 			name = UILabelWithText;
 			sourceTree = "<group>";
 		};
+		92F18CC01984211900ACEA70 /* MainViewNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				92F18CC11984214500ACEA70 /* MainViewNavigation.h */,
+				92F18CC21984214500ACEA70 /* MainViewNavigation.m */,
+			);
+			name = MainViewNavigation;
+			sourceTree = "<group>";
+		};
 		CB15E4291984139900157FA4 /* NewExpenseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CB9FD03519841C7D00FF6ED0 /* CategoryTypesTableViewCell */,
 				CB15E42A1984141300157FA4 /* NewExpenseViewController.h */,
 				CB15E42B1984141300157FA4 /* NewExpenseViewController.m */,
 				CB15E42C1984141300157FA4 /* NewExpenseViewController.xib */,
 			);
 			name = NewExpenseViewController;
-			sourceTree = "<group>";
-		};
-		CB9FD02F19841C1800FF6ED0 /* CategoryTypesViewController */ = {
-			isa = PBXGroup;
-			children = (
-				CB9FD03B1984273800FF6ED0 /* CategoryTypesViewController.h */,
-				CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */,
-				CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */,
-			);
-			name = CategoryTypesViewController;
 			sourceTree = "<group>";
 		};
 		CB9FD03519841C7D00FF6ED0 /* CategoryTypesTableViewCell */ = {
@@ -485,12 +487,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB15E42E1984141300157FA4 /* NewExpenseViewController.xib in Resources */,
-				CB9FD03F1984273800FF6ED0 /* CategoryTypesViewController.xib in Resources */,
 				92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */,
 				92B83D191984032700AD72BC /* StartViewController.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
 				CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */,
-				92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */,
+				92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +543,7 @@
 				92877F9A1983D2F8007FB3F7 /* CalendarCell.m in Sources */,
 				92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */,
 				92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */,
+				92F18CC31984214500ACEA70 /* MainViewNavigation.m in Sources */,
 				CB9FD03919841CA300FF6ED0 /* CategoryTypesTableViewCell.m in Sources */,
 				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
@@ -549,14 +551,13 @@
 				CBEFCC2B198459B00089D145 /* MoneyTrackerClient.m in Sources */,
 				CB15E42D1984141300157FA4 /* NewExpenseViewController.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
+				92801811198463B7002901F3 /* ExpenseViewController.m in Sources */,
 				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
-				CB9FD03E1984273800FF6ED0 /* CategoryTypesViewController.m in Sources */,
 				CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,
 				CBEFCC28198458320089D145 /* MoneyTrackerServerManager.m in Sources */,
 				CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */,
-				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
 				92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */,
 			);
@@ -650,6 +651,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
@@ -666,6 +668,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";

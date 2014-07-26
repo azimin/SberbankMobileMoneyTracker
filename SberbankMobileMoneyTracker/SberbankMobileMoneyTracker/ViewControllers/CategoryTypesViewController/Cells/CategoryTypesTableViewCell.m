@@ -11,7 +11,14 @@
 @implementation CategoryTypesTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(0, 89, 320, 1)];
+    seperator.backgroundColor = [UIColor mainGreyColor];
+    [self addSubview:seperator];
+    
+    self.backgroundColor = [UIColor clearColor];
+    
+    self.categoryCircle = [[Circle alloc] initWithRadius:10 andCenter:CGPointMake(31, 45)];
+    [self.contentView addSubview:self.categoryCircle];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

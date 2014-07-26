@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Circle.h"
 
 @interface CategoryTypesTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *categorySmallCircleIcon;
 @property (weak, nonatomic) IBOutlet UILabel *categoryNameLabel;
+
+@property (nonatomic) Circle *categoryCircle;
 
 @end
