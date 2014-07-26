@@ -30,6 +30,8 @@
 		92B83D1D1984039200AD72BC /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D1C1984039200AD72BC /* CirclesView.m */; };
 		92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D2119840AFF00AD72BC /* LabelOnCircle.m */; };
 		92F18CC31984214500ACEA70 /* MainViewNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F18CC21984214500ACEA70 /* MainViewNavigation.m */; };
+		CB15E42D1984141300157FA4 /* NewExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB15E42B1984141300157FA4 /* NewExpenseViewController.m */; };
+		CB15E42E1984141300157FA4 /* NewExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB15E42C1984141300157FA4 /* NewExpenseViewController.xib */; };
 		CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB181984038B009D9E8A /* CoreDataManager.m */; };
 		CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1C19840411009D9E8A /* CategoryType.m */; };
 		CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1F19840412009D9E8A /* DayInfo.m */; };
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				92F18CC01984211900ACEA70 /* MainViewNavigation */,
+				CB9FD03519841C7D00FF6ED0 /* CategoryTypesTableViewCell */,
 				92B83D1F19840AE200AD72BC /* UILabelWithText */,
 				92B83D1A1984037900AD72BC /* CirclesView */,
 				92877FAB1983EB03007FB3F7 /* InfiniteScrollView */,
@@ -387,6 +390,36 @@
 			name = MainViewNavigation;
 			sourceTree = "<group>";
 		};
+        CB15E4291984139900157FA4 /* NewExpenseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CB15E42A1984141300157FA4 /* NewExpenseViewController.h */,
+				CB15E42B1984141300157FA4 /* NewExpenseViewController.m */,
+				CB15E42C1984141300157FA4 /* NewExpenseViewController.xib */,
+			);
+			name = NewExpenseViewController;
+			sourceTree = "<group>";
+		};
+		CB9FD02F19841C1800FF6ED0 /* CategoryTypesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CB9FD03B1984273800FF6ED0 /* CategoryTypesViewController.h */,
+				CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */,
+				CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */,
+			);
+			name = CategoryTypesViewController;
+			sourceTree = "<group>";
+		};
+		CB9FD03519841C7D00FF6ED0 /* CategoryTypesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				CB9FD03619841CA300FF6ED0 /* CategoryTypesTableViewCell.h */,
+				CB9FD03719841CA300FF6ED0 /* CategoryTypesTableViewCell.m */,
+				CB9FD03819841CA300FF6ED0 /* CategoryTypesTableViewCell.xib */,
+			);
+			name = CategoryTypesTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,6 +538,7 @@
 				92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */,
 				92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */,
 				92F18CC31984214500ACEA70 /* MainViewNavigation.m in Sources */,
+				CB9FD03919841CA300FF6ED0 /* CategoryTypesTableViewCell.m in Sources */,
 				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
 				CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */,
