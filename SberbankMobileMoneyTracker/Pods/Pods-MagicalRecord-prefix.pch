@@ -4,4 +4,8 @@
 
 #import "Pods-environment.h"
 #import <CoreData/CoreData.h>
+
+#define MR_ENABLE_ACTIVE_RECORD_LOGGING 1
+#define MR_SHORTHAND
+
 #import "CoreData+MagicalRecord.h"

@@ -1,928 +1,500 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>0080898B3E7E48FBAE15462C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>BD0AFDF4CE8E40AA9AFCF343</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>05BFC515BA894A7AAD964DF9</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>54253365C4104F52B28FEFA7</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>56F764DBDB3B44E4BD2F3632</key>
-		<dict>
-			<key>fileRef</key>
-			<string>BD0AFDF4CE8E40AA9AFCF343</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F441983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F4F1983B743007FB3F7</string>
-				<string>92877F691983B743007FB3F7</string>
-				<string>92877F4E1983B743007FB3F7</string>
-				<string>54253365C4104F52B28FEFA7</string>
-				<string>0080898B3E7E48FBAE15462C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F451983B743007FB3F7</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0600</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Empatika</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>92877F4C1983B743007FB3F7</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-					</dict>
-					<key>92877F651983B743007FB3F7</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-						<key>TestTargetID</key>
-						<string>92877F4C1983B743007FB3F7</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>92877F481983B743007FB3F7</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-			</array>
-			<key>mainGroup</key>
-			<string>92877F441983B743007FB3F7</string>
-			<key>productRefGroup</key>
-			<string>92877F4E1983B743007FB3F7</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>92877F4C1983B743007FB3F7</string>
-				<string>92877F651983B743007FB3F7</string>
-			</array>
-		</dict>
-		<key>92877F481983B743007FB3F7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>92877F6E1983B743007FB3F7</string>
-				<string>92877F6F1983B743007FB3F7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>92877F491983B743007FB3F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>92877F561983B743007FB3F7</string>
-				<string>92877F591983B743007FB3F7</string>
-				<string>92877F5C1983B743007FB3F7</string>
-				<string>92877F531983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>92877F4A1983B743007FB3F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>56F764DBDB3B44E4BD2F3632</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>92877F4B1983B743007FB3F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>92877F5F1983B743007FB3F7</string>
-				<string>92877F611983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>92877F4C1983B743007FB3F7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>92877F701983B743007FB3F7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>05BFC515BA894A7AAD964DF9</string>
-				<string>92877F491983B743007FB3F7</string>
-				<string>92877F4A1983B743007FB3F7</string>
-				<string>92877F4B1983B743007FB3F7</string>
-				<string>D8BA11D967F6485C801C4969</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SberbankMobileMoneyTracker</string>
-			<key>productName</key>
-			<string>SberbankMobileMoneyTracker</string>
-			<key>productReference</key>
-			<string>92877F4D1983B743007FB3F7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>92877F4D1983B743007FB3F7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTracker.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>92877F4E1983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F4D1983B743007FB3F7</string>
-				<string>92877F661983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F4F1983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F541983B743007FB3F7</string>
-				<string>92877F551983B743007FB3F7</string>
-				<string>92877F5A1983B743007FB3F7</string>
-				<string>92877F5B1983B743007FB3F7</string>
-				<string>92877F5D1983B743007FB3F7</string>
-				<string>92877F601983B743007FB3F7</string>
-				<string>92877F571983B743007FB3F7</string>
-				<string>92877F501983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTracker</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F501983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F511983B743007FB3F7</string>
-				<string>92877F521983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F511983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F521983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F531983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F521983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F541983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F551983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F561983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F551983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F571983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F581983B743007FB3F7</string>
-			</array>
-			<key>currentVersion</key>
-			<string>92877F581983B743007FB3F7</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTracker.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>92877F581983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTracker.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F591983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F571983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F5A1983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F5B1983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F5C1983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F5B1983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F5D1983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F5E1983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F5E1983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F5F1983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F5D1983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F601983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F611983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F601983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F621983B743007FB3F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>92877F6D1983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>92877F631983B743007FB3F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>92877F641983B743007FB3F7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>92877F651983B743007FB3F7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>92877F731983B743007FB3F7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>92877F621983B743007FB3F7</string>
-				<string>92877F631983B743007FB3F7</string>
-				<string>92877F641983B743007FB3F7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>92877F681983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SberbankMobileMoneyTrackerTests</string>
-			<key>productName</key>
-			<string>SberbankMobileMoneyTrackerTests</string>
-			<key>productReference</key>
-			<string>92877F661983B743007FB3F7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>92877F661983B743007FB3F7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTrackerTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>92877F671983B743007FB3F7</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>92877F451983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>92877F4C1983B743007FB3F7</string>
-			<key>remoteInfo</key>
-			<string>SberbankMobileMoneyTracker</string>
-		</dict>
-		<key>92877F681983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>92877F4C1983B743007FB3F7</string>
-			<key>targetProxy</key>
-			<string>92877F671983B743007FB3F7</string>
-		</dict>
-		<key>92877F691983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F6C1983B743007FB3F7</string>
-				<string>92877F6A1983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTrackerTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F6A1983B743007FB3F7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>92877F6B1983B743007FB3F7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F6B1983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F6C1983B743007FB3F7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SberbankMobileMoneyTrackerTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92877F6D1983B743007FB3F7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>92877F6C1983B743007FB3F7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>92877F6E1983B743007FB3F7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>92877F6F1983B743007FB3F7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.0</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>92877F701983B743007FB3F7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>92877F711983B743007FB3F7</string>
-				<string>92877F721983B743007FB3F7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>92877F711983B743007FB3F7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>54253365C4104F52B28FEFA7</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SberbankMobileMoneyTracker/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>92877F721983B743007FB3F7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>54253365C4104F52B28FEFA7</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SberbankMobileMoneyTracker/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>92877F731983B743007FB3F7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>92877F741983B743007FB3F7</string>
-				<string>92877F751983B743007FB3F7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>92877F741983B743007FB3F7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/SberbankMobileMoneyTracker.app/SberbankMobileMoneyTracker</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>SberbankMobileMoneyTrackerTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>92877F751983B743007FB3F7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/SberbankMobileMoneyTracker.app/SberbankMobileMoneyTracker</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>SberbankMobileMoneyTrackerTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>BD0AFDF4CE8E40AA9AFCF343</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D8BA11D967F6485C801C4969</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>92877F451983B743007FB3F7</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */; };
+		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
+		92877F561983B743007FB3F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F551983B743007FB3F7 /* AppDelegate.m */; };
+		92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */; };
+		92877F5C1983B743007FB3F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F5B1983B743007FB3F7 /* ViewController.m */; };
+		92877F5F1983B743007FB3F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92877F5D1983B743007FB3F7 /* Main.storyboard */; };
+		92877F611983B743007FB3F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92877F601983B743007FB3F7 /* Images.xcassets */; };
+		92877F6D1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F6C1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92877F671983B743007FB3F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92877F451983B743007FB3F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92877F4C1983B743007FB3F7;
+			remoteInfo = SberbankMobileMoneyTracker;
+		};
+		92877F761983B945007FB3F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92877F451983B743007FB3F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92877F4C1983B743007FB3F7;
+			remoteInfo = SberbankMobileMoneyTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SberbankMobileMoneyTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92877F511983B743007FB3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92877F521983B743007FB3F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92877F541983B743007FB3F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		92877F551983B743007FB3F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		92877F581983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SberbankMobileMoneyTracker.xcdatamodel; sourceTree = "<group>"; };
+		92877F5A1983B743007FB3F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		92877F5B1983B743007FB3F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		92877F5E1983B743007FB3F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92877F601983B743007FB3F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		92877F661983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SberbankMobileMoneyTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92877F6B1983B743007FB3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92877F6C1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SberbankMobileMoneyTrackerTests.m; sourceTree = "<group>"; };
+		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92877F4A1983B743007FB3F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92877F631983B743007FB3F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0080898B3E7E48FBAE15462C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92877F441983B743007FB3F7 = {
+			isa = PBXGroup;
+			children = (
+				92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */,
+				92877F691983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */,
+				92877F4E1983B743007FB3F7 /* Products */,
+				54253365C4104F52B28FEFA7 /* Pods.xcconfig */,
+				0080898B3E7E48FBAE15462C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		92877F4E1983B743007FB3F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */,
+				92877F661983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */ = {
+			isa = PBXGroup;
+			children = (
+				92877F541983B743007FB3F7 /* AppDelegate.h */,
+				92877F551983B743007FB3F7 /* AppDelegate.m */,
+				92877F5A1983B743007FB3F7 /* ViewController.h */,
+				92877F5B1983B743007FB3F7 /* ViewController.m */,
+				92877F5D1983B743007FB3F7 /* Main.storyboard */,
+				92877F601983B743007FB3F7 /* Images.xcassets */,
+				92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */,
+				92877F501983B743007FB3F7 /* Supporting Files */,
+			);
+			path = SberbankMobileMoneyTracker;
+			sourceTree = "<group>";
+		};
+		92877F501983B743007FB3F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92877F511983B743007FB3F7 /* Info.plist */,
+				92877F521983B743007FB3F7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92877F691983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				92877F6C1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m */,
+				92877F6A1983B743007FB3F7 /* Supporting Files */,
+			);
+			path = SberbankMobileMoneyTrackerTests;
+			sourceTree = "<group>";
+		};
+		92877F6A1983B743007FB3F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92877F6B1983B743007FB3F7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92877F701983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTracker" */;
+			buildPhases = (
+				05BFC515BA894A7AAD964DF9 /* Check Pods Manifest.lock */,
+				92877F491983B743007FB3F7 /* Sources */,
+				92877F4A1983B743007FB3F7 /* Frameworks */,
+				92877F4B1983B743007FB3F7 /* Resources */,
+				D8BA11D967F6485C801C4969 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SberbankMobileMoneyTracker;
+			productName = SberbankMobileMoneyTracker;
+			productReference = 92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92877F651983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92877F731983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTrackerTests" */;
+			buildPhases = (
+				92877F621983B743007FB3F7 /* Sources */,
+				92877F631983B743007FB3F7 /* Frameworks */,
+				92877F641983B743007FB3F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92877F681983B743007FB3F7 /* PBXTargetDependency */,
+				92877F771983B945007FB3F7 /* PBXTargetDependency */,
+			);
+			name = SberbankMobileMoneyTrackerTests;
+			productName = SberbankMobileMoneyTrackerTests;
+			productReference = 92877F661983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92877F451983B743007FB3F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = Empatika;
+				TargetAttributes = {
+					92877F4C1983B743007FB3F7 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					92877F651983B743007FB3F7 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 92877F4C1983B743007FB3F7;
+					};
+				};
+			};
+			buildConfigurationList = 92877F481983B743007FB3F7 /* Build configuration list for PBXProject "SberbankMobileMoneyTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92877F441983B743007FB3F7;
+			productRefGroup = 92877F4E1983B743007FB3F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */,
+				92877F651983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92877F4B1983B743007FB3F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92877F5F1983B743007FB3F7 /* Main.storyboard in Resources */,
+				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92877F641983B743007FB3F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05BFC515BA894A7AAD964DF9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D8BA11D967F6485C801C4969 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92877F491983B743007FB3F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92877F561983B743007FB3F7 /* AppDelegate.m in Sources */,
+				92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */,
+				92877F5C1983B743007FB3F7 /* ViewController.m in Sources */,
+				92877F531983B743007FB3F7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92877F621983B743007FB3F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92877F6D1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92877F681983B743007FB3F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */;
+			targetProxy = 92877F671983B743007FB3F7 /* PBXContainerItemProxy */;
+		};
+		92877F771983B945007FB3F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */;
+			targetProxy = 92877F761983B945007FB3F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92877F5D1983B743007FB3F7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92877F5E1983B743007FB3F7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92877F6E1983B743007FB3F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		92877F6F1983B743007FB3F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92877F711983B743007FB3F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54253365C4104F52B28FEFA7 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92877F721983B743007FB3F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54253365C4104F52B28FEFA7 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92877F741983B743007FB3F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SberbankMobileMoneyTracker.app/SberbankMobileMoneyTracker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SberbankMobileMoneyTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		92877F751983B743007FB3F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SberbankMobileMoneyTracker.app/SberbankMobileMoneyTracker";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SberbankMobileMoneyTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92877F481983B743007FB3F7 /* Build configuration list for PBXProject "SberbankMobileMoneyTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92877F6E1983B743007FB3F7 /* Debug */,
+				92877F6F1983B743007FB3F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92877F701983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92877F711983B743007FB3F7 /* Debug */,
+				92877F721983B743007FB3F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92877F731983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92877F741983B743007FB3F7 /* Debug */,
+				92877F751983B743007FB3F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92877F581983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodel */,
+			);
+			currentVersion = 92877F581983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodel */;
+			path = SberbankMobileMoneyTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 92877F451983B743007FB3F7 /* Project object */;
+}
