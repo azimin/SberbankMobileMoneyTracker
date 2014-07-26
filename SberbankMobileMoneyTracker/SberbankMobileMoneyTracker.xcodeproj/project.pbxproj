@@ -73,6 +73,13 @@
 		92B83D2019840AFF00AD72BC /* LabelOnCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LabelOnCircle.h; path = CustomViews/UILabelWithText/LabelOnCircle.h; sourceTree = "<group>"; };
 		92B83D2119840AFF00AD72BC /* LabelOnCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LabelOnCircle.m; path = CustomViews/UILabelWithText/LabelOnCircle.m; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB9CAB171984038B009D9E8A /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		CB9CAB181984038B009D9E8A /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		CB9CAB1A19840411009D9E8A /* SberbankMobileMoneyTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SberbankMobileMoneyTracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		CB9CAB1B19840411009D9E8A /* CategoryType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryType.h; sourceTree = "<group>"; };
+		CB9CAB1C19840411009D9E8A /* CategoryType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryType.m; sourceTree = "<group>"; };
+		CB9CAB1E19840412009D9E8A /* DayInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayInfo.h; sourceTree = "<group>"; };
+		CB9CAB1F19840412009D9E8A /* DayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,8 +193,11 @@
 		92877F7C1983BB2C007FB3F7 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				CB9CAB171984038B009D9E8A /* CoreDataManager.h */,
+				CB9CAB181984038B009D9E8A /* CoreDataManager.m */,
 				92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */,
 				92877F9D1983D825007FB3F7 /* Entities */,
+				CB9CAB1A19840411009D9E8A /* SberbankMobileMoneyTracker-Bridging-Header.h */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -276,6 +286,10 @@
 		92877F9D1983D825007FB3F7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CB9CAB1E19840412009D9E8A /* DayInfo.h */,
+				CB9CAB1F19840412009D9E8A /* DayInfo.m */,
+				CB9CAB1B19840411009D9E8A /* CategoryType.h */,
+				CB9CAB1C19840411009D9E8A /* CategoryType.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -458,8 +472,10 @@
 				92877FA51983E147007FB3F7 /* UIColor+AppColors.m in Sources */,
 				92B83D1D1984039200AD72BC /* CirclesView.m in Sources */,
 				92877FAE1983EB13007FB3F7 /* InfiniteScrollView.m in Sources */,
+				CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
 				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
+				CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,
 				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
@@ -553,10 +569,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -566,10 +585,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
 			};
 			name = Release;
 		};

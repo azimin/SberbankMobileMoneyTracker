@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6208.6" systemVersion="14A298i" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6208.6" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CategoryType" representedClassName="CategoryType" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="dayInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayInfo" inverseName="categoryTypes" inverseEntity="DayInfo" syncable="YES"/>
+    </entity>
+    <entity name="DayInfo" representedClassName="DayInfo" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="categoryTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CategoryType" inverseName="dayInfo" inverseEntity="CategoryType" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DayInfo" positionX="-27" positionY="18" width="128" height="73"/>
+        <element name="CategoryType" positionX="18" positionY="63" width="128" height="88"/>
+    </elements>
 </model>
