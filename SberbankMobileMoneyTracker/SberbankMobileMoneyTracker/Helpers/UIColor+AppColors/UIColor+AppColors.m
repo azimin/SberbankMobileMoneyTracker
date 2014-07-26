@@ -32,7 +32,7 @@
     float alpha = 1.0;
     
     BOOL b = [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
-    newBrightness = (brightness > 0.75) ? brightness * 0.9 - 0.25 : brightness * 1.1 + 0.25;
+    newBrightness = (brightness > 0.55) ? brightness * 0.9 - 0.25 : brightness * 1.1 + 0.25;
     newBrightness = (newBrightness > 0.95) ? 0.9 : newBrightness;
     
     return (b) ? [UIColor colorWithHue:hue saturation:saturation brightness:newBrightness alpha:alpha] : [UIColor lightGrayColor];

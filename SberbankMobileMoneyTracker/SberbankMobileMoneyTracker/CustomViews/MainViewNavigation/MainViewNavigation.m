@@ -72,10 +72,12 @@
     
     self.leftArrowButton = [[UIButton alloc] initWithFrame:CGRectMake(15, 41, 22, 43)];
     [self.leftArrowButton setImage:[UIImage imageNamed:@"img_arrow_to_the_left"] forState:UIControlStateNormal];
+    [self.leftArrowButton addTarget:self action:@selector(scrollToLeft) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.leftArrowButton];
     
     self.rightArrowButton = [[UIButton alloc] initWithFrame:CGRectMake(283, 41, 22, 43)];
     [self.rightArrowButton setImage:[UIImage imageNamed:@"img_arrow_to_the_right"] forState:UIControlStateNormal];
+    [self.rightArrowButton addTarget:self action:@selector(scrollToRight) forControlEvents:UIControlEventTouchUpInside];
     self.rightArrowButton.alpha = 0.2;
     [self addSubview:self.rightArrowButton];
 }
@@ -102,22 +104,38 @@
 {
     self.leftArrowButton.alpha = 1.0;
     self.rightArrowButton.alpha = 1.0;
+    self.leftArrowButton.enabled = YES;
+    self.rightArrowButton.enabled = YES;
     NSInteger index;
     
     if ( scrollView.contentOffset.x < 300 ) {
-        index = 0;
+        index = (scrollView.contentOffset.x + 160) / 320;
         self.leftArrowButton.alpha = 0.2;
+        self.leftArrowButton.enabled = NO;
     } else if ( scrollView.contentOffset.x > scrollView.contentSize.width - self.bounds.size.width - 300 ) {
-        index = self.titles.count - 1;
+        index = (scrollView.contentOffset.x + 160) / 320;
         self.rightArrowButton.alpha = 0.2;
+        self.rightArrowButton.enabled = NO;
     } else {
-        index = scrollView.contentOffset.x / 320;
+        index = (scrollView.contentOffset.x + 160) / 320;
     }
     
     if (self.selectedIndex != index) {
         [self.delegate mainNavigation:self scrollToIndex:index];
         self.selectedIndex = index;
     }
+}
+
+#pragma mark - IB Actions
+
+- (void)scrollToLeft
+{
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x - 320, 0) animated:YES];
+}
+
+- (void)scrollToRight
+{
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x + 320, 0) animated:YES];
 }
 
 @end

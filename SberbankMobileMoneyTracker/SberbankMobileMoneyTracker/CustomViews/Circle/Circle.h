@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Circle : UIView
+@interface Circle : UIView <NSCopying>
 
 - (instancetype)initWithRadius: (CGFloat)radius
            andCenter: (CGPoint)center;
@@ -22,5 +22,7 @@
            andBounce: (BOOL)isBounce;
 
 - (void)addTarget:(id)target action:(SEL)action;
+
+- (void)removeText;
 
 @end

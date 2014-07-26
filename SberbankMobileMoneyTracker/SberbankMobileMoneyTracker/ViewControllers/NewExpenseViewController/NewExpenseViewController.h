@@ -10,4 +10,6 @@
 
 @interface NewExpenseViewController : UIViewController
 
+@property (nonatomic) UIImage *backgroundImage;
+
 @end

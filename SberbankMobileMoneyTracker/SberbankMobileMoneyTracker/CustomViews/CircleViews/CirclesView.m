@@ -10,7 +10,7 @@
 #import "Circle.h"
 #import "LabelOnCircle.h"
 
-@implementation CirclesView
+@implementation CirclesView 
 
 - (instancetype)init
 {
@@ -44,8 +44,6 @@
 
 - (void)commonInit
 {
-    self.userInteractionEnabled = FALSE;
-    
     NSArray *sortedValues = [self.values sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         CGFloat firstValue = [obj1 floatValue];
         CGFloat secondValuer = [obj2 floatValue];
@@ -69,7 +67,9 @@
         CGFloat radius = [self.circleSizes[sizeNumber] floatValue];
         Circle *circle = [[Circle alloc] initWithRadius:radius andCenter:[self centerAfterNumber: index
                                                                                    andSizeNumber: sizeNumber]];
-        circle.backgroundColor = UIColor.circleColors[index];
+        circle.color = UIColor.circleColors[index];
+        circle.tagPlus = index;
+        [circle addTarget:self action:@selector(circleWasPressed:)];
         [circle bounceAppearWithDuration: 0.8 + (float)(arc4random() % 6) / 10];
         
         LabelOnCircle *labelOnCircle = [[LabelOnCircle alloc] initWithCategoryName:[NSArray categoriesArray][index] valueString:[self.values[index] stringValue] onCircle:circle];
@@ -78,6 +78,26 @@
         [self addSubview:circle];
     }
 }
+
+- (void)circleWasPressed:(Circle*)circle
+{
+    [self.delegate circlesView:self didSelectCircle:circle];
+}
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
+{
+    BOOL flag = FALSE;
+    for (Circle *circle in self.subviews) {
+        if ([circle isKindOfClass:[Circle class]]) {
+            if (CGRectContainsPoint(circle.frame, point)) {
+                flag = TRUE;
+            }
+        }
+    }
+    
+    return flag;
+}
+
 
 #pragma mark - Getters
 

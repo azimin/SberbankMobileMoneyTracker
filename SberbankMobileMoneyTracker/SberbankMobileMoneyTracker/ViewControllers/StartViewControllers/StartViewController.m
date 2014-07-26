@@ -11,12 +11,15 @@
 #import "Circle.h"
 #import "CalendarView.h"
 #import "MainViewNavigation.h"
+#import "NewExpenseViewController.h"
 
-@interface StartViewController () <MainViewNavigationDelegat>
+@interface StartViewController () <MainViewNavigationDelegat, CirclesViewDelegat>
 
 @property (nonatomic) CirclesView *circlesView;
 @property (nonatomic) Circle *circleButton;
 @property (nonatomic) CalendarView *calendar;
+
+@property (nonatomic) NSInteger currentIndex;
 
 @end
 
@@ -26,17 +29,8 @@
     [super viewDidLoad];
     
     self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(0, 122, 320, 285)];
+    self.circlesView.delegate = self;
     [self.view addSubview:self.circlesView];
-    
-    self.circleButton = [[Circle alloc] initWithRadius:40 andCenter:CGPointMake(self.view.frame.size.width / 2, 482)];
-    self.circleButton.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.circleButton];
-    
-    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"btn_add_new_transaction"]];
-    imgView.frame = self.circleButton.bounds;
-    [self.circleButton addSubview:imgView];
-    self.circleButton.color = [UIColor colorWithHexString:@"555555"];
-    [self.circleButton addTarget:self action:@selector(buttonClicked)];
     
     MainViewNavigation *mainNavigation = [[MainViewNavigation alloc] initWithTitles:@[@"Year", @"Month", @"Week", @"Day"] selectedIndex:0 andDelegat:self];
     [self.view insertSubview:mainNavigation atIndex:0];
@@ -44,14 +38,39 @@
 
 - (void)buttonClicked
 {
-    /*[self.circlesView removeFromSuperview];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+    effectView.frame = [UIScreen mainScreen].bounds;
+    effectView.userInteractionEnabled = false;
+    [self.view addSubview:effectView];
     
-    self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(0, 122, 320, 285)];
-    [self.view addSubview:self.circlesView];*/
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
+    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];
+    [self.view addSubview:effectView];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    [effectView removeFromSuperview];
+    UIGraphicsEndImageContext();
+    
+    NewExpenseViewController *newExpenseViewController = [[NewExpenseViewController alloc] initWithNibName:@"NewExpenseViewController" bundle:nil];
+    newExpenseViewController.backgroundImage = image;
+    [self presentViewController:newExpenseViewController animated:YES completion:nil];
+}
+
+- (void)createCircleButton
+{
+    self.circleButton = [[Circle alloc] initWithRadius:40 andCenter:CGPointMake(self.view.frame.size.width / 2, 482)];
+    self.circleButton.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.circleButton];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"btn_add_new_transaction"]];
+    imgView.frame = self.circleButton.bounds;
+    [self.circleButton addSubview:imgView];
+    self.circleButton.color = [UIColor colorWithHexString:@"555555"];
+    [self.circleButton addTarget:self action:@selector(buttonClicked)];
 }
 
 - (void)mainNavigation:(MainViewNavigation *)mainNavigation scrollToIndex:(NSInteger)index
 {
+    self.currentIndex = index;
+    
     NSMutableArray *valuesArray = [NSMutableArray array];
     for (NSInteger index = 0; index < 7; index ++)
     {
@@ -74,17 +93,32 @@
     
     if (index == 3) {
         [self.circlesView removeFromSuperview];
+        [self.circleButton removeFromSuperview];
+        
+        [self createCircleButton];
         
         self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(0, 122, 320, 285)];
-        
+        self.circlesView.delegate = self;
         [self.view addSubview:self.circlesView];
+        
+        self.circleButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height + 100);
+        [UIView animateWithDuration:0.2 animations:^{
+            self.circleButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height - 70);
+        }];
+        
     } else {
         if (self.circlesView) {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.2 animations:^{
                 self.circlesView.center = CGPointMake(self.view.center.x + 320, self.circlesView.center.y);
+                self.circleButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height + 100);
             } completion:^(BOOL finished) {
-                [self.circlesView removeFromSuperview];
-                self.circlesView = nil;
+                if ( self.currentIndex != 3 ) {
+                    [self.circlesView removeFromSuperview];
+                    self.circlesView = nil;
+                    [self.circleButton removeFromSuperview];
+                    self.circleButton = nil;
+                }
+                
             }];
         }
     }
@@ -98,6 +132,23 @@
             self.calendar.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
         }];
     }
+}
+
+#pragma mark - Circle View Delegat
+
+- (void)circlesView:(CirclesView *)circlesView didSelectCircle:(Circle *)circle
+{
+    Circle *newCircle = [circle copy];
+    [self.circlesView addSubview:newCircle];
+    newCircle.layer.zPosition = 1.1;
+    [newCircle removeText];
+    [newCircle changeRadius:600 withDuration:0.6 andBounce:YES];
+    [self performSelector:@selector(openTableWithCircleView:) withObject:newCircle afterDelay:0.6];
+}
+
+- (void)openTableWithCircleView:(Circle*)circle
+{
+    [circle removeFromSuperview];
 }
 
 @end

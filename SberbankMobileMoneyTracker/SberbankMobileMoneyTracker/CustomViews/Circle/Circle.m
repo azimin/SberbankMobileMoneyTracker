@@ -42,6 +42,14 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 
 @implementation Circle
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    Circle *another = [[Circle alloc] initWithRadius:self.radius andCenter:self.center];
+    another.color = self.color;
+    
+    return another;
+}
+
 #pragma mark - Init
 
 - (instancetype)init
@@ -116,7 +124,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 {
     _color = color;
     
-    UIImageView *imgView = [[UIImageView alloc] init];
+    UIImageView *imgView = nil;
     for (UIView *vi in self.subviews) {
         if ([vi isKindOfClass:[UIImageView class]]) {
             imgView = (UIImageView*)vi;
@@ -209,7 +217,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     [self selectionColorIsBegin:isBegin];
     self.isTouchBegin = isBegin;
     
-    CGFloat scale = (isBegin) ? 0.9 : 1.0 / 0.9;
+    CGFloat scale = (isBegin) ? 0.85 : 1.0;
     
     [UIView animateWithDuration:0.15 animations:^{
         self.transform = CGAffineTransformMakeScale(scale, scale);
@@ -218,7 +226,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 
 - (void)selectionColorIsBegin:(BOOL)isBegin
 {
-    UIImageView *imgView = [[UIImageView alloc] init];
+    UIImageView *imgView = nil;
     for (UIView *vi in self.subviews) {
         if ([vi isKindOfClass:[UIImageView class]]) {
             imgView = (UIImageView*)vi;
@@ -267,10 +275,9 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     } else if ( recognizer.state == UIGestureRecognizerStateEnded ) {
         
         if ( [self isPointInViewOrAround:point] ) {
-            [self.target performSelector:self.selector withObject:nil];
+            [self touchAnimationBegin:FALSE];
+            [self.target performSelector:self.selector withObject:self];
         }
-        
-        [self touchAnimationBegin:FALSE];
         
     } else {
         [self touchAnimationBegin:FALSE];
@@ -284,7 +291,6 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     CGFloat offset = (self.isTouchBegin) ? 35 : 0;
     
     if (point.x < -offset || point.x > self.frame.size.width + offset) {
-        NSLog(@"Here");
         return FALSE;
     }
     
@@ -293,6 +299,17 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     }
     
     return TRUE;
+}
+
+#pragma marl - Additional
+
+- (void)removeText
+{
+    for (UIView *vi in self.subviews) {
+        if ([vi isKindOfClass:[UILabel class]]) {
+            [vi removeFromSuperview];
+        }
+    }
 }
 
 
