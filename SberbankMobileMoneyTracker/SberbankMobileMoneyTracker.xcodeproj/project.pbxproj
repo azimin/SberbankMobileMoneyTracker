@@ -17,7 +17,7 @@
 		92877F881983BD86007FB3F7 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F871983BD86007FB3F7 /* CalendarView.m */; };
 		92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F891983BE08007FB3F7 /* CalendarView.xib */; };
 		92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F8D1983BEC9007FB3F7 /* Circle.m */; };
-		92877F901983BED6007FB3F7 /* Circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F8F1983BED6007FB3F7 /* Circle.xib */; };
+		92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F941983D0D1007FB3F7 /* UIColor+Expanded.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,9 @@
 		92877F891983BE08007FB3F7 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarView.xib; path = CustomViews/CalendarView/CalendarView.xib; sourceTree = "<group>"; };
 		92877F8C1983BEC9007FB3F7 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Circle.h; path = CustomViews/Circle/Circle.h; sourceTree = "<group>"; };
 		92877F8D1983BEC9007FB3F7 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Circle.m; path = CustomViews/Circle/Circle.m; sourceTree = "<group>"; };
-		92877F8F1983BED6007FB3F7 /* Circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Circle.xib; path = CustomViews/Circle/Circle.xib; sourceTree = "<group>"; };
+		92877F931983D0D1007FB3F7 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Expanded.h"; path = "Helpers/Color+Extend/UIColor+Expanded.h"; sourceTree = "<group>"; };
+		92877F941983D0D1007FB3F7 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Expanded.m"; path = "Helpers/Color+Extend/UIColor+Expanded.m"; sourceTree = "<group>"; };
+		92877F961983D16D007FB3F7 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 		92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */ = {
 			isa = PBXGroup;
 			children = (
+				92877F911983D09C007FB3F7 /* Helpers */,
 				92877F7D1983BB36007FB3F7 /* AppDelegate */,
 				92877F7B1983BB29007FB3F7 /* Core */,
 				92877F7A1983BB1A007FB3F7 /* ViewControllers */,
@@ -94,6 +97,7 @@
 		92877F501983B743007FB3F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92877F961983D16D007FB3F7 /* Prefix.pch */,
 				92877F601983B743007FB3F7 /* Images.xcassets */,
 				92877F511983B743007FB3F7 /* Info.plist */,
 				92877F521983B743007FB3F7 /* main.m */,
@@ -168,9 +172,25 @@
 			children = (
 				92877F8C1983BEC9007FB3F7 /* Circle.h */,
 				92877F8D1983BEC9007FB3F7 /* Circle.m */,
-				92877F8F1983BED6007FB3F7 /* Circle.xib */,
 			);
 			name = Circle;
+			sourceTree = "<group>";
+		};
+		92877F911983D09C007FB3F7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				92877F921983D0C2007FB3F7 /* Color+Extend */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		92877F921983D0C2007FB3F7 /* Color+Extend */ = {
+			isa = PBXGroup;
+			children = (
+				92877F931983D0D1007FB3F7 /* UIColor+Expanded.h */,
+				92877F941983D0D1007FB3F7 /* UIColor+Expanded.m */,
+			);
+			name = "Color+Extend";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */,
-				92877F901983BED6007FB3F7 /* Circle.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
 				92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */,
 			);
@@ -282,6 +301,7 @@
 				92877F561983B743007FB3F7 /* AppDelegate.m in Sources */,
 				92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */,
 				92877F531983B743007FB3F7 /* main.m in Sources */,
+				92877F951983D0D1007FB3F7 /* UIColor+Expanded.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
@@ -373,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,6 +406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

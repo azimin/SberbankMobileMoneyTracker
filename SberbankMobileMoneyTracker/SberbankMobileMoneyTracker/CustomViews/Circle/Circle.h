@@ -10,9 +10,14 @@
 
 @interface Circle : UIView
 
-- (id)initWithRadius: (CGFloat)radius
+- (instancetype)initWithRadius: (CGFloat)radius
            andCenter: (CGPoint)center;
 
-@property (nonatomic) CGFloat *radius;
+@property (nonatomic) CGFloat radius;
+
+- (void)bounceAppearWithDuration: (CGFloat)duration;
+- (void)changeRadius: (CGFloat)radius
+        withDuration: (CGFloat)duration
+           andBounce: (BOOL)isBounce;
 
 @end

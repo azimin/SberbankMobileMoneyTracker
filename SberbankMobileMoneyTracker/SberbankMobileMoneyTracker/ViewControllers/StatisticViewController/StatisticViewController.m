@@ -7,8 +7,11 @@
 //
 
 #import "StatisticViewController.h"
+#import "Circle.h"
 
 @interface StatisticViewController ()
+
+@property (nonatomic) Circle *circle;
 
 @end
 
@@ -16,7 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.circle = [[Circle alloc] initWithRadius: 40
+                                          andCenter: CGPointMake(100, 100)];
+    self.circle.backgroundColor = [UIColor colorWithHexString:@"ca4e4e"];
+    
+    [self.view addSubview:self.circle];
+    
+    [self performSelector:@selector(animationGo) withObject:nil afterDelay:1.0];
+}
+
+- (void)animationGo
+{
+    [self.circle changeRadius:60 withDuration:0.6 andBounce:YES];
 }
 
 - (void)didReceiveMemoryWarning {
