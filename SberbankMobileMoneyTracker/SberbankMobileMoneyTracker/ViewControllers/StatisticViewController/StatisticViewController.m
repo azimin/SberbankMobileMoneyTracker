@@ -10,6 +10,8 @@
 #import "Circle.h"
 #import "CalendarView.h"
 
+#import "CoreDataManager.h"
+
 @interface StatisticViewController ()
 
 @property (nonatomic) Circle *circle;
@@ -49,6 +51,9 @@
     //[self.view addSubview:self.circle];
     
     [self performSelector:@selector(animationGo) withObject:nil afterDelay:1.0];
+    
+    [[CoreDataManager sharedInstance] addExpenses:15.f toCategory:@"Home" atDate:[NSDate date]];
+    NSArray *statistic = [[CoreDataManager sharedInstance] fetchExpensesStatistic];
 }
 
 - (void)animationGo

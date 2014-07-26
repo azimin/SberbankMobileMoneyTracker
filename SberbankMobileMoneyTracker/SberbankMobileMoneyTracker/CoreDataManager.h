@@ -12,4 +12,7 @@
 
 + (instancetype)sharedInstance;
 
+- (void)addExpenses:(double)sum toCategory:(NSString *)categoryName atDate:(NSDate *)date;
+-(NSArray *)fetchExpensesStatistic;
+
 @end

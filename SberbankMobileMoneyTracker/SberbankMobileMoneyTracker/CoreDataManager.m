@@ -46,6 +46,13 @@
         }
     } else {
         dayInfo = [DayInfo createEntity];
+        
+        int timestamp = [[NSDate date] timeIntervalSince1970];
+        timestamp = timestamp - timestamp % 86400;
+        NSDate *date1970 = [NSDate dateWithTimeIntervalSince1970:0];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+        
+        
         NSMutableSet *dayInfoCategories = [[NSMutableSet alloc] init];
         NSArray *categoryNames = @[@"Home", @"Health", @"Food", @"Fun"];
         for(NSString *cName in categoryNames){
