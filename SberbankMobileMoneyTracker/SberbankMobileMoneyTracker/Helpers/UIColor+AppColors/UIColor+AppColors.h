@@ -12,5 +12,6 @@
 
 + (NSArray*)circleColors;
 + (UIColor*)mainGreyColor;
++ (UIColor *)selectionColorFromColor:(UIColor*)color;
 
 @end

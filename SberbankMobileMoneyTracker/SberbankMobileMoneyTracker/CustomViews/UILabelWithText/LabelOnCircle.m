@@ -35,6 +35,7 @@
         self.value = value;
         self.circle = circle;
         
+        
         [self commonInit];
     }
     

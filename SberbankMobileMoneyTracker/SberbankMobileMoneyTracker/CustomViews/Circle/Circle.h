@@ -14,10 +14,13 @@
            andCenter: (CGPoint)center;
 
 @property (nonatomic) CGFloat radius;
+@property (nonatomic) UIColor *color;
 
 - (void)bounceAppearWithDuration: (CGFloat)duration;
 - (void)changeRadius: (CGFloat)radius
         withDuration: (CGFloat)duration
            andBounce: (BOOL)isBounce;
+
+- (void)addTarget:(id)target action:(SEL)action;
 
 @end

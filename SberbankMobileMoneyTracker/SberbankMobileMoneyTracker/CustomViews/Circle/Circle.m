@@ -29,6 +29,17 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     return points;
 }
 
+@interface Circle ()
+
+@property (nonatomic) id target;
+@property (nonatomic) SEL selector;
+@property (nonatomic) UILongPressGestureRecognizer
+ *pressGester;
+
+@property (nonatomic) BOOL isTouchBegin;
+
+@end
+
 @implementation Circle
 
 #pragma mark - Init
@@ -101,6 +112,24 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     self.layer.cornerRadius = minSide / 2;
 }
 
+- (void)setColor:(UIColor *)color
+{
+    _color = color;
+    
+    UIImageView *imgView = [[UIImageView alloc] init];
+    for (UIView *vi in self.subviews) {
+        if ([vi isKindOfClass:[UIImageView class]]) {
+            imgView = (UIImageView*)vi;
+        }
+    }
+    
+    if ( imgView ) {
+        imgView.image = [imgView.image imageWithOverlayColor:color];
+    } else {
+        self.backgroundColor = color;
+    }
+}
+
 #pragma mark - Animation
 
 - (void)bounceAppearWithDuration: (CGFloat)duration
@@ -169,6 +198,100 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     [self.layer addAnimation:boundsOvershootAnimation forKey:boundsOvershootAnimation.keyPath];
     
     [CATransaction commit];
+}
+
+- (void)touchAnimationBegin:(BOOL)isBegin
+{
+    if (self.isTouchBegin == isBegin) {
+        return;
+    }
+    
+    [self selectionColorIsBegin:isBegin];
+    self.isTouchBegin = isBegin;
+    
+    CGFloat scale = (isBegin) ? 0.9 : 1.0 / 0.9;
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        self.transform = CGAffineTransformMakeScale(scale, scale);
+    }];
+}
+
+- (void)selectionColorIsBegin:(BOOL)isBegin
+{
+    UIImageView *imgView = [[UIImageView alloc] init];
+    for (UIView *vi in self.subviews) {
+        if ([vi isKindOfClass:[UIImageView class]]) {
+            imgView = (UIImageView*)vi;
+        }
+    }
+    
+    if ( isBegin ) {
+        if ( imgView ) {
+            imgView.image = [imgView.image imageWithOverlayColor:[UIColor selectionColorFromColor:self.color]];
+        } else {
+            self.backgroundColor = [UIColor selectionColorFromColor:self.color];
+        }
+    } else {
+        if ( imgView ) {
+            imgView.image = [imgView.image imageWithOverlayColor:self.color];
+        } else {
+            self.backgroundColor = self.color;
+        }
+    }
+}
+
+#pragma marl - Action
+
+- (void)addTarget:(id)target action:(SEL)action
+{
+    self.isTouchBegin = FALSE;
+    [self removeGestureRecognizer:self.pressGester];
+    
+    self.target = target;
+    self.selector = action;
+    
+    self.pressGester = [[UILongPressGestureRecognizer
+ alloc] initWithTarget:self action:@selector(handTapGesture:)];
+    self.pressGester.minimumPressDuration = 0.0;
+    [self addGestureRecognizer:self.pressGester];
+}
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
+- (void) handTapGesture: (UILongPressGestureRecognizer*)recognizer
+{
+    CGPoint point = [recognizer locationInView:recognizer.view];
+    if ( recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateChanged ) {
+        [self touchAnimationBegin:[self isPointInViewOrAround:point]];
+    } else if ( recognizer.state == UIGestureRecognizerStateEnded ) {
+        [self touchAnimationBegin:FALSE];
+        
+        if ( [self isPointInViewOrAround:point] ) {
+            [self.target performSelector:self.selector withObject:nil];
+        }
+        
+    } else {
+        [self touchAnimationBegin:FALSE];
+    }
+}
+         
+#pragma clang diagnostic pop
+
+- (BOOL)isPointInViewOrAround:(CGPoint)point
+{
+    CGFloat offset = (self.isTouchBegin) ? 35 : 0;
+    
+    if (point.x < -offset || point.x > self.frame.size.width + offset) {
+        NSLog(@"Here");
+        return FALSE;
+    }
+    
+    if (point.y < -offset || point.y > self.frame.size.height + offset) {
+        return FALSE;
+    }
+    
+    return TRUE;
 }
 
 
