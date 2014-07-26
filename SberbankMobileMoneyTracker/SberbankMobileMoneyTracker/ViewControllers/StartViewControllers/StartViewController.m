@@ -12,6 +12,7 @@
 #import "CalendarView.h"
 #import "MainViewNavigation.h"
 #import "NewExpenseViewController.h"
+#import "ExpenseViewController.h"
 
 @interface StartViewController () <MainViewNavigationDelegat, CirclesViewDelegat>
 
@@ -20,6 +21,8 @@
 @property (nonatomic) CalendarView *calendar;
 
 @property (nonatomic) NSInteger currentIndex;
+
+@property (nonatomic) BOOL isColorTableOpen;
 
 @end
 
@@ -143,12 +146,32 @@
     newCircle.layer.zPosition = 1.1;
     [newCircle removeText];
     [newCircle changeRadius:600 withDuration:0.6 andBounce:YES];
-    [self performSelector:@selector(openTableWithCircleView:) withObject:newCircle afterDelay:0.6];
+    [self performSelector:@selector(openTableWithCircleView:) withObject:newCircle afterDelay:0.3];
+    self.isColorTableOpen = TRUE;
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (void)openTableWithCircleView:(Circle*)circle
 {
-    [circle removeFromSuperview];
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
+    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    ExpenseViewController *newExpenseViewController = [[ExpenseViewController alloc] initWithNibName:@"ExpenseViewController" bundle:nil];
+    newExpenseViewController.bgImage = image;
+    [self presentViewController:newExpenseViewController animated:NO completion:^{
+        [circle removeFromSuperview];
+        self.isColorTableOpen = FALSE;
+        [self setNeedsStatusBarAppearanceUpdate];
+    }];
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    if ( self.isColorTableOpen ) {
+        return UIStatusBarStyleLightContent;
+    }
+    return UIStatusBarStyleDefault;
 }
 
 @end

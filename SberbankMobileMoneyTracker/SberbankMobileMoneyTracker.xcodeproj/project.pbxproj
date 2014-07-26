@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */; };
+		92801811198463B7002901F3 /* ExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9280180F198463B7002901F3 /* ExpenseViewController.m */; };
+		92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92801810198463B7002901F3 /* ExpenseViewController.xib */; };
 		928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671ED1983EC5600974D6B /* UIView+Tag.m */; };
 		928671F21984014200974D6B /* UIImage+ImageFromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671F11984014200974D6B /* UIImage+ImageFromColor.m */; };
 		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
@@ -39,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9280180E198463B7002901F3 /* ExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpenseViewController.h; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.h; sourceTree = "<group>"; };
+		9280180F198463B7002901F3 /* ExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpenseViewController.m; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.m; sourceTree = "<group>"; };
+		92801810198463B7002901F3 /* ExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpenseViewController.xib; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.xib; sourceTree = "<group>"; };
 		928671EC1983EC5600974D6B /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Tag.h"; path = "Helpers/UIView+Tag/UIView+Tag.h"; sourceTree = "<group>"; };
 		928671ED1983EC5600974D6B /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Tag.m"; path = "Helpers/UIView+Tag/UIView+Tag.m"; sourceTree = "<group>"; };
 		928671F01984014200974D6B /* UIImage+ImageFromColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFromColor.h"; sourceTree = "<group>"; };
@@ -111,6 +116,16 @@
 				BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9280180D19846395002901F3 /* ExpenseTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9280180E198463B7002901F3 /* ExpenseViewController.h */,
+				9280180F198463B7002901F3 /* ExpenseViewController.m */,
+				92801810198463B7002901F3 /* ExpenseViewController.xib */,
+			);
+			name = ExpenseTableViewController;
 			sourceTree = "<group>";
 		};
 		928671EB1983EC3100974D6B /* UIView+Tag */ = {
@@ -186,6 +201,7 @@
 		92877F7A1983BB1A007FB3F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9280180D19846395002901F3 /* ExpenseTableViewController */,
 				CB15E4291984139900157FA4 /* NewExpenseViewController */,
 				928671F3198401FF00974D6B /* StartViewController */,
 			);
@@ -452,6 +468,7 @@
 				92B83D191984032700AD72BC /* StartViewController.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
 				CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */,
+				92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +527,7 @@
 				CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */,
 				CB15E42D1984141300157FA4 /* NewExpenseViewController.m in Sources */,
 				92877FA11983DBCB007FB3F7 /* NSArray+Functional.m in Sources */,
+				92801811198463B7002901F3 /* ExpenseViewController.m in Sources */,
 				928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */,
 				CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
