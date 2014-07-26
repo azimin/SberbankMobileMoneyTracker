@@ -29,6 +29,9 @@
 		92B83D191984032700AD72BC /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B83D181984032700AD72BC /* StartViewController.xib */; };
 		92B83D1D1984039200AD72BC /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D1C1984039200AD72BC /* CirclesView.m */; };
 		92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B83D2119840AFF00AD72BC /* LabelOnCircle.m */; };
+		CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB181984038B009D9E8A /* CoreDataManager.m */; };
+		CB9CAB1D19840411009D9E8A /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1C19840411009D9E8A /* CategoryType.m */; };
+		CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1F19840412009D9E8A /* DayInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -478,6 +481,7 @@
 				CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */,
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,
+				CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */,
 				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
 				92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */,

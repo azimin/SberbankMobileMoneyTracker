@@ -28,7 +28,7 @@
         CGFloat imageScale = 2.0f;
         if ([self respondsToSelector:@selector(scale)]) // The scale property is new with iOS4. imageScale = self.scale;
         UIGraphicsBeginImageContextWithOptions(self.size, NO, imageScale);
-    } else UIGraphicsBeginImageContext(self.size);
+    }
         
     [self drawInRect:rect];
     
