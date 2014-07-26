@@ -109,8 +109,11 @@
     return YES;
 }
 
-- (void)confirmButtonTouchUpInside{
-    //code for processing new expense
+#pragma mark - Setter
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
     
     self.categoryCircle.color = [UIColor circleColors][selectedIndex];
     NSArray *categoriesArray = [NSArray categoriesArray];
