@@ -11,28 +11,14 @@
 		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
 		92877F561983B743007FB3F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F551983B743007FB3F7 /* AppDelegate.m */; };
 		92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */; };
-		92877F5C1983B743007FB3F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F5B1983B743007FB3F7 /* ViewController.m */; };
-		92877F5F1983B743007FB3F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92877F5D1983B743007FB3F7 /* Main.storyboard */; };
 		92877F611983B743007FB3F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92877F601983B743007FB3F7 /* Images.xcassets */; };
-		92877F6D1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F6C1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m */; };
+		92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F801983BB97007FB3F7 /* StatisticViewController.m */; };
+		92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F811983BB97007FB3F7 /* StatisticViewController.xib */; };
+		92877F881983BD86007FB3F7 /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F871983BD86007FB3F7 /* CalendarView.m */; };
+		92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F891983BE08007FB3F7 /* CalendarView.xib */; };
+		92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F8D1983BEC9007FB3F7 /* Circle.m */; };
+		92877F901983BED6007FB3F7 /* Circle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92877F8F1983BED6007FB3F7 /* Circle.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		92877F671983B743007FB3F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92877F451983B743007FB3F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 92877F4C1983B743007FB3F7;
-			remoteInfo = SberbankMobileMoneyTracker;
-		};
-		92877F761983B945007FB3F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92877F451983B743007FB3F7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 92877F4C1983B743007FB3F7;
-			remoteInfo = SberbankMobileMoneyTracker;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -42,13 +28,16 @@
 		92877F541983B743007FB3F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		92877F551983B743007FB3F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		92877F581983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SberbankMobileMoneyTracker.xcdatamodel; sourceTree = "<group>"; };
-		92877F5A1983B743007FB3F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		92877F5B1983B743007FB3F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		92877F5E1983B743007FB3F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92877F601983B743007FB3F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		92877F661983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SberbankMobileMoneyTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92877F6B1983B743007FB3F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92877F6C1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SberbankMobileMoneyTrackerTests.m; sourceTree = "<group>"; };
+		92877F7F1983BB97007FB3F7 /* StatisticViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatisticViewController.h; path = ViewControllers/StatisticViewController/StatisticViewController.h; sourceTree = "<group>"; };
+		92877F801983BB97007FB3F7 /* StatisticViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatisticViewController.m; path = ViewControllers/StatisticViewController/StatisticViewController.m; sourceTree = "<group>"; };
+		92877F811983BB97007FB3F7 /* StatisticViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StatisticViewController.xib; path = ViewControllers/StatisticViewController/StatisticViewController.xib; sourceTree = "<group>"; };
+		92877F861983BD86007FB3F7 /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarView.h; path = CustomViews/CalendarView/CalendarView.h; sourceTree = "<group>"; };
+		92877F871983BD86007FB3F7 /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarView.m; path = CustomViews/CalendarView/CalendarView.m; sourceTree = "<group>"; };
+		92877F891983BE08007FB3F7 /* CalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CalendarView.xib; path = CustomViews/CalendarView/CalendarView.xib; sourceTree = "<group>"; };
+		92877F8C1983BEC9007FB3F7 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Circle.h; path = CustomViews/Circle/Circle.h; sourceTree = "<group>"; };
+		92877F8D1983BEC9007FB3F7 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Circle.m; path = CustomViews/Circle/Circle.m; sourceTree = "<group>"; };
+		92877F8F1983BED6007FB3F7 /* Circle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Circle.xib; path = CustomViews/Circle/Circle.xib; sourceTree = "<group>"; };
 		BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,13 +47,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92877F631983B743007FB3F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */,
-				92877F691983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */,
 				92877F4E1983B743007FB3F7 /* Products */,
 				54253365C4104F52B28FEFA7 /* Pods.xcconfig */,
 				0080898B3E7E48FBAE15462C /* Frameworks */,
@@ -94,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */,
-				92877F661983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,13 +82,10 @@
 		92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */ = {
 			isa = PBXGroup;
 			children = (
-				92877F541983B743007FB3F7 /* AppDelegate.h */,
-				92877F551983B743007FB3F7 /* AppDelegate.m */,
-				92877F5A1983B743007FB3F7 /* ViewController.h */,
-				92877F5B1983B743007FB3F7 /* ViewController.m */,
-				92877F5D1983B743007FB3F7 /* Main.storyboard */,
-				92877F601983B743007FB3F7 /* Images.xcassets */,
-				92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */,
+				92877F7D1983BB36007FB3F7 /* AppDelegate */,
+				92877F7B1983BB29007FB3F7 /* Core */,
+				92877F7A1983BB1A007FB3F7 /* ViewControllers */,
+				92877F841983BD3D007FB3F7 /* CustomViews */,
 				92877F501983B743007FB3F7 /* Supporting Files */,
 			);
 			path = SberbankMobileMoneyTracker;
@@ -117,27 +94,83 @@
 		92877F501983B743007FB3F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				92877F601983B743007FB3F7 /* Images.xcassets */,
 				92877F511983B743007FB3F7 /* Info.plist */,
 				92877F521983B743007FB3F7 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		92877F691983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */ = {
+		92877F7A1983BB1A007FB3F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				92877F6C1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m */,
-				92877F6A1983B743007FB3F7 /* Supporting Files */,
+				92877F7E1983BB45007FB3F7 /* StatisticViewController */,
 			);
-			path = SberbankMobileMoneyTrackerTests;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		92877F6A1983B743007FB3F7 /* Supporting Files */ = {
+		92877F7B1983BB29007FB3F7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				92877F6B1983B743007FB3F7 /* Info.plist */,
+				92877F7C1983BB2C007FB3F7 /* DataModel */,
 			);
-			name = "Supporting Files";
+			name = Core;
+			sourceTree = "<group>";
+		};
+		92877F7C1983BB2C007FB3F7 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				92877F571983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		92877F7D1983BB36007FB3F7 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				92877F541983B743007FB3F7 /* AppDelegate.h */,
+				92877F551983B743007FB3F7 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		92877F7E1983BB45007FB3F7 /* StatisticViewController */ = {
+			isa = PBXGroup;
+			children = (
+				92877F7F1983BB97007FB3F7 /* StatisticViewController.h */,
+				92877F801983BB97007FB3F7 /* StatisticViewController.m */,
+				92877F811983BB97007FB3F7 /* StatisticViewController.xib */,
+			);
+			name = StatisticViewController;
+			sourceTree = "<group>";
+		};
+		92877F841983BD3D007FB3F7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				92877F8B1983BEAA007FB3F7 /* Circle */,
+				92877F851983BD5C007FB3F7 /* CalendarView */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		92877F851983BD5C007FB3F7 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				92877F861983BD86007FB3F7 /* CalendarView.h */,
+				92877F871983BD86007FB3F7 /* CalendarView.m */,
+				92877F891983BE08007FB3F7 /* CalendarView.xib */,
+			);
+			name = CalendarView;
+			sourceTree = "<group>";
+		};
+		92877F8B1983BEAA007FB3F7 /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				92877F8C1983BEC9007FB3F7 /* Circle.h */,
+				92877F8D1983BEC9007FB3F7 /* Circle.m */,
+				92877F8F1983BED6007FB3F7 /* Circle.xib */,
+			);
+			name = Circle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,25 +195,6 @@
 			productReference = 92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		92877F651983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 92877F731983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTrackerTests" */;
-			buildPhases = (
-				92877F621983B743007FB3F7 /* Sources */,
-				92877F631983B743007FB3F7 /* Frameworks */,
-				92877F641983B743007FB3F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				92877F681983B743007FB3F7 /* PBXTargetDependency */,
-				92877F771983B945007FB3F7 /* PBXTargetDependency */,
-			);
-			name = SberbankMobileMoneyTrackerTests;
-			productName = SberbankMobileMoneyTrackerTests;
-			productReference = 92877F661983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -192,10 +206,6 @@
 				TargetAttributes = {
 					92877F4C1983B743007FB3F7 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					92877F651983B743007FB3F7 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 92877F4C1983B743007FB3F7;
 					};
 				};
 			};
@@ -213,7 +223,6 @@
 			projectRoot = "";
 			targets = (
 				92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */,
-				92877F651983B743007FB3F7 /* SberbankMobileMoneyTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -223,15 +232,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92877F5F1983B743007FB3F7 /* Main.storyboard in Resources */,
+				92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */,
+				92877F901983BED6007FB3F7 /* Circle.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92877F641983B743007FB3F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				92877F831983BB97007FB3F7 /* StatisticViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,44 +281,14 @@
 			files = (
 				92877F561983B743007FB3F7 /* AppDelegate.m in Sources */,
 				92877F591983B743007FB3F7 /* SberbankMobileMoneyTracker.xcdatamodeld in Sources */,
-				92877F5C1983B743007FB3F7 /* ViewController.m in Sources */,
 				92877F531983B743007FB3F7 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92877F621983B743007FB3F7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				92877F6D1983B743007FB3F7 /* SberbankMobileMoneyTrackerTests.m in Sources */,
+				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
+				92877F821983BB97007FB3F7 /* StatisticViewController.m in Sources */,
+				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		92877F681983B743007FB3F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */;
-			targetProxy = 92877F671983B743007FB3F7 /* PBXContainerItemProxy */;
-		};
-		92877F771983B945007FB3F7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */;
-			targetProxy = 92877F761983B945007FB3F7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		92877F5D1983B743007FB3F7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92877F5E1983B743007FB3F7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		92877F6E1983B743007FB3F7 /* Debug */ = {
@@ -417,40 +391,6 @@
 			};
 			name = Release;
 		};
-		92877F741983B743007FB3F7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SberbankMobileMoneyTracker.app/SberbankMobileMoneyTracker";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SberbankMobileMoneyTrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		92877F751983B743007FB3F7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SberbankMobileMoneyTracker.app/SberbankMobileMoneyTracker";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SberbankMobileMoneyTrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -468,15 +408,6 @@
 			buildConfigurations = (
 				92877F711983B743007FB3F7 /* Debug */,
 				92877F721983B743007FB3F7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		92877F731983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTrackerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				92877F741983B743007FB3F7 /* Debug */,
-				92877F751983B743007FB3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
