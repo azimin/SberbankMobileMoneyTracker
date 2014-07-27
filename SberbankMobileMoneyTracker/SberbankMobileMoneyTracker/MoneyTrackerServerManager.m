@@ -30,7 +30,9 @@
     return self;
 }
 
-- (void)sendNewExpense:(NSDictionary *)expenseDictionary{
+- (void)sendNewExpense:(NSDictionary *)expenseDictionary
+           withSuccess:(void (^)())success
+               failure:(void (^)(NSError *error))failure{
     NSDictionary *params = @{@"category": expenseDictionary[@"category"],
                              @"description": expenseDictionary[@"description"],
                              @"cost": expenseDictionary[@"value"],
@@ -40,15 +42,18 @@
                                  parameters:params
                                     success:^(NSURLSessionDataTask *task, id responseObject) {
                                         NSLog(@"New expense successfully sended");
-                                        [self.delegate MoneyTrackerServerManagerSendNewExpenseWithSuccess:self];
+                                        success();
                                     }
                                     failure:^(NSURLSessionDataTask *task, NSError *error) {
                                         NSLog(@"Error while sending new expense: %@", error);
-                                        [self.delegate MoneyTrackerServerManager:self newExpenseSendingDidFailWithError:error];
+                                        failure(error);
                                     }];
 }
 
-- (void)fetchStatisticInIntervalFrom:(NSDate *)fromDate to:(NSDate *)toDate{
+- (void)fetchStatisticInIntervalFrom:(NSDate *)fromDate
+                                  to:(NSDate *)toDate
+                         withSuccess:(void(^)(NSArray *resultStatistic))success
+                             failure:(void (^)(NSError *error))failure{
     fromDate = [NSDate dateWithFirstMinuteOfDay:fromDate];
     toDate = [NSDate dateWithLastMinuteOfDay:toDate];
     
@@ -73,23 +78,25 @@
                                                    [[CoreDataManager sharedInstance] addExpense:expenseValue toCategory:categoryName withDescription:description atDate:date];
                                                }
                                            }
-                                           [[CoreDataManager sharedInstance] fetchExpensesStatistic];
                                        }
-                                       [self.delegate MoneyTrackerServerManager:self DidFetchStatisticWithResult:[[CoreDataManager sharedInstance] fetchExpensesStatistic]];
+                                       success([[CoreDataManager sharedInstance] fetchExpensesStatistic]);
                                        
                                    }
                                    failure:^(NSURLSessionDataTask *task, NSError *error) {
                                        NSLog(@"Error while fetching statistic: %@", error);
-                                       [self.delegate MoneyTrackerServerManager:self fetchingStatisticDidFailWithError:error];
+                                       failure(error);
                                    }];
 }
 
-- (void)fetchStatisticForDay:(NSDate *)date{
-    [self fetchStatisticInIntervalFrom:date to:date];
+- (void)fetchStatisticForDay:(NSDate *)date
+                 withSuccess:(void(^)(NSArray *resultStatistic))success
+                     failure:(void (^)(NSError *error))failure{
+    [self fetchStatisticInIntervalFrom:date to:date withSuccess:success failure:failure];
 }
 
-- (void)fetchAllStatistic{
-    [self fetchStatisticInIntervalFrom:[NSDate dateWithTimeIntervalSince1970:50000000] to:[NSDate date]];
+- (void)fetchAllStatisticWithSuccess:(void(^)(NSArray *resultStatistic))success
+                             failure:(void (^)(NSError *error))failure{
+    [self fetchStatisticInIntervalFrom:[NSDate dateWithTimeIntervalSince1970:50000000] to:[NSDate date] withSuccess:success failure:failure];
 }
 
 @end

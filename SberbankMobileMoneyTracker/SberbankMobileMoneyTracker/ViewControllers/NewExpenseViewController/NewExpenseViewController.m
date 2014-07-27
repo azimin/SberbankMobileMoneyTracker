@@ -10,8 +10,6 @@
 #import "CategoryTypesTableViewCell.h"
 #import "Circle.h"
 
-#import "CoreDataManager.h"
-#import "MoneyTrackerServerManager.h"
 
 @interface NewExpenseViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
@@ -76,6 +74,7 @@
     [self.contentView addSubview:self.circleButton];
     
     self.selectedIndex = 2;
+    
 }
 
 - (void)createEntity

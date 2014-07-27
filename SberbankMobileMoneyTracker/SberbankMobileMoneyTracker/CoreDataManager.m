@@ -40,6 +40,7 @@
     return self;
 }
 
+
 - (void)addExpense:(double)sum toCategory:(NSString *)categoryName withDescription:(NSString *)description atDate:(NSDate *)date{
     date = [NSDate dateWithFirstMinuteOfDay:date];
     
