@@ -59,11 +59,14 @@
     
     
     for (NSInteger index = 0; index < 4; index ++) {
-        if ( index >= self.values.count ) {
-            return;
+        
+        NSInteger sizeNumber = 3;
+        NSString *valueString = @"0";
+        if ( index < self.values.count ) {
+            sizeNumber = [sortedValues indexOfObject:self.values[index]];
+            valueString = [self.values[index] stringValue];
         }
         
-        NSInteger sizeNumber = [sortedValues indexOfObject:self.values[index]];
         CGFloat radius = [self.circleSizes[sizeNumber] floatValue];
         Circle *circle = [[Circle alloc] initWithRadius:radius andCenter:[self centerAfterNumber: index
                                                                                    andSizeNumber: sizeNumber]];
@@ -73,7 +76,7 @@
         [circle bounceAppearWithDuration: 0.8 + (float)(arc4random() % 6) / 10];
         circle.hovering = YES;
         
-        LabelOnCircle *labelOnCircle = [[LabelOnCircle alloc] initWithCategoryName:[NSArray categoriesArray][index] valueString:[self.values[index] stringValue] onCircle:circle];
+        LabelOnCircle *labelOnCircle = [[LabelOnCircle alloc] initWithCategoryName:[NSArray categoriesArray][index] valueString:valueString onCircle:circle];
         [circle addSubview:labelOnCircle];
         
         [self addSubview:circle];

@@ -61,13 +61,13 @@
     }];
     
     
-    
     for (NSInteger index = 0; index < 4; index ++) {
-        if ( index >= self.values.count ) {
-            return;
+        
+        NSInteger sizeNumber = 4;
+        if ( index <= self.values.count ) {
+            sizeNumber = [sortedValues indexOfObject:self.values[index]];
         }
         
-        NSInteger sizeNumber = [sortedValues indexOfObject:self.values[index]];
         CGFloat radius = [self.circleSizes[sizeNumber] floatValue];
         Circle *circle = [[Circle alloc] initWithRadius:radius andCenter:[self centerAfterNumber: index
                                                                                    andSizeNumber: sizeNumber]];

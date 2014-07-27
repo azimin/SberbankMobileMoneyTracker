@@ -21,6 +21,8 @@
 @property (nonatomic) CalendarView *calendar;
 @property (nonatomic) CirclesView *calendarCirclesView;
 
+@property (nonatomic) NSArray *currentViewValues;
+
 @property (nonatomic) NSInteger currentIndex;
 
 @property (nonatomic) BOOL isColorTableOpen;
@@ -31,13 +33,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.currentViewValues = @[@(0), @(0), @(0), @(0)];
     
-    self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(0, 122, 320, 285)];
+    self.circlesView = [[CirclesView alloc] initWithValues:self.currentViewValues andFrame:CGRectMake(0, 122, 320, 285)];
     self.circlesView.delegate = self;
     [self.view addSubview:self.circlesView];
     
     MainViewNavigation *mainNavigation = [[MainViewNavigation alloc] initWithTitles:@[@"Week", @"Day"] selectedIndex:0 andDelegat:self];
     [self.view insertSubview:mainNavigation atIndex:0];
+    
+    if ( ![CoreDataManager sharedInstance].expenses || [CoreDataManager sharedInstance].expenses.count == 0 ) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [[MoneyTrackerServerManager sharedInstance] fetchAllStatisticWithSuccess:^(NSArray *resultStatistic) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            
+            NSArray *arr = [[CoreDataManager sharedInstance].expensesWithDayMove objectForKey:@(0)];
+            NSLog(@"%@", [CoreDataManager sharedInstance].expensesWithDayMove);
+            if (arr) {
+                NSMutableArray *currentValues = [NSMutableArray array];
+                for (NSDictionary *dic in arr) {
+                  /*  if (<#condition#>) {
+                        <#statements#>
+                    }*/
+                }
+            }
+            
+        } failure:^(NSError *error) {
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        }];
+    }
 }
 
 - (void)buttonClicked
@@ -112,7 +136,7 @@
         
         [self createCircleButton];
         
-        self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(0, 122, 320, 285)];
+        self.circlesView = [[CirclesView alloc] initWithValues:self.currentViewValues andFrame:CGRectMake(0, 122, 320, 285)];
         self.circlesView.delegate = self;
         [self.view addSubview:self.circlesView];
         

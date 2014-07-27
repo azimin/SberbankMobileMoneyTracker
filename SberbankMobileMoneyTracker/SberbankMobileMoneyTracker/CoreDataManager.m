@@ -84,7 +84,7 @@
     [self.context saveToPersistentStoreAndWait];
 }
 
--(NSArray *)fetchExpensesStatistic{
+-(void)fetchExpensesStatistic{
     NSArray *allDays = [DayInfo findAll];
     NSMutableArray *resultStatistic = [[NSMutableArray alloc] init];
     
@@ -112,7 +112,24 @@
                                      @"categories": categories}];
     }
     
-    return resultStatistic;
+    self.expenses = resultStatistic;
+    NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
+    for (NSDictionary *dic in self.expenses) {
+        NSDate *date = [dic objectForKey:@"date"];
+        [mDic setObject:[dic objectForKey:@"categories"] forKey:@([self daysToDate:date])];
+    }
+    
+    self.expensesWithDayMove = mDic;
+}
+
+- (NSInteger)daysToDate:(NSDate*)date
+{
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [gregorianCalendar components:NSDayCalendarUnit
+                                                        fromDate:[NSDate date]
+                                                          toDate:date
+                                                         options:0];
+    return [components day];
 }
 
 - (void)clearStore{

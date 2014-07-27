@@ -10,10 +10,13 @@
 
 @interface CoreDataManager : NSObject
 
+@property (nonatomic) NSArray *expenses;
+@property (nonatomic) NSDictionary *expensesWithDayMove;
+
 + (instancetype)sharedInstance;
 
 - (void)addExpense:(double)sum toCategory:(NSString *)categoryName withDescription:(NSString *)description atDate:(NSDate *)date;
-- (NSArray *)fetchExpensesStatistic;
+- (void)fetchExpensesStatistic;
 
 - (void)clearStore;
 

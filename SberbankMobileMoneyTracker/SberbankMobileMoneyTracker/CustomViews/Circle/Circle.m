@@ -155,7 +155,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     CGFloat yCoordinateMovement = -8 + drand48() * 16;
     CGPoint cPoint = point;
     
-    [UIView animateWithDuration:duration animations:^{
+    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         self.center = CGPointMake(cPoint.x + xCoordinateMovement,
                                   cPoint.y + yCoordinateMovement);
     } completion:^(BOOL finished) {

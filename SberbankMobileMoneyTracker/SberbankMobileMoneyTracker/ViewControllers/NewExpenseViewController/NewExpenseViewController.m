@@ -10,6 +10,10 @@
 #import "CategoryTypesTableViewCell.h"
 #import "Circle.h"
 
+#import "MoneyTrackerServerManager.h"
+#import "CoreDataManager.h"
+
+#import <MBProgressHUD.h>
 
 @interface NewExpenseViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
@@ -79,8 +83,23 @@
 
 - (void)createEntity
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     [self.valueTextField resignFirstResponder];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [[CoreDataManager sharedInstance] addExpense:[self.valueTextField.text doubleValue] toCategory:self.categoryTypeLabel.text withDescription:@"cash" atDate:[NSDate date]];
+    
+    NSDictionary *expenseDic = @{@"category": self.categoryTypeLabel.text,
+                                 @"description": @"cash",
+                                 @"value": self.valueTextField.text,
+                                 @"date": [NSDate date]};
+    
+    [[MoneyTrackerServerManager sharedInstance] sendNewExpense:expenseDic withSuccess:^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } failure:^(NSError *error) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Server not respond" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }];
 }
 
 #pragma mark - Custom View

@@ -71,10 +71,10 @@
     [self addSubview: self.dayLabel];
     
     self.arrayOfCircles = @[];
-    NSArray *arrOfSizes = self.circleSizes;
+    NSArray *arrOfSizes = [self circleSizes:YES];
     
     if ( self.values.count != arrOfSizes.count ) {
-        return;
+        NSArray *arrOfSizes = [self circleSizes:NO];
     }
     
     NSArray *sortedValues = [self.values sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -93,7 +93,13 @@
     
     // Add circles
     for (NSInteger i = 0; i < arrOfSizes.count; i ++) {
-        NSInteger index = [sortedValues indexOfObject:self.values[i]];
+        NSInteger index;
+        if (self.values.count <= i) {
+            index = 3;
+        } else {
+            index = [sortedValues indexOfObject:self.values[i]];
+        }
+        
         Circle *circle = [[Circle alloc] initWithRadius: [arrOfSizes[index] floatValue]
                                               andCenter: CGPointMake(self.frame.size.width / 2,
                                                                      56 + 40 * i)];
@@ -117,8 +123,15 @@
     return CGRectMake(0, 0, 45, 190);
 }
 
-- (NSArray*)circleSizes
+- (NSArray*)circleSizes:(BOOL)withValues
 {
+    if (!withValues) {
+        return @[@(4),
+                 @(4),
+                 @(4),
+                 @(4)];
+    }
+    
     return @[@(10),
              @(8),
              @(6),

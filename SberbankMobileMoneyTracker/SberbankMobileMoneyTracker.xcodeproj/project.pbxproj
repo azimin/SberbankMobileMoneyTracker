@@ -20,6 +20,7 @@
 		92300E281984A1E5006B2078 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E1E1984A1E5006B2078 /* UIColor+Expanded.m */; };
 		92300E291984A1E5006B2078 /* UIImage+ImageFromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E201984A1E5006B2078 /* UIImage+ImageFromColor.m */; };
 		92300E2A1984A1E5006B2078 /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E221984A1E5006B2078 /* UIView+Tag.m */; };
+		924E161A1984DA9500903C7E /* NSDictionary+FastSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 924E16191984DA9500903C7E /* NSDictionary+FastSearch.m */; };
 		92801811198463B7002901F3 /* ExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9280180F198463B7002901F3 /* ExpenseViewController.m */; };
 		92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92801810198463B7002901F3 /* ExpenseViewController.xib */; };
 		92801814198470BC002901F3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801813198470BC002901F3 /* Parse.framework */; };
@@ -126,6 +127,8 @@
 		92300E201984A1E5006B2078 /* UIImage+ImageFromColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageFromColor.m"; sourceTree = "<group>"; };
 		92300E211984A1E5006B2078 /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tag.h"; sourceTree = "<group>"; };
 		92300E221984A1E5006B2078 /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tag.m"; sourceTree = "<group>"; };
+		924E16181984DA9500903C7E /* NSDictionary+FastSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FastSearch.h"; sourceTree = "<group>"; };
+		924E16191984DA9500903C7E /* NSDictionary+FastSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FastSearch.m"; sourceTree = "<group>"; };
 		9280180E198463B7002901F3 /* ExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpenseViewController.h; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.h; sourceTree = "<group>"; };
 		9280180F198463B7002901F3 /* ExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpenseViewController.m; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.m; sourceTree = "<group>"; };
 		92801810198463B7002901F3 /* ExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpenseViewController.xib; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.xib; sourceTree = "<group>"; };
@@ -484,6 +487,8 @@
 				92877FA21983E102007FB3F7 /* UIColors + App */,
 				92877F9E1983DB87007FB3F7 /* Additional Helpers */,
 				92877F921983D0C2007FB3F7 /* Color+Extend */,
+				924E16181984DA9500903C7E /* NSDictionary+FastSearch.h */,
+				924E16191984DA9500903C7E /* NSDictionary+FastSearch.m */,
 			);
 			name = "Third Party";
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 				CBEFCC3C19847E8E0089D145 /* DayInfo.m in Sources */,
 				CBEFCC28198458320089D145 /* MoneyTrackerServerManager.m in Sources */,
 				9280183319847889002901F3 /* ExpenseInfoCell.m in Sources */,
+				924E161A1984DA9500903C7E /* NSDictionary+FastSearch.m in Sources */,
 				CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
 				92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */,

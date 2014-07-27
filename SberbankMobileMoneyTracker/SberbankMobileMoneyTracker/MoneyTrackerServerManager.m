@@ -79,7 +79,9 @@
                                                }
                                            }
                                        }
-                                       success([[CoreDataManager sharedInstance] fetchExpensesStatistic]);
+                                       
+                                       [[CoreDataManager sharedInstance] fetchExpensesStatistic];
+                                       success([CoreDataManager sharedInstance].expenses);
                                        
                                    }
                                    failure:^(NSURLSessionDataTask *task, NSError *error) {

@@ -25,4 +25,7 @@
     #import "UIView+Tag.h"
     #import "UIImage+ImageFromColor.h"
     #import "NSDate+DayAccuracy.h"
+    #import "CoreDataManager.h"
+    #import "MoneyTrackerServerManager.h"
+    #import <MBProgressHUD.h>
 #endif

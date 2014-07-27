@@ -91,7 +91,13 @@
             [values addObject:@(arc4random() % 100)];
         }
         
-        [valuesArray addObject:values];
+        if (index == 5) {
+            [valuesArray addObject:@[]];
+        } else {
+            [valuesArray addObject:values];
+        }
+        
+        
     }
     self.arrayOfValues = valuesArray;
     

@@ -50,7 +50,7 @@
 {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
     
-    UIButton *but = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, 44, 44)];
+    UIButton *but = [[UIButton alloc] initWithFrame:CGRectMake(8, 20, 44, 44)];
     [but setImage:[[UIImage imageNamed:@"btn_creation_cancel"] imageWithOverlayColor:[UIColor whiteColor]] forState:UIControlStateNormal];
     [but addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:but];

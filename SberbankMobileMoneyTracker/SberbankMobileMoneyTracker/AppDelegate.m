@@ -30,6 +30,7 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert  categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
+    [[CoreDataManager sharedInstance] fetchExpensesStatistic];
 
     [self openMainView];
     
