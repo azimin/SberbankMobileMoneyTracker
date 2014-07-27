@@ -150,7 +150,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 
 - (void)hoverNearPoint:(CGPoint)point
 {
-    CGFloat duration = drand48() * 1.6 + 1.6;
+    CGFloat duration = drand48() * 1.4 + 1.4;
     CGFloat xCoordinateMovement = -8 + drand48() * 16;
     CGFloat yCoordinateMovement = -8 + drand48() * 16;
     CGPoint cPoint = point;
