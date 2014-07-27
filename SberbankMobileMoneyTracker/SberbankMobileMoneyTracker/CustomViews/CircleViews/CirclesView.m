@@ -71,6 +71,7 @@
         circle.tagPlus = index;
         [circle addTarget:self action:@selector(circleWasPressed:)];
         [circle bounceAppearWithDuration: 0.8 + (float)(arc4random() % 6) / 10];
+        circle.hovering = YES;
         
         LabelOnCircle *labelOnCircle = [[LabelOnCircle alloc] initWithCategoryName:[NSArray categoriesArray][index] valueString:[self.values[index] stringValue] onCircle:circle];
         [circle addSubview:labelOnCircle];

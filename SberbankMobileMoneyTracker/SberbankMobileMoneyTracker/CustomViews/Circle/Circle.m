@@ -138,6 +138,33 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     }
 }
 
+- (void)setHovering:(BOOL)hovering
+{
+    _hovering = hovering;
+    
+    if ( hovering )
+    {
+        [self hoverNearPoint:self.center];
+    }
+}
+
+- (void)hoverNearPoint:(CGPoint)point
+{
+    CGFloat duration = drand48() * 1.6 + 1.6;
+    CGFloat xCoordinateMovement = -8 + drand48() * 16;
+    CGFloat yCoordinateMovement = -8 + drand48() * 16;
+    CGPoint cPoint = point;
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.center = CGPointMake(cPoint.x + xCoordinateMovement,
+                                  cPoint.y + yCoordinateMovement);
+    } completion:^(BOOL finished) {
+        if (self.hovering) {
+            [self hoverNearPoint:cPoint];
+        }
+    }];
+}
+
 #pragma mark - Animation
 
 - (void)bounceAppearWithDuration: (CGFloat)duration

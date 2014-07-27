@@ -9,10 +9,11 @@
 #import "ExpenseViewController.h"
 #import "ExpenseInfoCell.h"
 
-@interface ExpenseViewController ()
+@interface ExpenseViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *expenses;
+@property (nonatomic) UILabel *pullToCloseLabel;
 
 @end
 
@@ -35,6 +36,12 @@
     [self.expenses addObject:@{@"value":@"100", @"name": @"Swag"}];
     [self.expenses addObject:@{@"value":@"1000", @"name": @"McDonalds"}];
     [self.expenses addObject:@{@"value":@"500", @"name": @"Car rent"}];
+    
+    self.pullToCloseLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, -50, 320, 40)];
+    self.pullToCloseLabel.text = @"Pull to close";
+    self.pullToCloseLabel.textAlignment = NSTextAlignmentCenter;
+    self.pullToCloseLabel.textColor = [UIColor whiteColor];
+    [self.tableView addSubview:self.pullToCloseLabel];
 }
 
 #pragma mark - Custom View
@@ -97,6 +104,21 @@
     return cell;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y < -100) {
+        self.pullToCloseLabel.text = @"Release your finger to close";
+    } else {
+        self.pullToCloseLabel.text = @"Pull to close";
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView.contentOffset.y < -100) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 
 /*
 #pragma mark - Navigation
