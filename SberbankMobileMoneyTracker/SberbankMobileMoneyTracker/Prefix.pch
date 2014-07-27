@@ -24,4 +24,5 @@
     #import "NSArray+Functional.h"
     #import "UIView+Tag.h"
     #import "UIImage+ImageFromColor.h"
+    #import "NSDate+DayAccuracy.h"
 #endif

@@ -10,12 +10,14 @@
 #import "CategoryTypesTableViewCell.h"
 #import "Circle.h"
 
-@interface NewExpenseViewController () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
+#import "MoneyTrackerServerManager.h"
+#import "CoreDataManager.h"
+
+@interface NewExpenseViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
 @property (weak, nonatomic) IBOutlet UILabel *categoryTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *valueTextField;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (nonatomic) Circle *categoryCircle;
 
 @property (nonatomic) NSInteger selectedIndex;
@@ -37,7 +39,6 @@
     
     [self.categoryButton addTarget:self action:@selector(goToCategoryTypesViewController) forControlEvents:UIControlEventTouchUpInside];
     [self.cancelButton addTarget:self action:@selector(cancelButtonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
-    [self.confirmButton addTarget:self action:@selector(confirmButtonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imgView = [[UIImageView alloc] initWithImage:self.backgroundImage];
     imgView.frame = [UIScreen mainScreen].bounds;
@@ -77,6 +78,18 @@
     [self.contentView addSubview:self.circleButton];
     
     self.selectedIndex = 2;
+    
+    /*[[MoneyTrackerServerManager sharedInstance] sendNewExpense:@{@"category": @"Home",
+                                                                @"value": @(1111),
+                                                                @"description": @"IIko",
+                                                                 @"date": [NSDate dateWithTimeIntervalSince1970:([[NSDate date] timeIntervalSince1970] - 86400)]}];*/
+                                                                
+    [[MoneyTrackerServerManager sharedInstance] fetchAllStatistic];
+    //[[CoreDataManager sharedInstance] fetchExpensesStatistic];
+    //[[CoreDataManager sharedInstance] addExpense:117.f toCategory:@"Health" withDescription:@"Starbucks" atDate:[NSDate date]];
+    //[[CoreDataManager sharedInstance] addExpense:1000.f toCategory:@"Fun" withDescription:@"Starbucks" atDate:[NSDate date]];
+    //[[CoreDataManager sharedInstance] addExpense:5.f toCategory:@"Home" withDescription:@"Starbucks" atDate:[NSDate date]];
+    
 }
 
 - (void)createEntity
@@ -102,13 +115,6 @@
     [self tableViewCategoriesShouldShow:TRUE];
 }
 
-#pragma mark - UITextField Delegat
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    [self checkInputData];
-    return YES;
-}
-
 #pragma mark - Setter
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex
@@ -128,16 +134,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//check if all parameters have selected
-- (void)checkInputData{
-    BOOL isAccepted = YES;
-    isAccepted = isAccepted && ![self.categoryTypeLabel.text isEqualToString:@"Category"];
-    isAccepted = isAccepted && ![self.valueTextField.text isEqualToString:@""];
-    
-    if(isAccepted){
-        // change button color
-    }
-}
 
 #pragma marl - Table View Delegat
 
@@ -170,8 +166,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self tableViewCategoriesShouldShow:FALSE];
     self.selectedIndex = indexPath.row;
-    
-    [self checkInputData];
 }
 
 #pragma mark - Navigation

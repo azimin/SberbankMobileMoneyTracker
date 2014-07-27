@@ -9,6 +9,9 @@
 #import "CoreDataManager.h"
 #import "DayInfo.h"
 #import "CategoryType.h"
+#import "Expense.h"
+
+#define  STORE_NAME @"SberbankMobileMoneyTrackerModel"
 
 @interface CoreDataManager ()
 @property (strong, nonatomic) NSManagedObjectContext *context;
@@ -31,37 +34,50 @@
     if (self == [super init])
         
     {
-        [MagicalRecord setupCoreDataStackWithStoreNamed:@"SberbankMobileMoneyTrackerModel"];
+        [MagicalRecord setupCoreDataStackWithStoreNamed:STORE_NAME];
         self.context = [NSManagedObjectContext defaultContext];
     }
     return self;
 }
 
-- (void)addExpense:(double)sum toCategory:(NSString *)categoryName atDate:(NSDate *)date{
+- (void)addExpense:(double)sum toCategory:(NSString *)categoryName withDescription:(NSString *)description atDate:(NSDate *)date{
+    date = [NSDate dateWithFirstMinuteOfDay:date];
+    
     DayInfo *dayInfo = [DayInfo findFirstByAttribute:@"date" withValue:date];
     
     if(dayInfo){
         for(CategoryType *type in dayInfo.categoryTypes){
             if([type.name isEqualToString:categoryName]){
+                //update category sum
                 type.value = @([type.value doubleValue] + sum);
+                
+                // add expense to category
+                Expense *expence = [Expense createEntity];
+                expence.expenceDescription = description;
+                expence.value = @(sum);
+                [type addExpensesObject:expence];
             }
         }
     } else {
         dayInfo = [DayInfo createEntity];
         dayInfo.date = date;
         
-        NSMutableSet *dayInfoCategories = [[NSMutableSet alloc] init];
         NSArray *categoryNames = [NSArray categoriesArray];
         for(NSString *cName in categoryNames){
+            //add category to dayInfo
             CategoryType *concreteType = [CategoryType createEntity];
             concreteType.name = cName;
             concreteType.value = [cName isEqualToString:categoryName] ? @(sum) : @(0);
-            concreteType.dayInfo = dayInfo;
             
-            [dayInfoCategories addObject:concreteType];
+            if([cName isEqualToString:categoryName]){
+                // add expense to category
+                Expense *expence = [Expense createEntity];
+                expence.expenceDescription = description;
+                expence.value = @(sum);
+                [concreteType addExpensesObject:expence];
+            }
+            [dayInfo addCategoryTypesObject:concreteType];
         }
-        
-        dayInfo.categoryTypes = dayInfoCategories;
     }
     
     [self.context saveToPersistentStoreAndWait];
@@ -72,11 +88,22 @@
     NSMutableArray *resultStatistic = [[NSMutableArray alloc] init];
     
     for(DayInfo *day in allDays){
+        //fetch all categories of DayInfo
         NSMutableArray *categories = [[NSMutableArray alloc] init];
         for(CategoryType *categoryType in day.categoryTypes){
+            //fetch all expenses of category
+            NSMutableArray *expenses = [[NSMutableArray alloc] init];
+            for(Expense *expense in categoryType.expenses){
+                NSDictionary *expenseInfo = @{@"description":expense.expenceDescription,
+                                              @"value": expense.value,
+                                              @"date": expense.categoryType.dayInfo.date};
+                [expenses addObject:expenseInfo];
+            }
+            
             NSDictionary *categoryInfo = @{@"name": categoryType.name,
                                            @"value": categoryType.value,
-                                           @"date": categoryType.dayInfo};
+                                           @"date": categoryType.dayInfo.date,
+                                           @"expenses": expenses};
             [categories addObject:categoryInfo];
         }
         
@@ -85,6 +112,20 @@
     }
     
     return resultStatistic;
+}
+
+- (void)clearStore{
+    NSURL *storeURL = [NSPersistentStore urlForStoreName:STORE_NAME];
+    [MagicalRecord cleanUp];
+    
+    NSError *error;
+    if([[NSFileManager defaultManager] removeItemAtURL:storeURL error:&error]){
+        [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:STORE_NAME];
+    }
+    else{
+        NSLog(@"An error has occurred while deleting %@", STORE_NAME);
+        NSLog(@"Error description: %@", error.description);
+    }
 }
 
 @end

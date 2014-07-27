@@ -32,9 +32,9 @@
 
 - (void)sendNewExpense:(NSDictionary *)expenseDictionary{
     NSDictionary *params = @{@"category": expenseDictionary[@"category"],
-                             @"description": @"cash",
+                             @"description": expenseDictionary[@"description"],
                              @"cost": expenseDictionary[@"value"],
-                             @"datetime": [NSNumber numberWithInt:[(NSDate *)expenseDictionary[@"date"] timeIntervalSince1970]]};
+                             @"datetime": [NSNumber numberWithLongLong:(long long)[(NSDate *)expenseDictionary[@"date"] timeIntervalSince1970]]};
     
     [[MoneyTrackerClient sharedClient] POST:@"addexpense"
                                  parameters:params
@@ -49,22 +49,31 @@
 }
 
 - (void)fetchStatisticInIntervalFrom:(NSDate *)fromDate to:(NSDate *)toDate{
-    NSDictionary *params = @{@"from": @([fromDate timeIntervalSince1970]),
-                             @"to": @([toDate timeIntervalSince1970])};
+    fromDate = [NSDate dateWithFirstMinuteOfDay:fromDate];
+    toDate = [NSDate dateWithLastMinuteOfDay:toDate];
+    
+    NSDictionary *params = @{@"from": [NSNumber numberWithLongLong:(long long)[fromDate timeIntervalSince1970]],
+                             @"to": [NSNumber numberWithLongLong:(long long)[toDate timeIntervalSince1970]]};
     
     [[MoneyTrackerClient sharedClient] GET:@"getexpenseslist"
                                 parameters:params
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       
+                                       NSLog(@"%@", responseObject);
                                        if(responseObject){
+                                           //clear store and resave statistic
+                                           [[CoreDataManager sharedInstance] clearStore];
+                                           
                                            for(NSDictionary *expenseDictionary in responseObject[@"expenses"]){
                                                double expenseValue = [expenseDictionary[@"cost"] doubleValue];
                                                NSString *categoryName = expenseDictionary[@"category"];
-                                               NSDate *date = [NSDate dateWithTimeIntervalSince1970:[expenseDictionary[@"dateTime"] doubleValue]];
+                                               NSString *description = expenseDictionary[@"description"] ? expenseDictionary[@"description"] : @"No description";
+                                               NSInteger timestamp = [[expenseDictionary objectForKey:@"datetime"] integerValue];
+                                               NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
                                                if(expenseValue && categoryName && date){
-                                                   [[CoreDataManager sharedInstance] addExpense:expenseValue toCategory:categoryName atDate:date];
+                                                   [[CoreDataManager sharedInstance] addExpense:expenseValue toCategory:categoryName withDescription:description atDate:date];
                                                }
                                            }
+                                           [[CoreDataManager sharedInstance] fetchExpensesStatistic];
                                        }
                                        [self.delegate MoneyTrackerServerManager:self DidFetchStatisticWithResult:[[CoreDataManager sharedInstance] fetchExpensesStatistic]];
                                        
@@ -75,12 +84,12 @@
                                    }];
 }
 
-- (void)fetchStatisticForDate:(NSDate *)date{
+- (void)fetchStatisticForDay:(NSDate *)date{
     [self fetchStatisticInIntervalFrom:date to:date];
 }
 
 - (void)fetchAllStatistic{
-    [self fetchStatisticInIntervalFrom:[NSDate dateWithTimeIntervalSince1970:1] to:[NSDate date]];
+    [self fetchStatisticInIntervalFrom:[NSDate dateWithTimeIntervalSince1970:50000000] to:[NSDate date]];
 }
 
 @end

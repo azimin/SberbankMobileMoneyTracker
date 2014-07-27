@@ -31,7 +31,7 @@
 
 - (void)sendNewExpense:(NSDictionary *)expenseDictionary;
 - (void)fetchStatisticInIntervalFrom:(NSDate *)fromDate to:(NSDate *)toDate;
-- (void)fetchStatisticForDate:(NSDate *)date;
+- (void)fetchStatisticForDay:(NSDate *)date;
 - (void)fetchAllStatistic;
 
 @end

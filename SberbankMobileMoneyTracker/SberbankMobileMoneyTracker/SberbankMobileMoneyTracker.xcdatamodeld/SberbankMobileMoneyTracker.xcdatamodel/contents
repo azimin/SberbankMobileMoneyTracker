@@ -4,13 +4,20 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="dayInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DayInfo" inverseName="categoryTypes" inverseEntity="DayInfo" syncable="YES"/>
+        <relationship name="expenses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Expense" inverseName="categoryType" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <entity name="DayInfo" representedClassName="DayInfo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="categoryTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CategoryType" inverseName="dayInfo" inverseEntity="CategoryType" syncable="YES"/>
     </entity>
+    <entity name="Expense" representedClassName="Expense" syncable="YES">
+        <attribute name="expenceDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="categoryType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryType" inverseName="expenses" inverseEntity="CategoryType" syncable="YES"/>
+    </entity>
     <elements>
+        <element name="CategoryType" positionX="18" positionY="63" width="128" height="103"/>
         <element name="DayInfo" positionX="-27" positionY="18" width="128" height="73"/>
-        <element name="CategoryType" positionX="18" positionY="63" width="128" height="88"/>
+        <element name="Expense" positionX="0" positionY="72" width="128" height="88"/>
     </elements>
 </model>

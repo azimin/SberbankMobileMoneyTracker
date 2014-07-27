@@ -1,21 +1,19 @@
 //
-//  CategoryType.m
+//  Expense.m
 //  SberbankMobileMoneyTracker
 //
 //  Created by Ivan Oschepkov on 27.07.14.
 //  Copyright (c) 2014 Empatika. All rights reserved.
 //
 
-#import "CategoryType.h"
-#import "DayInfo.h"
 #import "Expense.h"
+#import "CategoryType.h"
 
 
-@implementation CategoryType
+@implementation Expense
 
-@dynamic name;
+@dynamic expenceDescription;
 @dynamic value;
-@dynamic dayInfo;
-@dynamic expenses;
+@dynamic categoryType;
 
 @end
