@@ -14,11 +14,12 @@
 #import "NewExpenseViewController.h"
 #import "ExpenseViewController.h"
 
-@interface StartViewController () <MainViewNavigationDelegat, CirclesViewDelegat>
+@interface StartViewController () <MainViewNavigationDelegat, CirclesViewDelegat, CalendarViewDelegat>
 
 @property (nonatomic) CirclesView *circlesView;
 @property (nonatomic) Circle *circleButton;
 @property (nonatomic) CalendarView *calendar;
+@property (nonatomic) CirclesView *calendarCirclesView;
 
 @property (nonatomic) NSInteger currentIndex;
 
@@ -35,7 +36,7 @@
     self.circlesView.delegate = self;
     [self.view addSubview:self.circlesView];
     
-    MainViewNavigation *mainNavigation = [[MainViewNavigation alloc] initWithTitles:@[@"Year", @"Month", @"Week", @"Day"] selectedIndex:0 andDelegat:self];
+    MainViewNavigation *mainNavigation = [[MainViewNavigation alloc] initWithTitles:@[@"Week", @"Day"] selectedIndex:0 andDelegat:self];
     [self.view insertSubview:mainNavigation atIndex:0];
 }
 
@@ -72,6 +73,10 @@
 
 - (void)mainNavigation:(MainViewNavigation *)mainNavigation scrollToIndex:(NSInteger)index
 {
+    BOOL comeFromLeft = true;
+    if (self.currentIndex > index)
+        comeFromLeft = false;
+    
     self.currentIndex = index;
     
     NSMutableArray *valuesArray = [NSMutableArray array];
@@ -85,16 +90,23 @@
         [valuesArray addObject:values];
     }
     
-    if (index > 2 && self.calendar) {
+    if (index != 0 && self.calendar) {
+        
+        [self.calendarCirclesView removeFromSuperview];
+        
+        CGFloat directipn = 1;
+        if (comeFromLeft) {
+            directipn = -1;
+        }
         [UIView animateWithDuration:0.3 animations:^{
-            self.calendar.center = CGPointMake(self.view.center.x - 320, self.view.center.y - 100);
+            self.calendar.center = CGPointMake(self.view.center.x + directipn * 320, self.view.center.y - 100);
         } completion:^(BOOL finished) {
             [self.calendar removeFromSuperview];
             self.calendar = nil;
         }];
     }
     
-    if (index == 3) {
+    if (index == 1) {
         [self.circlesView removeFromSuperview];
         [self.circleButton removeFromSuperview];
         
@@ -109,8 +121,9 @@
             self.circleButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height - 70);
         }];
         
-    } else {
+    } else if (index == 0) {
         if (self.circlesView) {
+            
             [UIView animateWithDuration:0.2 animations:^{
                 self.circlesView.center = CGPointMake(self.view.center.x + 320, self.circlesView.center.y);
                 self.circleButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height + 100);
@@ -126,9 +139,17 @@
         }
     }
     
-    if (index <= 2 && !self.calendar) {
+    if (index == 0 && !self.calendar) {
+        
+        CGFloat directipn = 1;
+        if (comeFromLeft) {
+            directipn = -1;
+        }
+        
+        
         self.calendar = [[CalendarView alloc] initWithDays:@[@(10), @(11), @(12), @(13), @(14), @(15), @(16)] andArrayOfValues:valuesArray];
-        self.calendar.center = CGPointMake(self.view.center.x - 320, self.view.center.y - 100);
+        self.calendar.delegate = self;
+        self.calendar.center = CGPointMake(self.view.center.x - directipn * 320, self.view.center.y - 100);
         [self.view addSubview:self.calendar];
         
         [UIView animateWithDuration:0.3 animations:^{
@@ -142,7 +163,14 @@
 - (void)circlesView:(CirclesView *)circlesView didSelectCircle:(Circle *)circle
 {
     Circle *newCircle = [circle copy];
-    [self.circlesView addSubview:newCircle];
+    
+    if (circlesView.tagPlus == 10) {
+        newCircle.center = CGPointMake(newCircle.center.x, newCircle.center.y + [UIScreen mainScreen].bounds.size.height - 280);
+        [self.view addSubview:newCircle];
+    } else {
+        [self.circlesView addSubview:newCircle];
+    }
+    
     newCircle.layer.zPosition = 1.1;
     [newCircle removeText];
     [newCircle changeRadius:600 withDuration:0.6 andBounce:YES];
@@ -173,5 +201,17 @@
     }
     return UIStatusBarStyleDefault;
 }
+
+
+#pragma mark - CalendarViewDelegat
+
+- (void)changeDownCirclesWithValues:(NSArray*)values {
+    [self.calendarCirclesView removeFromSuperview];
+    self.calendarCirclesView = [[CirclesView alloc] initWithValues:values andFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 280, 320, 260)];
+    self.calendarCirclesView.delegate = self;
+    self.calendarCirclesView.tagPlus = 10;
+    [self.view addSubview:self.calendarCirclesView];
+}
+
 
 @end

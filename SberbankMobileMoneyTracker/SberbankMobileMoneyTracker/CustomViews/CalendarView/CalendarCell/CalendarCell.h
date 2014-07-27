@@ -10,7 +10,7 @@
 
 @protocol CalendarCellDelegat;
 
-@interface CalendarCell : UIView
+@interface CalendarCell : UIView <NSCopying>
 
 @property (nonatomic) NSString *dayString;
 @property (nonatomic) NSArray *values;
@@ -22,6 +22,7 @@
                         andValues: (NSArray*)valus;
 
 + (CGRect)calendarCellFrame;
+- (IBAction)selectCell:(id)sender;
 
 @end
 

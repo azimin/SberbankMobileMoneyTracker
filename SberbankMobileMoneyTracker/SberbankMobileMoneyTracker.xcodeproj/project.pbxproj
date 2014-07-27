@@ -8,8 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */; };
+		92300E011984A18B006B2078 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922ECBD219849D1B0032A81E /* NotificationCenter.framework */; };
+		92300E071984A18B006B2078 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E061984A18B006B2078 /* TodayViewController.m */; };
+		92300E091984A18B006B2078 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92300E081984A18B006B2078 /* MainInterface.storyboard */; };
+		92300E0C1984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92300E001984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex */; };
+		92300E231984A1E5006B2078 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E141984A1E5006B2078 /* Circle.m */; };
+		92300E241984A1E5006B2078 /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E161984A1E5006B2078 /* CirclesView.m */; };
+		92300E251984A1E5006B2078 /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E181984A1E5006B2078 /* LabelOnCircle.m */; };
+		92300E261984A1E5006B2078 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E1A1984A1E5006B2078 /* NSArray+Functional.m */; };
+		92300E271984A1E5006B2078 /* UIColor+AppColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E1C1984A1E5006B2078 /* UIColor+AppColors.m */; };
+		92300E281984A1E5006B2078 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E1E1984A1E5006B2078 /* UIColor+Expanded.m */; };
+		92300E291984A1E5006B2078 /* UIImage+ImageFromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E201984A1E5006B2078 /* UIImage+ImageFromColor.m */; };
+		92300E2A1984A1E5006B2078 /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E221984A1E5006B2078 /* UIView+Tag.m */; };
 		92801811198463B7002901F3 /* ExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9280180F198463B7002901F3 /* ExpenseViewController.m */; };
 		92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92801810198463B7002901F3 /* ExpenseViewController.xib */; };
+		92801814198470BC002901F3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801813198470BC002901F3 /* Parse.framework */; };
+		92801816198470CA002901F3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801815198470CA002901F3 /* AudioToolbox.framework */; };
+		92801818198470CE002901F3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801817198470CE002901F3 /* CFNetwork.framework */; };
+		9280181A198470D4002901F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801819198470D4002901F3 /* CoreGraphics.framework */; };
+		9280181C198470D9002901F3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9280181B198470D9002901F3 /* CoreLocation.framework */; };
+		9280181E198470E1002901F3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9280181D198470E1002901F3 /* libz.dylib */; };
+		92801820198470E7002901F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9280181F198470E7002901F3 /* MobileCoreServices.framework */; };
+		92801822198470EB002901F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801821198470EB002901F3 /* QuartzCore.framework */; };
+		92801824198470F0002901F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801823198470F0002901F3 /* Security.framework */; };
+		92801826198470F5002901F3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801825198470F5002901F3 /* StoreKit.framework */; };
+		92801828198470FA002901F3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801827198470FA002901F3 /* SystemConfiguration.framework */; };
+		9280182A1984711A002901F3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928018291984711A002901F3 /* FacebookSDK.framework */; };
+		9280182C19847129002901F3 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9280182B19847129002901F3 /* Accounts.framework */; };
+		9280182E1984713C002901F3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9280182D1984713C002901F3 /* Social.framework */; };
+		9280183319847889002901F3 /* ExpenseInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9280183119847889002901F3 /* ExpenseInfoCell.m */; };
+		9280183419847889002901F3 /* ExpenseInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9280183219847889002901F3 /* ExpenseInfoCell.xib */; };
 		928671EE1983EC5600974D6B /* UIView+Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671ED1983EC5600974D6B /* UIView+Tag.m */; };
 		928671F21984014200974D6B /* UIImage+ImageFromColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928671F11984014200974D6B /* UIImage+ImageFromColor.m */; };
 		92877F531983B743007FB3F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92877F521983B743007FB3F7 /* main.m */; };
@@ -37,17 +65,85 @@
 		CB9CAB2019840412009D9E8A /* DayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9CAB1F19840412009D9E8A /* DayInfo.m */; };
 		CB9FD03919841CA300FF6ED0 /* CategoryTypesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9FD03719841CA300FF6ED0 /* CategoryTypesTableViewCell.m */; };
 		CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9FD03819841CA300FF6ED0 /* CategoryTypesTableViewCell.xib */; };
-		CB9FD03E1984273800FF6ED0 /* CategoryTypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */; };
-		CB9FD03F1984273800FF6ED0 /* CategoryTypesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */; };
 		CBEFCC28198458320089D145 /* MoneyTrackerServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCC27198458320089D145 /* MoneyTrackerServerManager.m */; };
 		CBEFCC2B198459B00089D145 /* MoneyTrackerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFCC2A198459B00089D145 /* MoneyTrackerClient.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		92300E0A1984A18B006B2078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92877F451983B743007FB3F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92300DFF1984A18B006B2078;
+			remoteInfo = SberbankMobileMoneyTrackerToday;
+		};
+		92300E0D1984A18B006B2078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92877F451983B743007FB3F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92300DFF1984A18B006B2078;
+			remoteInfo = SberbankMobileMoneyTrackerToday;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		922ECBE419849D1B0032A81E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				92300E0C1984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		54253365C4104F52B28FEFA7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		922ECBD219849D1B0032A81E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		92300E001984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SberbankMobileMoneyTrackerToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		92300E041984A18B006B2078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92300E051984A18B006B2078 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		92300E061984A18B006B2078 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		92300E081984A18B006B2078 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		92300E131984A1E5006B2078 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		92300E141984A1E5006B2078 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
+		92300E151984A1E5006B2078 /* CirclesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirclesView.h; sourceTree = "<group>"; };
+		92300E161984A1E5006B2078 /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirclesView.m; sourceTree = "<group>"; };
+		92300E171984A1E5006B2078 /* LabelOnCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelOnCircle.h; sourceTree = "<group>"; };
+		92300E181984A1E5006B2078 /* LabelOnCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelOnCircle.m; sourceTree = "<group>"; };
+		92300E191984A1E5006B2078 /* NSArray+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Functional.h"; sourceTree = "<group>"; };
+		92300E1A1984A1E5006B2078 /* NSArray+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Functional.m"; sourceTree = "<group>"; };
+		92300E1B1984A1E5006B2078 /* UIColor+AppColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AppColors.h"; sourceTree = "<group>"; };
+		92300E1C1984A1E5006B2078 /* UIColor+AppColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AppColors.m"; sourceTree = "<group>"; };
+		92300E1D1984A1E5006B2078 /* UIColor+Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Expanded.h"; sourceTree = "<group>"; };
+		92300E1E1984A1E5006B2078 /* UIColor+Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Expanded.m"; sourceTree = "<group>"; };
+		92300E1F1984A1E5006B2078 /* UIImage+ImageFromColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFromColor.h"; sourceTree = "<group>"; };
+		92300E201984A1E5006B2078 /* UIImage+ImageFromColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageFromColor.m"; sourceTree = "<group>"; };
+		92300E211984A1E5006B2078 /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Tag.h"; sourceTree = "<group>"; };
+		92300E221984A1E5006B2078 /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Tag.m"; sourceTree = "<group>"; };
 		9280180E198463B7002901F3 /* ExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpenseViewController.h; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.h; sourceTree = "<group>"; };
 		9280180F198463B7002901F3 /* ExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpenseViewController.m; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.m; sourceTree = "<group>"; };
 		92801810198463B7002901F3 /* ExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpenseViewController.xib; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.xib; sourceTree = "<group>"; };
+		92801813198470BC002901F3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		92801815198470CA002901F3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		92801817198470CE002901F3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		92801819198470D4002901F3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9280181B198470D9002901F3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9280181D198470E1002901F3 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		9280181F198470E7002901F3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		92801821198470EB002901F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		92801823198470F0002901F3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		92801825198470F5002901F3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		92801827198470FA002901F3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		928018291984711A002901F3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		9280182B19847129002901F3 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		9280182D1984713C002901F3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9280183019847889002901F3 /* ExpenseInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpenseInfoCell.h; path = ViewControllers/ExpenseTableViewController/Cells/ExpenseInfoCell.h; sourceTree = "<group>"; };
+		9280183119847889002901F3 /* ExpenseInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpenseInfoCell.m; path = ViewControllers/ExpenseTableViewController/Cells/ExpenseInfoCell.m; sourceTree = "<group>"; };
+		9280183219847889002901F3 /* ExpenseInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpenseInfoCell.xib; path = ViewControllers/ExpenseTableViewController/Cells/ExpenseInfoCell.xib; sourceTree = "<group>"; };
 		928671EC1983EC5600974D6B /* UIView+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Tag.h"; path = "Helpers/UIView+Tag/UIView+Tag.h"; sourceTree = "<group>"; };
 		928671ED1983EC5600974D6B /* UIView+Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Tag.m"; path = "Helpers/UIView+Tag/UIView+Tag.m"; sourceTree = "<group>"; };
 		928671F01984014200974D6B /* UIImage+ImageFromColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageFromColor.h"; sourceTree = "<group>"; };
@@ -100,9 +196,6 @@
 		CB9FD03619841CA300FF6ED0 /* CategoryTypesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTypesTableViewCell.h; path = ViewControllers/CategoryTypesViewController/Cells/CategoryTypesTableViewCell.h; sourceTree = "<group>"; };
 		CB9FD03719841CA300FF6ED0 /* CategoryTypesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTypesTableViewCell.m; path = ViewControllers/CategoryTypesViewController/Cells/CategoryTypesTableViewCell.m; sourceTree = "<group>"; };
 		CB9FD03819841CA300FF6ED0 /* CategoryTypesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTypesTableViewCell.xib; path = ViewControllers/CategoryTypesViewController/Cells/CategoryTypesTableViewCell.xib; sourceTree = "<group>"; };
-		CB9FD03B1984273800FF6ED0 /* CategoryTypesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryTypesViewController.h; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.h; sourceTree = "<group>"; };
-		CB9FD03C1984273800FF6ED0 /* CategoryTypesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryTypesViewController.m; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.m; sourceTree = "<group>"; };
-		CB9FD03D1984273800FF6ED0 /* CategoryTypesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryTypesViewController.xib; path = ViewControllers/CategoryTypesViewController/CategoryTypesViewController.xib; sourceTree = "<group>"; };
 		CBEFCC26198458320089D145 /* MoneyTrackerServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTrackerServerManager.h; sourceTree = "<group>"; };
 		CBEFCC27198458320089D145 /* MoneyTrackerServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoneyTrackerServerManager.m; sourceTree = "<group>"; };
 		CBEFCC29198459B00089D145 /* MoneyTrackerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoneyTrackerClient.h; sourceTree = "<group>"; };
@@ -110,10 +203,32 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		92300DFD1984A18B006B2078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92300E011984A18B006B2078 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92877F4A1983B743007FB3F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9280182E1984713C002901F3 /* Social.framework in Frameworks */,
+				9280182C19847129002901F3 /* Accounts.framework in Frameworks */,
+				92801828198470FA002901F3 /* SystemConfiguration.framework in Frameworks */,
+				92801826198470F5002901F3 /* StoreKit.framework in Frameworks */,
+				92801824198470F0002901F3 /* Security.framework in Frameworks */,
+				92801822198470EB002901F3 /* QuartzCore.framework in Frameworks */,
+				92801820198470E7002901F3 /* MobileCoreServices.framework in Frameworks */,
+				9280181E198470E1002901F3 /* libz.dylib in Frameworks */,
+				9280181C198470D9002901F3 /* CoreLocation.framework in Frameworks */,
+				9280181A198470D4002901F3 /* CoreGraphics.framework in Frameworks */,
+				9280182A1984711A002901F3 /* FacebookSDK.framework in Frameworks */,
+				92801818198470CE002901F3 /* CFNetwork.framework in Frameworks */,
+				92801816198470CA002901F3 /* AudioToolbox.framework in Frameworks */,
+				92801814198470BC002901F3 /* Parse.framework in Frameworks */,
 				56F764DBDB3B44E4BD2F3632 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,19 +239,88 @@
 		0080898B3E7E48FBAE15462C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9280182D1984713C002901F3 /* Social.framework */,
+				9280182B19847129002901F3 /* Accounts.framework */,
+				928018291984711A002901F3 /* FacebookSDK.framework */,
+				92801827198470FA002901F3 /* SystemConfiguration.framework */,
+				92801825198470F5002901F3 /* StoreKit.framework */,
+				92801823198470F0002901F3 /* Security.framework */,
+				92801821198470EB002901F3 /* QuartzCore.framework */,
+				9280181F198470E7002901F3 /* MobileCoreServices.framework */,
+				9280181D198470E1002901F3 /* libz.dylib */,
+				9280181B198470D9002901F3 /* CoreLocation.framework */,
+				92801819198470D4002901F3 /* CoreGraphics.framework */,
+				92801817198470CE002901F3 /* CFNetwork.framework */,
+				92801815198470CA002901F3 /* AudioToolbox.framework */,
+				92801813198470BC002901F3 /* Parse.framework */,
 				BD0AFDF4CE8E40AA9AFCF343 /* libPods.a */,
+				922ECBD219849D1B0032A81E /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92300E021984A18B006B2078 /* SberbankMobileMoneyTrackerToday */ = {
+			isa = PBXGroup;
+			children = (
+				92300E121984A1DD006B2078 /* Classes */,
+				92300E051984A18B006B2078 /* TodayViewController.h */,
+				92300E061984A18B006B2078 /* TodayViewController.m */,
+				92300E081984A18B006B2078 /* MainInterface.storyboard */,
+				92300E031984A18B006B2078 /* Supporting Files */,
+			);
+			path = SberbankMobileMoneyTrackerToday;
+			sourceTree = "<group>";
+		};
+		92300E031984A18B006B2078 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92300E041984A18B006B2078 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92300E121984A1DD006B2078 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				92300E131984A1E5006B2078 /* Circle.h */,
+				92300E141984A1E5006B2078 /* Circle.m */,
+				92300E151984A1E5006B2078 /* CirclesView.h */,
+				92300E161984A1E5006B2078 /* CirclesView.m */,
+				92300E171984A1E5006B2078 /* LabelOnCircle.h */,
+				92300E181984A1E5006B2078 /* LabelOnCircle.m */,
+				92300E191984A1E5006B2078 /* NSArray+Functional.h */,
+				92300E1A1984A1E5006B2078 /* NSArray+Functional.m */,
+				92300E1B1984A1E5006B2078 /* UIColor+AppColors.h */,
+				92300E1C1984A1E5006B2078 /* UIColor+AppColors.m */,
+				92300E1D1984A1E5006B2078 /* UIColor+Expanded.h */,
+				92300E1E1984A1E5006B2078 /* UIColor+Expanded.m */,
+				92300E1F1984A1E5006B2078 /* UIImage+ImageFromColor.h */,
+				92300E201984A1E5006B2078 /* UIImage+ImageFromColor.m */,
+				92300E211984A1E5006B2078 /* UIView+Tag.h */,
+				92300E221984A1E5006B2078 /* UIView+Tag.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		9280180D19846395002901F3 /* ExpenseTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9280182F19847869002901F3 /* Cells */,
 				9280180E198463B7002901F3 /* ExpenseViewController.h */,
 				9280180F198463B7002901F3 /* ExpenseViewController.m */,
 				92801810198463B7002901F3 /* ExpenseViewController.xib */,
 			);
 			name = ExpenseTableViewController;
+			sourceTree = "<group>";
+		};
+		9280182F19847869002901F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9280183019847889002901F3 /* ExpenseInfoCell.h */,
+				9280183119847889002901F3 /* ExpenseInfoCell.m */,
+				9280183219847889002901F3 /* ExpenseInfoCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		928671EB1983EC3100974D6B /* UIView+Tag */ = {
@@ -171,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				92877F4F1983B743007FB3F7 /* SberbankMobileMoneyTracker */,
+				92300E021984A18B006B2078 /* SberbankMobileMoneyTrackerToday */,
 				92877F4E1983B743007FB3F7 /* Products */,
 				54253365C4104F52B28FEFA7 /* Pods.xcconfig */,
 				0080898B3E7E48FBAE15462C /* Frameworks */,
@@ -181,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				92877F4D1983B743007FB3F7 /* SberbankMobileMoneyTracker.app */,
+				92300E001984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,6 +616,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		92300DFF1984A18B006B2078 /* SberbankMobileMoneyTrackerToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92300E0F1984A18B006B2078 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTrackerToday" */;
+			buildPhases = (
+				92300DFC1984A18B006B2078 /* Sources */,
+				92300DFD1984A18B006B2078 /* Frameworks */,
+				92300DFE1984A18B006B2078 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SberbankMobileMoneyTrackerToday;
+			productName = SberbankMobileMoneyTrackerToday;
+			productReference = 92300E001984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92877F701983B743007FB3F7 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTracker" */;
@@ -439,10 +642,13 @@
 				92877F4A1983B743007FB3F7 /* Frameworks */,
 				92877F4B1983B743007FB3F7 /* Resources */,
 				D8BA11D967F6485C801C4969 /* Copy Pods Resources */,
+				922ECBE419849D1B0032A81E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				92300E0B1984A18B006B2078 /* PBXTargetDependency */,
+				92300E0E1984A18B006B2078 /* PBXTargetDependency */,
 			);
 			name = SberbankMobileMoneyTracker;
 			productName = SberbankMobileMoneyTracker;
@@ -458,6 +664,9 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Empatika;
 				TargetAttributes = {
+					92300DFF1984A18B006B2078 = {
+						CreatedOnToolsVersion = 6.0;
+					};
 					92877F4C1983B743007FB3F7 = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -477,17 +686,27 @@
 			projectRoot = "";
 			targets = (
 				92877F4C1983B743007FB3F7 /* SberbankMobileMoneyTracker */,
+				92300DFF1984A18B006B2078 /* SberbankMobileMoneyTrackerToday */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		92300DFE1984A18B006B2078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92300E091984A18B006B2078 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92877F4B1983B743007FB3F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CB15E42E1984141300157FA4 /* NewExpenseViewController.xib in Resources */,
 				92877F8A1983BE08007FB3F7 /* CalendarView.xib in Resources */,
+				9280183419847889002901F3 /* ExpenseInfoCell.xib in Resources */,
 				92B83D191984032700AD72BC /* StartViewController.xib in Resources */,
 				92877F611983B743007FB3F7 /* Images.xcassets in Resources */,
 				CB9FD03A19841CA300FF6ED0 /* CategoryTypesTableViewCell.xib in Resources */,
@@ -531,6 +750,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		92300DFC1984A18B006B2078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92300E241984A1E5006B2078 /* CirclesView.m in Sources */,
+				92300E271984A1E5006B2078 /* UIColor+AppColors.m in Sources */,
+				92300E261984A1E5006B2078 /* NSArray+Functional.m in Sources */,
+				92300E281984A1E5006B2078 /* UIColor+Expanded.m in Sources */,
+				92300E251984A1E5006B2078 /* LabelOnCircle.m in Sources */,
+				92300E291984A1E5006B2078 /* UIImage+ImageFromColor.m in Sources */,
+				92300E071984A18B006B2078 /* TodayViewController.m in Sources */,
+				92300E2A1984A1E5006B2078 /* UIView+Tag.m in Sources */,
+				92300E231984A1E5006B2078 /* Circle.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92877F491983B743007FB3F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,6 +792,7 @@
 				92877F8E1983BEC9007FB3F7 /* Circle.m in Sources */,
 				92B83D15198402EE00AD72BC /* StartViewController.m in Sources */,
 				CBEFCC28198458320089D145 /* MoneyTrackerServerManager.m in Sources */,
+				9280183319847889002901F3 /* ExpenseInfoCell.m in Sources */,
 				CB9CAB191984038B009D9E8A /* CoreDataManager.m in Sources */,
 				92877F881983BD86007FB3F7 /* CalendarView.m in Sources */,
 				92B83D2219840AFF00AD72BC /* LabelOnCircle.m in Sources */,
@@ -565,7 +801,48 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		92300E0B1984A18B006B2078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92300DFF1984A18B006B2078 /* SberbankMobileMoneyTrackerToday */;
+			targetProxy = 92300E0A1984A18B006B2078 /* PBXContainerItemProxy */;
+		};
+		92300E0E1984A18B006B2078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92300DFF1984A18B006B2078 /* SberbankMobileMoneyTrackerToday */;
+			targetProxy = 92300E0D1984A18B006B2078 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		92300E101984A18B006B2078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SberbankMobileMoneyTrackerToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		92300E111984A18B006B2078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
+				INFOPLIST_FILE = SberbankMobileMoneyTrackerToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		92877F6E1983B743007FB3F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -649,11 +926,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -666,11 +950,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
 			};
 			name = Release;
@@ -678,6 +969,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		92300E0F1984A18B006B2078 /* Build configuration list for PBXNativeTarget "SberbankMobileMoneyTrackerToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92300E101984A18B006B2078 /* Debug */,
+				92300E111984A18B006B2078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		92877F481983B743007FB3F7 /* Build configuration list for PBXProject "SberbankMobileMoneyTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

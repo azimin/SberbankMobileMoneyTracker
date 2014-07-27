@@ -15,11 +15,14 @@
 @required
 - (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadNextViewAfterView:(UIView *)currentView;
 - (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadPreviousViewAfterView:(UIView *)currentView;
+- (void)infiniteScrollView:(InfiniteScrollView *)scrollView presentView:(UIView*)currentView;
 
 @end
 
 
 @interface InfiniteScrollView : UIScrollView
+
+@property (nonatomic, readonly) UIView *currentView;
 
 - (instancetype)initWithVisibleView:(UIView *)view dataSource:(id<InfiniteScrollViewDataSource>)source;
 

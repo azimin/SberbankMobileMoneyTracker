@@ -8,11 +8,14 @@
 
 #import "CalendarView.h"
 #import "CalendarCell.h"
+#import "CirclesView.h"
+#import "InfiniteScrollView.h"
 
-@interface CalendarView () <CalendarCellDelegat>
+@interface CalendarView () <CalendarCellDelegat, InfiniteScrollViewDataSource>
 
 @property (nonatomic) UIImageView *triangleIndicator;
 @property (nonatomic) NSArray *cellsArray;
+@property (nonatomic) InfiniteScrollView *infiniteScrollView;
 
 @end
 
@@ -56,37 +59,10 @@
 
 - (void)commonInit
 {
-    NSMutableArray *cells = [NSMutableArray array];
-    
-    for (NSInteger index = 0; index < 7; index ++) {
-        NSArray *values = @[];
-        NSString *day = @"-";
-        
-        if (index < self.arrayOfValues.count) {
-            values = self.arrayOfValues[index];
-        }
-        
-        if (index < self.numbers.count) {
-            day = [self.numbers[index] stringValue];
-        }
-        
-        CalendarCell *cell = [[CalendarCell alloc] initWithDayString:day andValues:values];
-        cell.tagPlus = index;
-        cell.delegate = self;
-        cell.center = CGPointMake(23 + 45 * index, cell.frame.size.height / 2);
-        [self addSubview:cell];
-        [cells addObject:cell];
-        
-        if (index == 6) {
-            continue;
-        }
-        
-        UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(cell.frame.origin.x + cell.frame.size.width, 36, 1, cell.frame.size.height - 36)];
-        seperator.backgroundColor = [UIColor mainGreyColor];
-        [self addSubview:seperator];
-    }
-    
-    self.cellsArray = cells;
+    self.infiniteScrollView = [[InfiniteScrollView alloc] initWithVisibleView:[self calendarCellsViewWithDates:self.numbers] dataSource:self];
+ //   self.infiniteScrollView.contentOffset = CGPointMake(self.infiniteScrollView.contentOffset.x + 320, self.infiniteScrollView.contentOffset.y);
+    [self addSubview:self.infiniteScrollView];
+    //[self addSubview:[self calendarCellsView]];
     
     self.triangleIndicator = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"img_calendar_selected_triangle"] imageWithOverlayColor:[UIColor mainGreyColor]]];
     self.triangleIndicator.frame = CGRectMake(0, 200, 28, 14);
@@ -96,7 +72,69 @@
     seperator.backgroundColor = [UIColor mainGreyColor];
     [self addSubview:seperator];
     
+    [self infiniteScrollView:self.infiniteScrollView presentView:self.infiniteScrollView.currentView];
     self.selectedIndex = 0;
+}
+
+- (UIView*)calendarCellsViewWithDates:(NSArray*)dates
+{
+    UIView *calendarCellsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+    calendarCellsView.dates = dates;
+    
+    NSMutableArray *cells = [NSMutableArray array];
+    
+    NSMutableArray *valuesArray = [NSMutableArray array];
+    for (NSInteger index = 0; index < 7; index ++)
+    {
+        NSMutableArray *values = [NSMutableArray array];
+        for (NSInteger index = 0; index < 4; index ++) {
+            [values addObject:@(arc4random() % 100)];
+        }
+        
+        [valuesArray addObject:values];
+    }
+    self.arrayOfValues = valuesArray;
+    
+    for (NSInteger index = 0; index < 7; index ++) {
+        NSArray *values = @[];
+        NSString *day = @"-";
+        
+        if (index < self.arrayOfValues.count) {
+            values = self.arrayOfValues[index];
+        }
+        
+        if (index < dates.count) {
+            day = [dates[index] stringValue];
+        }
+        
+        CalendarCell *cell = [[CalendarCell alloc] initWithDayString:day andValues:values];
+        cell.tagPlus = index;
+        cell.delegate = self;
+        cell.center = CGPointMake(23 + 45 * index, cell.frame.size.height / 2);
+        [calendarCellsView addSubview:cell];
+        [cells addObject:cell];
+        
+        if (index == 6) {
+            continue;
+        }
+        
+        if (index == 0) {
+        //    [cell selectCell:nil];
+        }
+        
+        UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(cell.frame.origin.x + cell.frame.size.width, 36, 1, cell.frame.size.height - 36)];
+        seperator.backgroundColor = [UIColor mainGreyColor];
+        [calendarCellsView addSubview:seperator];
+    }
+    
+    self.cellsArray = cells;
+    return calendarCellsView;
+}
+
+- (void)setDelegate:(id<CalendarViewDelegat>)delegate
+{
+    _delegate = delegate;
+    [self.delegate changeDownCirclesWithValues:self.arrayOfValues[self.selectedIndex]];
 }
 
 #pragma mark - Getters
@@ -123,7 +161,7 @@
 - (void)calendarCellDidSelect:(CalendarCell *)calendarCell
 {
     self.selectedIndex = calendarCell.tagPlus;
-    NSLog(@"%i", calendarCell.tagPlus);
+    [self.delegate changeDownCirclesWithValues:self.arrayOfValues[calendarCell.tagPlus]];
 }
 
 #pragma mark - Animation
@@ -173,6 +211,62 @@
     [self.triangleIndicator.layer addAnimation:boundsOvershootAnimation forKey:boundsOvershootAnimation.keyPath];
     
     [CATransaction commit];
+}
+
+- (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadNextViewAfterView:(UIView *)currentView
+{
+    return [self calendarCellsViewWithDates:[self calculateDatesAfter:currentView.dates]];
+}
+
+- (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadPreviousViewAfterView:(UIView *)currentView
+{
+    UIView *vi = [self calendarCellsViewWithDates:[self calculateDatesBefore:currentView.dates]];
+    NSLog(@"%@", vi.dates);
+    return vi;
+}
+
+- (void)infiniteScrollView:(InfiniteScrollView *)scrollView presentView:(UIView *)currentView
+{
+    for (UIView *vi in currentView.subviews) {
+        if ([vi isKindOfClass:[CalendarCell class]]) {
+            CalendarCell *cell = (CalendarCell*)vi;
+            if (cell.tagPlus == 0) {
+                [cell selectCell:nil];
+                return;
+            }
+            
+        }
+    }
+}
+
+- (NSArray*)calculateDatesBefore:(NSArray*)dates
+{
+    NSMutableArray *arr = [NSMutableArray array];
+    NSInteger firstDate = [dates[0] intValue];
+    for (int i = 0; i < 7; i++) {
+        if (firstDate - i - 1 < 1) {
+            [arr insertObject:@(30 + firstDate - i - 1) atIndex:0];
+        } else {
+            [arr insertObject:@(firstDate - i - 1) atIndex:0];
+        }
+    }
+    
+    return arr;
+}
+
+- (NSArray*)calculateDatesAfter:(NSArray*)dates
+{
+    NSMutableArray *arr = [NSMutableArray array];
+    NSInteger lastDate = [dates.lastObject intValue];
+    for (int i = 0; i < 7; i++) {
+        if (lastDate + i + 1 > 30) {
+            [arr addObject:@(lastDate + i + 1 - 30)];
+        } else {
+            [arr addObject:@(lastDate + i + 1)];
+        }
+    }
+    
+    return arr;
 }
 
 

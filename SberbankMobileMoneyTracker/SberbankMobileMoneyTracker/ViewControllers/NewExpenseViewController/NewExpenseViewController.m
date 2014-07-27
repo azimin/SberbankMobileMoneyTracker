@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *categoryTypeLabel;
 @property (weak, nonatomic) IBOutlet UITextField *valueTextField;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
-@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (nonatomic) Circle *categoryCircle;
 
 @property (nonatomic) NSInteger selectedIndex;
@@ -37,7 +36,6 @@
     
     [self.categoryButton addTarget:self action:@selector(goToCategoryTypesViewController) forControlEvents:UIControlEventTouchUpInside];
     [self.cancelButton addTarget:self action:@selector(cancelButtonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
-    [self.confirmButton addTarget:self action:@selector(confirmButtonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
     
     UIImageView *imgView = [[UIImageView alloc] initWithImage:self.backgroundImage];
     imgView.frame = [UIScreen mainScreen].bounds;

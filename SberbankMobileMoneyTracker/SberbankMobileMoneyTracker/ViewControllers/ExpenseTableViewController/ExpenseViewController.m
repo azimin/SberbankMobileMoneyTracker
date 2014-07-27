@@ -7,11 +7,12 @@
 //
 
 #import "ExpenseViewController.h"
-#import "CategoryTypesTableViewCell.h"
+#import "ExpenseInfoCell.h"
 
 @interface ExpenseViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSMutableArray *expenses;
 
 @end
 
@@ -21,6 +22,7 @@
     [super viewDidLoad];
     
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:self.bgImage];
     bgImageView.frame = [UIScreen mainScreen].bounds;
@@ -28,6 +30,11 @@
     
     self.tableView.tableHeaderView = [self tableViewHeaderView];
     // Do any additional setup after loading the view from its nib.
+    
+    self.expenses = [NSMutableArray array];
+    [self.expenses addObject:@{@"value":@"100", @"name": @"Swag"}];
+    [self.expenses addObject:@{@"value":@"1000", @"name": @"McDonalds"}];
+    [self.expenses addObject:@{@"value":@"500", @"name": @"Car rent"}];
 }
 
 #pragma mark - Custom View
@@ -66,23 +73,24 @@
 #pragma mark - TableView Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.expenses.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90;
+    return 87;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CategoryTypesTableViewCell *cell = (CategoryTypesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"categoryTypesCell"];
+    ExpenseInfoCell *cell = (ExpenseInfoCell *)[tableView dequeueReusableCellWithIdentifier:@"ExpenseInfoCell"];
     
     if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"CategoryTypesTableViewCell" owner:self options:nil] firstObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"ExpenseInfoCell" owner:self options:nil] firstObject];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.categoryCircle.color = (UIColor*)[UIColor circleColors][indexPath.row];
+    cell.nameLabel.text = self.expenses[indexPath.row][@"name"];
+    cell.valueLabel.text = self.expenses[indexPath.row][@"value"];
     
    // cell.categoryNameLabel.text = self.categoryNames[indexPath.row];
     
