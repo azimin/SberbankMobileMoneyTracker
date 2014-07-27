@@ -687,6 +687,7 @@
 					};
 					92877F4C1983B743007FB3F7 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = AM7RDT263T;
 					};
 				};
 			};
@@ -946,7 +947,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -954,10 +955,10 @@
 				);
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "74B12DAE-BB69-4152-B8C5-668871BAE8B3";
 				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -970,7 +971,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bayram Annakov (NU8R6C3SJ2)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -978,10 +979,10 @@
 				);
 				GCC_PREFIX_HEADER = SberbankMobileMoneyTracker/Prefix.pch;
 				INFOPLIST_FILE = SberbankMobileMoneyTracker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "74B12DAE-BB69-4152-B8C5-668871BAE8B3";
 				SWIFT_OBJC_BRIDGING_HEADER = "SberbankMobileMoneyTracker/SberbankMobileMoneyTracker-Bridging-Header.h";
 			};
 			name = Release;
@@ -996,6 +997,7 @@
 				92300E111984A18B006B2078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92877F481983B743007FB3F7 /* Build configuration list for PBXProject "SberbankMobileMoneyTracker" */ = {
 			isa = XCConfigurationList;

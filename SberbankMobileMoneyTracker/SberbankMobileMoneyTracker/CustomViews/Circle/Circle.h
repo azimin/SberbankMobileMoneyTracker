@@ -15,6 +15,7 @@
 
 @property (nonatomic) CGFloat radius;
 @property (nonatomic) UIColor *color;
+@property (nonatomic, getter = isHovering) BOOL hovering;
 
 - (void)bounceAppearWithDuration: (CGFloat)duration;
 - (void)changeRadius: (CGFloat)radius
