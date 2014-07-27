@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CirclesView.h"
+#import "Circle.h"
+
+@protocol CalendarViewDelegat;
 
 @interface CalendarView : UIView
 
@@ -16,5 +20,12 @@
 
 - (instancetype)initWithDays: (NSArray*)numbers
             andArrayOfValues: (NSArray*)arrayOfValues;
+@property (nonatomic, assign) id <CalendarViewDelegat> delegate;
 
 @end
+
+
+@protocol CalendarViewDelegat <NSObject>
+- (void)changeDownCirclesWithValues:(NSArray*)values;
+@end
+

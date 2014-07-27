@@ -19,6 +19,14 @@
 
 @implementation CalendarCell
 
+- (id)copyWithZone:(NSZone *)zone
+{
+    CalendarCell *another = [[CalendarCell alloc] initWithDayString:self.dayString andValues:self.values];
+    another.tagPlus = self.tagPlus;
+    
+    return another;
+}
+
 - (instancetype)init
 {
     return [self initWithFrame:CGRectZero];
@@ -132,6 +140,8 @@
         [[NSNotificationCenter defaultCenter] removeObserver:self];
         return;
     }
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [[NSNotificationCenter defaultCenter] postNotificationName: kNotificationCalendarCellDidSelect
                                                         object: nil];

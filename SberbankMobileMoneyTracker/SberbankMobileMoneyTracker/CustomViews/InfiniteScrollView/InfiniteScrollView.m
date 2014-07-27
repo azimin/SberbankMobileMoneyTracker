@@ -44,6 +44,8 @@
         [self addSubview:vi];
     }
     
+    [self changeContentFrames];
+    
     return self;
 }
 
@@ -58,46 +60,40 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     
-    BOOL isEnd = FALSE;
-    
-    //right
     if ( scrollView.contentOffset.x > scrollView.frame.size.width ) {
-        UIView *newView = [self.infiniteDataSource infiniteScrollView:self loadNextViewAfterView:self.itemsView[1]];
-        if ( !newView ) {
-            isEnd = TRUE;
-        } else {
-            int lastIndex = (int)[self.itemsView count] - 1;
-            
-            [self.itemsView[0] removeFromSuperview];
-            for(int i = 0; i < lastIndex; i++)
-                self.itemsView[i] = self.itemsView[i + 1];
-            
-            self.itemsView[lastIndex] = newView;
-            [self addSubview:newView];
-        }
+        UIView *newView = [self.infiniteDataSource infiniteScrollView:self loadNextViewAfterView:self.itemsView[2]];
+        int lastIndex = (int)[self.itemsView count] - 1;
+        
+        [self.itemsView[0] removeFromSuperview];
+        for(int i = 0; i < lastIndex; i++)
+            self.itemsView[i] = self.itemsView[i + 1];
+        
+        self.itemsView[lastIndex] = newView;
+        [self addSubview:newView];
+
     }
     
     //left
     if ( scrollView.contentOffset.x < scrollView.frame.size.width ) {
-        UIView *newView = [self.infiniteDataSource infiniteScrollView:self loadPreviousViewAfterView:self.itemsView[1]];
-        if ( !newView ) {
-            isEnd = TRUE;
-        } else {
-            int lastIndex = (int)[self.itemsView count] - 1;
-            [self.itemsView[lastIndex] removeFromSuperview];
-            for(int i = lastIndex; i > 0; i--)
-                self.itemsView[i] = self.itemsView[i - 1];
-            
-            self.itemsView[0] = newView;
-            [self addSubview:newView];
-        }
+        UIView *newView = [self.infiniteDataSource infiniteScrollView:self loadPreviousViewAfterView:self.itemsView[0]];
+        int lastIndex = (int)[self.itemsView count] - 1;
+        [self.itemsView[lastIndex] removeFromSuperview];
+        for(int i = lastIndex; i > 0; i--)
+            self.itemsView[i] = self.itemsView[i - 1];
+        
+        self.itemsView[0] = newView;
+        [self addSubview:newView];
     }
     
-    if ( !isEnd ) {
-        [self changeContentFrames];
-        [self scrollRectToVisible:CGRectMake(320, 0, 320, 568) animated:NO];
-    }
-    
+    [self changeContentFrames];
+    [self scrollRectToVisible:CGRectMake(320, 0, 320, 568) animated:NO];
+    [self.infiniteDataSource infiniteScrollView:self presentView:self.itemsView[1]];
+
+}
+
+- (UIView *)currentView
+{
+    return self.itemsView[1];
 }
 
 - (void)changeContentFrames{

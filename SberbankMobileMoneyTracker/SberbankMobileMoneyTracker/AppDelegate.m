@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "StartViewController.h"
 
-@interface AppDelegate ()
+#import <Parse/Parse.h>
+
+@interface AppDelegate () <UIApplicationDelegate>
 
 @end
 
@@ -22,6 +24,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    
+    [Parse setApplicationId: @"L4FDuWsxclFuVd8b45zogsjjfA4ERu9cJonxgAEo"
+                  clientKey: @"lcXTsGgB7lY12ZRq4Tx3SXFHSt57t6KQdCxDN52c"];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert  categories:nil]];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+
     [self openMainView];
     
     return YES;
@@ -59,6 +68,29 @@
     [self.window makeKeyAndVisible];
 }
 
+#pragma mark - UIApplicaion Delegat
+
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"%@",error);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
 
 
 @end

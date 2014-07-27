@@ -123,7 +123,7 @@
             y = height / 3.35;
         } else {
             x = width / 1.52;
-            y = height / 1.45;
+            y = height / 1.35;
         }
     }
     
@@ -133,8 +133,8 @@
 - (NSArray*)circleSizes
 {
     CGFloat minSide = MIN(self.frame.size.width, self.frame.size.height);
-    CGFloat maxValue = minSide / 4.6;
-    CGFloat minValue = minSide / 7.5;
+    CGFloat maxValue = minSide / 5.0;
+    CGFloat minValue = minSide / 7.8;
     CGFloat delta = (maxValue - minValue) / 3;
     
     return @[@(maxValue),

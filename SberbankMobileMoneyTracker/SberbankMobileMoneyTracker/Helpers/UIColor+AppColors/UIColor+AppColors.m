@@ -15,7 +15,7 @@
     return @[[UIColor colorWithHexString:@"669129"],
              [UIColor colorWithHexString:@"ca4e4e"],
              [UIColor colorWithHexString:@"6e92c9"],
-             [UIColor colorWithHexString:@"9bc663"]];
+             [UIColor colorWithHexString:@"7951a6"]];
 }
 
 + (UIColor*)mainGreyColor
@@ -25,11 +25,11 @@
 
 + (UIColor *)selectionColorFromColor:(UIColor*)color
 {
-    float hue = 0;
-    float saturation = 0;
-    float brightness = 0;
-    float newBrightness = 0;
-    float alpha = 1.0;
+    CGFloat hue = 0;
+    CGFloat saturation = 0;
+    CGFloat brightness = 0;
+    CGFloat newBrightness = 0;
+    CGFloat alpha = 1.0;
     
     BOOL b = [color getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha];
     newBrightness = (brightness > 0.55) ? brightness * 0.9 - 0.25 : brightness * 1.1 + 0.25;
