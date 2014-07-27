@@ -146,4 +146,29 @@
     }
 }
 
+- (NSArray*)sortDictsByNameWithDefaultKeys:(NSArray*)arrOfDics
+{
+    NSMutableArray *nArr = [NSMutableArray array];
+    NSMutableArray *cArr = [NSMutableArray arrayWithArray:[NSArray categoriesArray]];
+    
+    int helper = 0;
+    while (nArr.count != arrOfDics.count || cArr.count != 0) {
+        if (helper == 40) {
+            return nArr;
+        }
+        
+        for (NSDictionary *dic in arrOfDics) {
+            if ([[dic objectForKey:@"name"] isEqualToString:cArr.firstObject]) {
+                [nArr addObject:dic];
+                [cArr removeObjectAtIndex:0];
+                continue;
+            }
+        }
+        
+        helper++;
+    }
+    
+    return nArr;
+}
+
 @end

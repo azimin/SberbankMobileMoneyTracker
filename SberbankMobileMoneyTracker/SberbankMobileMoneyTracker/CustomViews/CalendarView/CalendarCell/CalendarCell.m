@@ -62,6 +62,10 @@
 
 - (void)commonInit
 {
+    if ( [self allEqualZero:self.values] ) {
+        self.values = @[];
+    }
+    
     self.selected = NO;
     // Day label
     self.dayLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 36)];
@@ -74,7 +78,7 @@
     NSArray *arrOfSizes = [self circleSizes:YES];
     
     if ( self.values.count != arrOfSizes.count ) {
-        NSArray *arrOfSizes = [self circleSizes:NO];
+        arrOfSizes = [self circleSizes:NO];
     }
     
     NSArray *sortedValues = [self.values sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -98,6 +102,9 @@
             index = 3;
         } else {
             index = [sortedValues indexOfObject:self.values[i]];
+            if ([self.values[i] floatValue] == 0) {
+                index = 3;
+            }
         }
         
         Circle *circle = [[Circle alloc] initWithRadius: [arrOfSizes[index] floatValue]
@@ -114,6 +121,17 @@
     UIButton *but = [[UIButton alloc] initWithFrame:self.bounds];
     [but addTarget:self action:@selector(selectCell:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:but];
+}
+
+- (BOOL)allEqualZero:(NSArray*)arr
+{
+    for (NSNumber *num in arr) {
+        if ([num floatValue] != 0) {
+            return FALSE;;
+        }
+    }
+    
+    return TRUE;
 }
 
 #pragma mark - Getters

@@ -94,6 +94,7 @@
                                  @"date": [NSDate date]};
     
     [[MoneyTrackerServerManager sharedInstance] sendNewExpense:expenseDic withSuccess:^{
+        [[CoreDataManager sharedInstance] fetchExpensesStatistic];
         [self dismissViewControllerAnimated:YES completion:nil];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } failure:^(NSError *error) {

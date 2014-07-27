@@ -14,6 +14,7 @@
 
 @property (nonatomic) NSString *dayString;
 @property (nonatomic) NSArray *values;
+@property (nonatomic) NSArray *info;
 @property (nonatomic, getter = isSelected) BOOL selected;
 
 @property (nonatomic, assign) id <CalendarCellDelegat> delegate;

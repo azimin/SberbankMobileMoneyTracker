@@ -20,4 +20,6 @@
 
 - (void)clearStore;
 
+- (NSArray*)sortDictsByNameWithDefaultKeys:(NSArray*)arrOfDics;
+
 @end

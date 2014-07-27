@@ -11,5 +11,6 @@
 @interface ExpenseViewController : UIViewController
 
 @property (nonatomic) UIImage *bgImage;
+@property (nonatomic) NSArray *infos;
 
 @end

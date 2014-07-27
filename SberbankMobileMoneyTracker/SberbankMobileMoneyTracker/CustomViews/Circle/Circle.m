@@ -46,6 +46,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 {
     Circle *another = [[Circle alloc] initWithRadius:self.radius andCenter:self.center];
     another.color = self.color;
+    another.tagPlus = self.tagPlus;
     
     return another;
 }
@@ -144,7 +145,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     
     if ( hovering )
     {
-        [self hoverNearPoint:self.center];
+        //[self hoverNearPoint:self.center];
     }
 }
 

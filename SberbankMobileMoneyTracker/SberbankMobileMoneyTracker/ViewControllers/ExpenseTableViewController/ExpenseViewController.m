@@ -22,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ( !self.infos ) {
+        self.infos = @[];
+    }
+    
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -80,7 +84,7 @@
 #pragma mark - TableView Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.expenses.count;
+    return self.infos.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,8 +100,24 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.nameLabel.text = self.expenses[indexPath.row][@"name"];
-    cell.valueLabel.text = self.expenses[indexPath.row][@"value"];
+    NSString *disct;
+    
+    if ([self.infos[indexPath.row][@"description"] isKindOfClass:[NSString class]]) {
+        disct = self.infos[indexPath.row][@"description"];
+    } else {
+        disct = [self.infos[indexPath.row][@"description"] stringValue];
+    }
+    
+    NSString *value;
+    
+    if ([self.infos[indexPath.row][@"value"] isKindOfClass:[NSString class]]) {
+        value = self.infos[indexPath.row][@"value"];
+    } else {
+        value = [self.infos[indexPath.row][@"value"] stringValue];
+    }
+    
+    cell.nameLabel.text = disct;
+    cell.valueLabel.text = value;
     
    // cell.categoryNameLabel.text = self.categoryNames[indexPath.row];
     

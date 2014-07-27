@@ -16,6 +16,7 @@
 @property (nonatomic) UIImageView *triangleIndicator;
 @property (nonatomic) NSArray *cellsArray;
 @property (nonatomic) InfiniteScrollView *infiniteScrollView;
+@property (nonatomic) NSUInteger currentDayMove;
 
 @end
 
@@ -59,7 +60,8 @@
 
 - (void)commonInit
 {
-    self.infiniteScrollView = [[InfiniteScrollView alloc] initWithVisibleView:[self calendarCellsViewWithDates:self.numbers] dataSource:self];
+    self.currentDayMove = 0;
+    self.infiniteScrollView = [[InfiniteScrollView alloc] initWithVisibleView:[self calendarCellsViewWithDates:self.numbers type:0] dataSource:self];
  //   self.infiniteScrollView.contentOffset = CGPointMake(self.infiniteScrollView.contentOffset.x + 320, self.infiniteScrollView.contentOffset.y);
     [self addSubview:self.infiniteScrollView];
     //[self addSubview:[self calendarCellsView]];
@@ -76,38 +78,35 @@
     self.selectedIndex = 0;
 }
 
-- (UIView*)calendarCellsViewWithDates:(NSArray*)dates
+- (UIView*)calendarCellsViewWithDates: (NSArray*)dates
+                                 type: (NSInteger)type
 {
+    NSInteger dayMove = self.currentDayMove;
+    dayMove += (type == 1) ? 7 : (type == -1) ? -7 : 0;
+    NSLog(@"%i", dayMove);
     UIView *calendarCellsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
     calendarCellsView.dates = dates;
     
     NSMutableArray *cells = [NSMutableArray array];
     
-    NSMutableArray *valuesArray = [NSMutableArray array];
-    for (NSInteger index = 0; index < 7; index ++)
-    {
-        NSMutableArray *values = [NSMutableArray array];
-        for (NSInteger index = 0; index < 4; index ++) {
-            [values addObject:@(arc4random() % 100)];
-        }
-        
-        if (index == 5) {
-            [valuesArray addObject:@[]];
-        } else {
-            [valuesArray addObject:values];
-        }
-        
-        
-    }
-    self.arrayOfValues = valuesArray;
     
     for (NSInteger index = 0; index < 7; index ++) {
         NSArray *values = @[];
         NSString *day = @"-";
         
-        if (index < self.arrayOfValues.count) {
-            values = self.arrayOfValues[index];
+        NSArray *arr = [[CoreDataManager sharedInstance].expensesWithDayMove objectForKey:@(dayMove + index)];
+        NSMutableArray *mArr = [NSMutableArray array];
+        
+        NSArray *sArr = [NSMutableArray array];
+        
+        if (arr) {
+            sArr = [[CoreDataManager sharedInstance] sortDictsByNameWithDefaultKeys:arr];
+            for (NSDictionary *dic in sArr) {
+                [mArr addObject:@([[dic objectForKey:@"value"] floatValue])];
+            }
         }
+    
+        values = mArr;
         
         if (index < dates.count) {
             day = [dates[index] stringValue];
@@ -116,17 +115,11 @@
         CalendarCell *cell = [[CalendarCell alloc] initWithDayString:day andValues:values];
         cell.tagPlus = index;
         cell.delegate = self;
+        cell.info = sArr;
         cell.center = CGPointMake(23 + 45 * index, cell.frame.size.height / 2);
         [calendarCellsView addSubview:cell];
         [cells addObject:cell];
         
-        if (index == 6) {
-            continue;
-        }
-        
-        if (index == 0) {
-        //    [cell selectCell:nil];
-        }
         
         UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(cell.frame.origin.x + cell.frame.size.width, 36, 1, cell.frame.size.height - 36)];
         seperator.backgroundColor = [UIColor mainGreyColor];
@@ -140,7 +133,7 @@
 - (void)setDelegate:(id<CalendarViewDelegat>)delegate
 {
     _delegate = delegate;
-    [self.delegate changeDownCirclesWithValues:self.arrayOfValues[self.selectedIndex]];
+    [self.delegate changeDownCirclesWithValues:nil andInfos:nil];
 }
 
 #pragma mark - Getters
@@ -167,7 +160,7 @@
 - (void)calendarCellDidSelect:(CalendarCell *)calendarCell
 {
     self.selectedIndex = calendarCell.tagPlus;
-    [self.delegate changeDownCirclesWithValues:self.arrayOfValues[calendarCell.tagPlus]];
+    [self.delegate changeDownCirclesWithValues:calendarCell.values andInfos:calendarCell.info];
 }
 
 #pragma mark - Animation
@@ -219,15 +212,29 @@
     [CATransaction commit];
 }
 
+BOOL firstNextAppear = TRUE;
+BOOL firstPrevAppear = TRUE;
+
 - (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadNextViewAfterView:(UIView *)currentView
 {
-    return [self calendarCellsViewWithDates:[self calculateDatesAfter:currentView.dates]];
+    if (firstNextAppear) {
+        firstNextAppear = FALSE;
+    } else {
+        self.currentDayMove += 7;
+    }
+    
+    return [self calendarCellsViewWithDates:[self calculateDatesAfter:currentView.dates] type:1];
 }
 
 - (UIView *)infiniteScrollView:(InfiniteScrollView *)scrollView loadPreviousViewAfterView:(UIView *)currentView
 {
-    UIView *vi = [self calendarCellsViewWithDates:[self calculateDatesBefore:currentView.dates]];
-    NSLog(@"%@", vi.dates);
+    if (firstPrevAppear) {
+        firstPrevAppear = FALSE;
+    } else {
+        self.currentDayMove -= 7;
+    }
+    
+    UIView *vi = [self calendarCellsViewWithDates:[self calculateDatesBefore:currentView.dates] type:-1];
     return vi;
 }
 

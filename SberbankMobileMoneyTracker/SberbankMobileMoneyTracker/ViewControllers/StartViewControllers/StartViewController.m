@@ -22,6 +22,7 @@
 @property (nonatomic) CirclesView *calendarCirclesView;
 
 @property (nonatomic) NSArray *currentViewValues;
+@property (nonatomic) NSArray *currentViewInfos;
 
 @property (nonatomic) NSInteger currentIndex;
 
@@ -31,37 +32,57 @@
 
 @implementation StartViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (self.currentIndex == 1) {
+        [self updateData];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.currentViewValues = @[@(0), @(0), @(0), @(0)];
-    
-    self.circlesView = [[CirclesView alloc] initWithValues:self.currentViewValues andFrame:CGRectMake(0, 122, 320, 285)];
-    self.circlesView.delegate = self;
-    [self.view addSubview:self.circlesView];
     
     MainViewNavigation *mainNavigation = [[MainViewNavigation alloc] initWithTitles:@[@"Week", @"Day"] selectedIndex:0 andDelegat:self];
     [self.view insertSubview:mainNavigation atIndex:0];
     
     if ( ![CoreDataManager sharedInstance].expenses || [CoreDataManager sharedInstance].expenses.count == 0 ) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+     //   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [[MoneyTrackerServerManager sharedInstance] fetchAllStatisticWithSuccess:^(NSArray *resultStatistic) {
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+       //     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
             
-            NSArray *arr = [[CoreDataManager sharedInstance].expensesWithDayMove objectForKey:@(0)];
-            NSLog(@"%@", [CoreDataManager sharedInstance].expensesWithDayMove);
-            if (arr) {
-                NSMutableArray *currentValues = [NSMutableArray array];
-                for (NSDictionary *dic in arr) {
-                  /*  if (<#condition#>) {
-                        <#statements#>
-                    }*/
-                }
-            }
+            [self updateData];
+            [self updateCirclesViewOnThisView];
             
         } failure:^(NSError *error) {
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+         //   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         }];
     }
+}
+
+- (void)updateData
+{
+    NSArray *arr = [[CoreDataManager sharedInstance].expensesWithDayMove objectForKey:@(0)];
+    if (arr) {
+        NSArray *sArr = [[CoreDataManager sharedInstance] sortDictsByNameWithDefaultKeys:arr];
+        NSMutableArray *mArr = [NSMutableArray array];
+        for (NSDictionary *dic in sArr) {
+            [mArr addObject:@([[dic objectForKey:@"value"] floatValue])];
+        }
+        
+        self.currentViewInfos = sArr;
+        self.currentViewValues = mArr;
+    }
+    
+    [self updateCirclesViewOnThisView];
+}
+
+- (void)updateCirclesViewOnThisView
+{
+    [self.circlesView removeFromSuperview];
+    self.circlesView = [[CirclesView alloc] initWithValues:self.currentViewValues andFrame:CGRectMake(0, 122, 320, 285)];
+    self.circlesView.delegate = self;
+    [self.view addSubview:self.circlesView];
 }
 
 - (void)buttonClicked
@@ -131,14 +152,14 @@
     }
     
     if (index == 1) {
-        [self.circlesView removeFromSuperview];
+        
+       
+        
         [self.circleButton removeFromSuperview];
         
         [self createCircleButton];
         
-        self.circlesView = [[CirclesView alloc] initWithValues:self.currentViewValues andFrame:CGRectMake(0, 122, 320, 285)];
-        self.circlesView.delegate = self;
-        [self.view addSubview:self.circlesView];
+        [self updateData];
         
         self.circleButton.center = CGPointMake(self.view.center.x, self.view.frame.size.height + 100);
         [UIView animateWithDuration:0.2 animations:^{
@@ -171,7 +192,7 @@
         }
         
         
-        self.calendar = [[CalendarView alloc] initWithDays:@[@(10), @(11), @(12), @(13), @(14), @(15), @(16)] andArrayOfValues:valuesArray];
+        self.calendar = [[CalendarView alloc] initWithDays:@[@(27), @(28), @(29), @(30), @(31), @(1), @(2)] andArrayOfValues:valuesArray];
         self.calendar.delegate = self;
         self.calendar.center = CGPointMake(self.view.center.x - directipn * 320, self.view.center.y - 100);
         [self.view addSubview:self.calendar];
@@ -212,6 +233,9 @@
     
     ExpenseViewController *newExpenseViewController = [[ExpenseViewController alloc] initWithNibName:@"ExpenseViewController" bundle:nil];
     newExpenseViewController.bgImage = image;
+    if (self.currentViewInfos.count > circle.tagPlus && self.currentViewInfos[circle.tagPlus][@"expenses"]) {
+        newExpenseViewController.infos = self.currentViewInfos[circle.tagPlus][@"expenses"];
+    }
     [self presentViewController:newExpenseViewController animated:NO completion:^{
         [circle removeFromSuperview];
         self.isColorTableOpen = FALSE;
@@ -229,7 +253,21 @@
 
 #pragma mark - CalendarViewDelegat
 
-- (void)changeDownCirclesWithValues:(NSArray*)values {
+- (void)changeDownCirclesWithValues:(NSArray*)values andInfos:(NSArray*)infos {
+    if ( !values ) {
+        values = self.currentViewValues;
+    }
+    
+    if ( !infos ) {
+        infos = self.currentViewInfos;
+    } else {
+        self.currentViewInfos = infos;
+    }
+    
+    if ( infos.count != 4 ) {
+        infos = @[@[], @[], @[], @[]];
+    }
+    
     [self.calendarCirclesView removeFromSuperview];
     self.calendarCirclesView = [[CirclesView alloc] initWithValues:values andFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 280, 320, 260)];
     self.calendarCirclesView.delegate = self;

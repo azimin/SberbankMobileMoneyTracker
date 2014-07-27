@@ -26,6 +26,8 @@
 
 
 @protocol CalendarViewDelegat <NSObject>
-- (void)changeDownCirclesWithValues:(NSArray*)values;
+
+- (void)changeDownCirclesWithValues:(NSArray*)values andInfos:(NSArray*)infos;
+
 @end
 
