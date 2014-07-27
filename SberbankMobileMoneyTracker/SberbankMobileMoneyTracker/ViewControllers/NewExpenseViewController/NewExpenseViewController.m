@@ -10,8 +10,6 @@
 #import "CategoryTypesTableViewCell.h"
 #import "Circle.h"
 
-#import "MoneyTrackerServerManager.h"
-#import "CoreDataManager.h"
 
 @interface NewExpenseViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *categoryButton;
@@ -34,8 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.valueTextField.delegate = self;
     
     [self.categoryButton addTarget:self action:@selector(goToCategoryTypesViewController) forControlEvents:UIControlEventTouchUpInside];
     [self.cancelButton addTarget:self action:@selector(cancelButtonTouchUpInside) forControlEvents:UIControlEventTouchUpInside];
@@ -78,17 +74,6 @@
     [self.contentView addSubview:self.circleButton];
     
     self.selectedIndex = 2;
-    
-    /*[[MoneyTrackerServerManager sharedInstance] sendNewExpense:@{@"category": @"Home",
-                                                                @"value": @(1111),
-                                                                @"description": @"IIko",
-                                                                 @"date": [NSDate dateWithTimeIntervalSince1970:([[NSDate date] timeIntervalSince1970] - 86400)]}];*/
-                                                                
-    [[MoneyTrackerServerManager sharedInstance] fetchAllStatistic];
-    //[[CoreDataManager sharedInstance] fetchExpensesStatistic];
-    //[[CoreDataManager sharedInstance] addExpense:117.f toCategory:@"Health" withDescription:@"Starbucks" atDate:[NSDate date]];
-    //[[CoreDataManager sharedInstance] addExpense:1000.f toCategory:@"Fun" withDescription:@"Starbucks" atDate:[NSDate date]];
-    //[[CoreDataManager sharedInstance] addExpense:5.f toCategory:@"Home" withDescription:@"Starbucks" atDate:[NSDate date]];
     
 }
 

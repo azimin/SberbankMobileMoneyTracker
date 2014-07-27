@@ -8,30 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-@class MoneyTrackerServerManager;
-@protocol MoneyTrackerServerDelegate <NSObject>
-
-@optional
-- (void)MoneyTrackerServerManagerSendNewExpenseWithSuccess:(MoneyTrackerServerManager *)manager;
-- (void)MoneyTrackerServerManager:(MoneyTrackerServerManager *)manager newExpenseSendingDidFailWithError:(NSError *)error;
-
-- (void)MoneyTrackerServerManager:(MoneyTrackerServerManager *)manager fetchingStatisticDidFailWithError:(NSError *)error;
-
-@required
-- (void)MoneyTrackerServerManager:(MoneyTrackerServerManager *)manager DidFetchStatisticWithResult:(NSArray *)resultDictionary;
-
-@end
-
 
 @interface MoneyTrackerServerManager : NSObject
 
-@property (weak, nonatomic) id<MoneyTrackerServerDelegate> delegate;
-
 + (instancetype)sharedInstance;
 
-- (void)sendNewExpense:(NSDictionary *)expenseDictionary;
-- (void)fetchStatisticInIntervalFrom:(NSDate *)fromDate to:(NSDate *)toDate;
-- (void)fetchStatisticForDay:(NSDate *)date;
-- (void)fetchAllStatistic;
+- (void)sendNewExpense:(NSDictionary *)expenseDictionary
+           withSuccess:(void (^)())success
+               failure:(void (^)(NSError *error))failure;
+
+- (void)fetchStatisticInIntervalFrom:(NSDate *)fromDate
+                                  to:(NSDate *)toDate
+                         withSuccess:(void(^)(NSArray *resultStatistic))success
+                             failure:(void (^)(NSError *error))failure;
+
+- (void)fetchStatisticForDay:(NSDate *)date
+                 withSuccess:(void(^)(NSArray *resultStatistic))success
+                     failure:(void (^)(NSError *error))failure;
+
+- (void)fetchAllStatisticWithSuccess:(void(^)(NSArray *resultStatistic))success
+                             failure:(void (^)(NSError *error))failure;
 
 @end

@@ -62,6 +62,7 @@
 + (NSArray*)categoriesArray
 {
     return @[@"Home", @"Health", @"Food", @"Fun"];
+    //return @[@"Дом", @"Здоровье", @"Еда", @"Развлечения"];
 }
 
 @end
