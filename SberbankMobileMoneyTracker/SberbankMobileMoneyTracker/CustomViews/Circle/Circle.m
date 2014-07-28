@@ -35,6 +35,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 @property (nonatomic) SEL selector;
 @property (nonatomic) UILongPressGestureRecognizer
  *pressGester;
+@property (nonatomic) CGPoint currentPoint;
 
 @property (nonatomic) BOOL isTouchBegin;
 
@@ -145,25 +146,27 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     
     if ( hovering )
     {
-        //[self hoverNearPoint:self.center];
+        self.currentPoint = self.center;
+        [self hoverNearPoint];
     }
 }
 
-- (void)hoverNearPoint:(CGPoint)point
+
+- (void)hoverNearPoint
 {
-    CGFloat duration = drand48() * 1.4 + 1.4;
-    CGFloat xCoordinateMovement = -8 + drand48() * 16;
-    CGFloat yCoordinateMovement = -8 + drand48() * 16;
-    CGPoint cPoint = point;
+    CGFloat duration = drand48() * 1.8 + 1.0;
+    CGFloat xCoordinateMovement = -13 + drand48() * 26;
+    CGFloat yCoordinateMovement = -13 + drand48() * 26;
     
-    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.center = CGPointMake(cPoint.x + xCoordinateMovement,
-                                  cPoint.y + yCoordinateMovement);
+    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction  animations:^{
+        self.center = CGPointMake(self.currentPoint.x + xCoordinateMovement,
+                                  self.currentPoint.y + yCoordinateMovement);
     } completion:^(BOOL finished) {
-        if (self.hovering) {
-            [self hoverNearPoint:cPoint];
+        if (self.hovering && self.superview) {
+            [self performSelector:@selector(hoverNearPoint) withObject:nil afterDelay:0.25];
         }
     }];
+    
 }
 
 #pragma mark - Animation

@@ -10,7 +10,6 @@
 #import "UIImage+ImageFromColor.h"
 #import "UIColor+Expanded.h"
 #import "UIColor+AppColors.h"
-
 @import QuartzCore;
 
 // Scale points
@@ -39,6 +38,7 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
 @property (nonatomic) SEL selector;
 @property (nonatomic) UILongPressGestureRecognizer
  *pressGester;
+@property (nonatomic) CGPoint currentPoint;
 
 @property (nonatomic) BOOL isTouchBegin;
 
@@ -140,6 +140,35 @@ ScalePoints ScalePointMale(CGFloat x, CGFloat y, CGFloat z, CGFloat k) {
     } else {
         self.backgroundColor = color;
     }
+}
+
+- (void)setHovering:(BOOL)hovering
+{
+    _hovering = hovering;
+    
+    if ( hovering )
+    {
+        self.currentPoint = self.center;
+        [self hoverNearPoint];
+    }
+}
+
+
+- (void)hoverNearPoint
+{
+    CGFloat duration = drand48() * 1.7 + 1.1;
+    CGFloat xCoordinateMovement = -13 + drand48() * 26;
+    CGFloat yCoordinateMovement = -13 + drand48() * 26;
+    
+    [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionAllowUserInteraction  animations:^{
+        self.center = CGPointMake(self.currentPoint.x + xCoordinateMovement,
+                                  self.currentPoint.y + yCoordinateMovement);
+    } completion:^(BOOL finished) {
+        if (self.hovering && self.superview) {
+            [self performSelector:@selector(hoverNearPoint) withObject:nil afterDelay:0.25];
+        }
+    }];
+    
 }
 
 #pragma mark - Animation

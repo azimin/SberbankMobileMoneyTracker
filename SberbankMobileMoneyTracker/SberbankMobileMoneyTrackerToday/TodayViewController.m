@@ -24,7 +24,7 @@
     
     
     [self widgetPerformUpdateWithCompletionHandler:^(NCUpdateResult result) {
-        self.circlesView = [[CirclesView alloc] initWithValues:@[@(10), @(20), @(40), @(5)] andFrame:CGRectMake(-20, -10, 280, 285)];
+        self.circlesView = [[CirclesView alloc] initWithValues:@[@(8314), @(13662), @(28231), @(13034)] andFrame:CGRectMake(-20, -10, 280, 285)];
         self.circlesView.userInteractionEnabled = false;
         // self.circlesView.delegate = self;
         [self.view addSubview:self.circlesView];

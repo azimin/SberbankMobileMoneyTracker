@@ -12,7 +12,6 @@
 		92300E071984A18B006B2078 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E061984A18B006B2078 /* TodayViewController.m */; };
 		92300E091984A18B006B2078 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92300E081984A18B006B2078 /* MainInterface.storyboard */; };
 		92300E0C1984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 92300E001984A18B006B2078 /* SberbankMobileMoneyTrackerToday.appex */; };
-		92300E231984A1E5006B2078 /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E141984A1E5006B2078 /* Circle.m */; };
 		92300E241984A1E5006B2078 /* CirclesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E161984A1E5006B2078 /* CirclesView.m */; };
 		92300E251984A1E5006B2078 /* LabelOnCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E181984A1E5006B2078 /* LabelOnCircle.m */; };
 		92300E261984A1E5006B2078 /* NSArray+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 92300E1A1984A1E5006B2078 /* NSArray+Functional.m */; };
@@ -23,6 +22,7 @@
 		924E161D1984E56100903C7E /* CategoryType.m in Sources */ = {isa = PBXBuildFile; fileRef = 924E161C1984E56100903C7E /* CategoryType.m */; };
 		924E16201984E56100903C7E /* DayInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 924E161F1984E56100903C7E /* DayInfo.m */; };
 		924E16231984E56100903C7E /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = 924E16221984E56100903C7E /* Expense.m */; };
+		924E16261984F34100903C7E /* Circle.m in Sources */ = {isa = PBXBuildFile; fileRef = 924E16251984F34100903C7E /* Circle.m */; };
 		92801811198463B7002901F3 /* ExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9280180F198463B7002901F3 /* ExpenseViewController.m */; };
 		92801812198463B7002901F3 /* ExpenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92801810198463B7002901F3 /* ExpenseViewController.xib */; };
 		92801814198470BC002901F3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92801813198470BC002901F3 /* Parse.framework */; };
@@ -110,8 +110,6 @@
 		92300E051984A18B006B2078 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
 		92300E061984A18B006B2078 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		92300E081984A18B006B2078 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
-		92300E131984A1E5006B2078 /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
-		92300E141984A1E5006B2078 /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 		92300E151984A1E5006B2078 /* CirclesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirclesView.h; sourceTree = "<group>"; };
 		92300E161984A1E5006B2078 /* CirclesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirclesView.m; sourceTree = "<group>"; };
 		92300E171984A1E5006B2078 /* LabelOnCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelOnCircle.h; sourceTree = "<group>"; };
@@ -132,6 +130,8 @@
 		924E161F1984E56100903C7E /* DayInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayInfo.m; sourceTree = "<group>"; };
 		924E16211984E56100903C7E /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
 		924E16221984E56100903C7E /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		924E16241984F34100903C7E /* Circle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Circle.h; sourceTree = "<group>"; };
+		924E16251984F34100903C7E /* Circle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Circle.m; sourceTree = "<group>"; };
 		9280180E198463B7002901F3 /* ExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExpenseViewController.h; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.h; sourceTree = "<group>"; };
 		9280180F198463B7002901F3 /* ExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExpenseViewController.m; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.m; sourceTree = "<group>"; };
 		92801810198463B7002901F3 /* ExpenseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpenseViewController.xib; path = ViewControllers/ExpenseTableViewController/ExpenseViewController.xib; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 		92300E121984A1DD006B2078 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				92300E131984A1E5006B2078 /* Circle.h */,
-				92300E141984A1E5006B2078 /* Circle.m */,
+				924E16241984F34100903C7E /* Circle.h */,
+				924E16251984F34100903C7E /* Circle.m */,
 				92300E151984A1E5006B2078 /* CirclesView.h */,
 				92300E161984A1E5006B2078 /* CirclesView.m */,
 				92300E171984A1E5006B2078 /* LabelOnCircle.h */,
@@ -776,12 +776,12 @@
 				92300E241984A1E5006B2078 /* CirclesView.m in Sources */,
 				92300E271984A1E5006B2078 /* UIColor+AppColors.m in Sources */,
 				92300E261984A1E5006B2078 /* NSArray+Functional.m in Sources */,
+				924E16261984F34100903C7E /* Circle.m in Sources */,
 				92300E281984A1E5006B2078 /* UIColor+Expanded.m in Sources */,
 				92300E251984A1E5006B2078 /* LabelOnCircle.m in Sources */,
 				92300E291984A1E5006B2078 /* UIImage+ImageFromColor.m in Sources */,
 				92300E071984A18B006B2078 /* TodayViewController.m in Sources */,
 				92300E2A1984A1E5006B2078 /* UIView+Tag.m in Sources */,
-				92300E231984A1E5006B2078 /* Circle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

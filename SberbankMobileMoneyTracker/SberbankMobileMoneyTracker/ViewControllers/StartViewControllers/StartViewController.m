@@ -27,6 +27,7 @@
 @property (nonatomic) NSInteger currentIndex;
 
 @property (nonatomic) BOOL isColorTableOpen;
+@property (nonatomic) BOOL shouldLoadBubbles;
 
 @end
 
@@ -40,24 +41,28 @@
 }
 
 - (void)viewDidLoad {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDataBase) name:@"UpdateBase" object:nil];
+    
     [super viewDidLoad];
     self.currentViewValues = @[@(0), @(0), @(0), @(0)];
     
     MainViewNavigation *mainNavigation = [[MainViewNavigation alloc] initWithTitles:@[@"Week", @"Day"] selectedIndex:0 andDelegat:self];
     [self.view insertSubview:mainNavigation atIndex:0];
     
-    if ( ![CoreDataManager sharedInstance].expenses || [CoreDataManager sharedInstance].expenses.count == 0 ) {
-     //   [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        [[MoneyTrackerServerManager sharedInstance] fetchAllStatisticWithSuccess:^(NSArray *resultStatistic) {
-       //     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-            
-            [self updateData];
-            [self updateCirclesViewOnThisView];
-            
-        } failure:^(NSError *error) {
-         //   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        }];
-    }
+    [self updateDataBase];
+}
+
+- (void)updateDataBase
+{
+    self.shouldLoadBubbles = false;
+    [[MoneyTrackerServerManager sharedInstance] fetchAllStatisticWithSuccess:^(NSArray *resultStatistic) {
+        self.shouldLoadBubbles = true;
+        [self updateData];
+        [self updateCirclesViewOnThisView];
+    } failure:^(NSError *error) {
+        self.shouldLoadBubbles = true;
+    }];
 }
 
 - (void)updateData
@@ -79,6 +84,10 @@
 
 - (void)updateCirclesViewOnThisView
 {
+    if ( !self.shouldLoadBubbles ) {
+        return;
+    }
+    
     [self.circlesView removeFromSuperview];
     self.circlesView = [[CirclesView alloc] initWithValues:self.currentViewValues andFrame:CGRectMake(0, 122, 320, 285)];
     self.circlesView.delegate = self;

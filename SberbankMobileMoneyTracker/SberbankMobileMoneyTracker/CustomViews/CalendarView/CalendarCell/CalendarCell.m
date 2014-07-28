@@ -118,7 +118,7 @@
     self.arrayOfCircles = circles;
     
     // Add button
-    UIButton *but = [[UIButton alloc] initWithFrame:self.bounds];
+    UIButton *but = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height / 2 + 25)];
     [but addTarget:self action:@selector(selectCell:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:but];
 }

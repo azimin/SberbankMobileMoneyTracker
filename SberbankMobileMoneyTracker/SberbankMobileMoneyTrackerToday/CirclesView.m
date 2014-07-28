@@ -71,6 +71,7 @@
         CGFloat radius = [self.circleSizes[sizeNumber] floatValue];
         Circle *circle = [[Circle alloc] initWithRadius:radius andCenter:[self centerAfterNumber: index
                                                                                    andSizeNumber: sizeNumber]];
+        circle.hovering = true;
         circle.color = UIColor.circleColors[index];
         circle.tagPlus = index;
         [circle addTarget:self action:@selector(circleWasPressed:)];
